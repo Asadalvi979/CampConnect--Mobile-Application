@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"surface-container-lowest":"#ffffff","error":"#ba1a1a","on-secondary-fixed-variant":"#3a4858","on-tertiary-container":"#bdffdb","on-surface":"#0b1c30","on-background":"#0b1c30","on-primary-container":"#eeefff","on-secondary-fixed":"#0e1d2b","on-primary":"#ffffff","on-tertiary":"#ffffff","surface-bright":"#f8f9ff","background":"#f8f9ff","surface-container-highest":"#d3e4fe","tertiary":"#006242","surface-container":"#e5eeff","on-error-container":"#93000a","secondary-container":"#d5e4f8","tertiary-fixed":"#6ffbbe","primary-fixed-dim":"#b4c5ff","surface":"#f8f9ff","secondary-fixed-dim":"#b9c8db","primary":"#004ac6","on-tertiary-fixed-variant":"#005236","primary-container":"#2563eb","on-secondary":"#ffffff","surface-container-low":"#eff4ff","inverse-primary":"#b4c5ff","on-secondary-container":"#576676","surface-tint":"#0053db","on-surface-variant":"#434655","secondary":"#516070","error-container":"#ffdad6","on-primary-fixed":"#00174b","outline-variant":"#c3c6d7","surface-container-high":"#dce9ff","primary-fixed":"#dbe1ff","surface-dim":"#cbdbf5","inverse-on-surface":"#eaf1ff","surface-variant":"#d3e4fe","tertiary-fixed-dim":"#4edea3","secondary-fixed":"#d5e4f8","on-error":"#ffffff","inverse-surface":"#213145","outline":"#737686","tertiary-container":"#007d55","on-tertiary-fixed":"#002113","on-primary-fixed-variant":"#003ea8"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{"space-sm":"0.5rem","space-md":"1rem","space-xl":"2rem",gutter:"1rem","space-xs":"0.25rem",margin:"1.25rem","space-lg":"1.5rem"},fontFamily:{"headline-sm":["Plus Jakarta Sans"],"body-lg":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"],"label-md":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"],"display-lg":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"label-sm":["Plus Jakarta Sans"],"label-lg":["Plus Jakarta Sans"]},fontSize:{"headline-sm":["18px",{lineHeight:"24px",fontWeight:"600"}],"body-lg":["16px",{lineHeight:"24px",fontWeight:"400"}],"headline-lg":["26px",{lineHeight:"34px",letterSpacing:"-0.015em",fontWeight:"700"}],"label-md":["13px",{lineHeight:"18px",letterSpacing:"0.01em",fontWeight:"600"}],"body-md":["14px",{lineHeight:"20px",fontWeight:"400"}],"body-sm":["12px",{lineHeight:"16px",fontWeight:"400"}],"display-lg":["32px",{lineHeight:"40px",letterSpacing:"-0.02em",fontWeight:"700"}],"headline-md":["22px",{lineHeight:"28px",letterSpacing:"-0.01em",fontWeight:"600"}],"label-sm":["11px",{lineHeight:"14px",letterSpacing:"0.02em",fontWeight:"500"}],"label-lg":["15px",{lineHeight:"20px",letterSpacing:"0.01em",fontWeight:"600"}]}}}};</script></head><body class="bg-background font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between"><div class="flex flex-col"><div class="h-16 px-space-lg flex items-center gap-space-sm bg-surface-container-lowest"><div class="w-9 h-9 rounded-xl bg-primary-container flex items-center justify-center text-on-primary shadow-sm"><span class="material-symbols-outlined text-[22px]">school</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface leading-tight">CampConnect</span><span class="font-label-sm text-label-sm text-on-surface-variant leading-tight">Admin Console</span></div></div><div class="px-space-md pt-space-lg"><div class="px-space-sm pb-space-xs font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Main Navigation</div><nav class="flex flex-col gap-space-xs" data-active-classes="bg-primary-container text-on-primary font-label-lg rounded-xl shadow-md"><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-xl font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px]">dashboard</span><span>Dashboard</span></a><a aria-current="page" class="flex items-center gap-space-md px-space-md py-space-sm transition-all bg-primary-container text-on-primary font-label-lg rounded-xl shadow-md" data-path="user-management" href="#"><span class="material-symbols-outlined text-[20px]">group</span><span>User Management</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-xl font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all" data-path="resource-moderation" href="#"><span class="material-symbols-outlined text-[20px]">verified</span><span>Resource Moderation</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-xl font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all" data-path="announcement-management" href="#"><span class="material-symbols-outlined text-[20px]">campaign</span><span>Announcement Management</span></a></nav></div></div><div class="p-space-md bg-surface-container-lowest"><div class="p-space-sm rounded-xl bg-surface-container-low flex items-center justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)] mb-space-xs"><div class="flex items-center gap-space-sm min-w-0"><div class="w-9 h-9 rounded-full bg-secondary-container flex items-center justify-center text-primary font-headline-sm text-label-md shrink-0">AD</div><div class="flex flex-col min-w-0"><span class="font-label-md text-label-md text-on-surface truncate">University Admin</span><span class="font-label-sm text-label-sm text-on-surface-variant truncate">Administrator</span></div></div><span class="material-symbols-outlined text-tertiary text-[18px]">verified_user</span></div><a class="flex items-center gap-space-sm w-full px-space-md py-space-sm rounded-xl font-label-md text-label-md text-on-surface-variant hover:bg-error-container hover:text-on-error-container transition-all" data-path="login" href="#"><span class="material-symbols-outlined text-[20px]">logout</span><span>Sign Out</span></a></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-xl"><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-xs font-label-md text-label-md text-on-surface-variant"><span class="material-symbols-outlined text-[18px]">home</span><span>/</span><span class="text-on-surface font-label-lg text-label-lg">Admin Panel</span></div><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-space-md text-outline text-[18px]">search</span><input class="w-72 h-10 pl-10 pr-space-md rounded-xl bg-surface-container-low text-on-surface placeholder:text-on-surface-variant font-body-sm text-body-sm outline-none focus:ring-2 focus:ring-primary-container transition-all" placeholder="Search users, documents, logs..." type="text"/></div></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs px-space-md py-1 rounded-full bg-secondary-container text-on-secondary-fixed"><span class="w-2 h-2 rounded-full bg-tertiary-container animate-pulse"></span><span class="font-label-sm text-label-sm font-medium">Riphah Sahiwal Campus</span></div><button class="relative p-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-error"></span></button><img alt="Profile" class="w-8 h-8 rounded-full object-cover shadow-[0_1px_8px_rgba(0,0,0,0.04)]" src="https://lh3.googleusercontent.com/aida/AEtjO1V3PTPfNamlqI-WR1eNR0z2N1jo5FVDLI4ouq2VnUUFNCd1UNYhW1Lgc-sxaYs0-VpxdsOGgyLvZrX3SER0yyT12u_skXW_AGu5o1vFbeH2gqEXM-kBeXDVwicVEF40okVbREPNwOpTtyE-uxJePj11xfpWY7TkuARCmspv0cHg1MFO9BwccHwpMa_qMf0eyaAHZ8xHib_kSfcDqoPZKhchbbgzNsqbwUcSDiZNEDT9cikPu6j9Xo1a_nY"/></div></header><main class="w-full pt-16 bg-background min-h-screen px-space-xl py-space-xl"><div class="flex flex-col w-full gap-space-lg">
+<!-- Top Stat Cards (Bento Style with SVG Data Sparklines) -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-space-md">
+<!-- Card 1 -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container-lowest p-space-lg shadow-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Total Enrolled</span>
+<span class="flex items-center justify-center w-8 h-8 rounded-lg bg-surface-container-low text-primary">
+<span class="material-symbols-outlined text-[18px]">group</span>
+</span>
+</div>
+<div class="mt-space-sm flex items-baseline gap-space-xs">
+<span class="font-display-lg text-display-lg text-on-surface">2,845</span>
+<span class="font-label-sm text-label-sm text-tertiary font-semibold flex items-center">
+<span class="material-symbols-outlined text-[14px]">trending_up</span> +8.4%
+        </span>
+</div>
+<div class="mt-space-md flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Active academic terms</span>
+<!-- Inline Mini Sparkline SVG -->
+<svg class="w-20 h-5 text-primary" fill="none" viewbox="0 0 100 24">
+<path d="M0 18 L15 14 L30 19 L45 8 L60 12 L75 4 L90 7 L100 2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+</svg>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container-lowest p-space-lg shadow-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Verified Undergrads</span>
+<span class="flex items-center justify-center w-8 h-8 rounded-lg bg-surface-container-low text-primary-container">
+<span class="material-symbols-outlined text-[18px]">school</span>
+</span>
+</div>
+<div class="mt-space-sm flex items-baseline gap-space-xs">
+<span class="font-display-lg text-display-lg text-on-surface">2,570</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Students &amp; Seniors</span>
+</div>
+<div class="mt-space-md w-full bg-surface-container-low h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 90.3%;"></div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container-lowest p-space-lg shadow-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Alumni Network</span>
+<span class="flex items-center justify-center w-8 h-8 rounded-lg bg-surface-container-low text-tertiary">
+<span class="material-symbols-outlined text-[18px]">workspace_premium</span>
+</span>
+</div>
+<div class="mt-space-sm flex items-baseline gap-space-xs">
+<span class="font-display-lg text-display-lg text-on-surface">275</span>
+<span class="font-label-sm text-label-sm text-tertiary font-semibold flex items-center">
+<span class="material-symbols-outlined text-[14px]">domain</span> Verified Orgs
+        </span>
+</div>
+<div class="mt-space-md flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Industry Mentors: 64</span>
+<svg class="w-20 h-5 text-tertiary" fill="none" viewbox="0 0 100 24">
+<path d="M0 20 L20 16 L40 14 L60 8 L80 10 L100 3" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+</svg>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container-lowest p-space-lg shadow-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Disciplinary Holds</span>
+<span class="flex items-center justify-center w-8 h-8 rounded-lg bg-error-container text-error">
+<span class="material-symbols-outlined text-[18px]">block</span>
+</span>
+</div>
+<div class="mt-space-sm flex items-baseline gap-space-xs">
+<span class="font-display-lg text-display-lg text-error">12</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Suspended total</span>
+</div>
+<div class="mt-space-md flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface-variant">0.42% of university base</span>
+<span class="font-label-sm text-label-sm text-tertiary font-medium">99.6% Compliance</span>
+</div>
+</div>
+</div>
+<!-- Header & Toolbar Container -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-lg">
+<!-- Header Block -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-sm">
+<h1 class="font-headline-lg text-headline-lg text-on-surface">User Management</h1>
+<span class="px-space-sm py-0.5 rounded-full bg-secondary-container text-on-secondary-fixed font-label-sm text-label-sm">Riphah Sahiwal Directory</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-space-xs">Search, monitor, inspect, and manage university student, senior, alumni, and staff accounts.</p>
+</div>
+<div class="flex items-center gap-space-sm shrink-0">
+<button class="flex items-center gap-space-xs px-space-md py-2.5 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md transition-all shadow-sm" id="exportBtn" onclick="handleExportClick()">
+<span class="material-symbols-outlined text-[18px]">file_download</span>
+<span>Export CSV</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-md py-2.5 rounded-xl bg-primary-container text-on-primary font-label-md text-label-md hover:bg-primary transition-all shadow-md">
+<span class="material-symbols-outlined text-[18px]">person_add</span>
+<span>Register New Student</span>
+</button>
+</div>
+</div>
+<!-- Controls Toolbar (Search + Filters) -->
+<div class="flex flex-col xl:flex-row gap-space-md xl:items-center justify-between pt-space-xs">
+<!-- Search Input -->
+<div class="relative flex-1 max-w-2xl">
+<span class="material-symbols-outlined absolute left-space-md top-1/2 -translate-y-1/2 text-outline text-[20px]">search</span>
+<input class="w-full h-12 pl-11 pr-space-md bg-surface-container-low rounded-xl font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant outline-none focus:bg-surface-container-lowest transition-all" id="userSearchInput" placeholder="Search by user name, official email, or CMS ID (e.g. FA21-BCS-042)..." type="text"/>
+<span class="hidden absolute right-space-md top-1/2 -translate-y-1/2 text-on-surface-variant hover:text-on-surface cursor-pointer material-symbols-outlined text-[18px]" id="clearSearchBtn">close</span>
+</div>
+<!-- Filters & Action Controls -->
+<div class="flex flex-wrap items-center gap-space-sm">
+<!-- Role Filter Tabs / Pills -->
+<div class="flex items-center bg-surface-container-low p-1 rounded-xl">
+<button class="role-filter-btn px-space-md py-1.5 rounded-lg bg-surface-container-lowest text-primary font-label-md text-label-md shadow-sm transition-all" data-role="all">
+            All <span class="font-normal text-on-surface-variant">(2,845)</span>
+</button>
+<button class="role-filter-btn px-space-md py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-all" data-role="Student">
+            Student <span class="font-normal opacity-70">(2,140)</span>
+</button>
+<button class="role-filter-btn px-space-md py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-all" data-role="Senior">
+            Senior <span class="font-normal opacity-70">(430)</span>
+</button>
+<button class="role-filter-btn px-space-md py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-all" data-role="Alumni">
+            Alumni <span class="font-normal opacity-70">(275)</span>
+</button>
+<button class="role-filter-btn px-space-md py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-all" data-role="Admin">
+            Admin <span class="font-normal opacity-70">(8)</span>
+</button>
+</div>
+<!-- Status Filter -->
+<div class="relative">
+<select class="appearance-none h-11 pl-space-md pr-10 rounded-xl bg-surface-container-low text-on-surface font-label-md text-label-md outline-none cursor-pointer" id="statusFilter">
+<option value="all">All Statuses</option>
+<option value="Active">Active Status</option>
+<option value="Suspended">Suspended</option>
+</select>
+<span class="material-symbols-outlined absolute right-space-sm top-1/2 -translate-y-1/2 pointer-events-none text-[18px] text-on-surface-variant">expand_more</span>
+</div>
+</div>
+</div>
+</div>
+<!-- User Data Table Card -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col">
+<!-- Responsive Table Container -->
+<div class="overflow-x-auto w-full">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">
+<th class="py-space-md px-space-lg font-semibold">User</th>
+<th class="py-space-md px-space-md font-semibold">CMS ID / Roll</th>
+<th class="py-space-md px-space-md font-semibold">Campus Email</th>
+<th class="py-space-md px-space-md font-semibold">Role</th>
+<th class="py-space-md px-space-md font-semibold">Department &amp; Term / Company</th>
+<th class="py-space-md px-space-md font-semibold">Status</th>
+<th class="py-space-md px-space-md font-semibold">Registered</th>
+<th class="py-space-md px-space-lg text-right font-semibold">Actions</th>
+</tr>
+</thead>
+<tbody class="font-body-md text-body-md text-on-surface" id="userTableBody">
+<!-- Row 1: Asadullah Sadiq -->
+<tr class="user-row hover:bg-surface-container-low transition-colors" data-cms="FA21-BCS-042" data-email="asadullah.sadiq@riphah.edu.pk" data-name="Asadullah Sadiq" data-role="Senior" data-status="Active">
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="relative shrink-0">
+<img class="w-10 h-10 rounded-full object-cover shadow-sm" data-alt="Close up modern portrait of a Pakistani computer science senior university student wearing smart casual collegiate attire against campus studio lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgDFYiURsd5iOlUMf8RjXrzansygHECYbUM7nEtUCPhZmeBUeqDrbLvwS2x8ajR-5sLo-SlhJu8KJpggS027HSaf4kELvis2GTvrlm7yv-82H9pj6-b5B5styQm-pDkUcZJj0_N4_koaECy4wmtjG6doXTVV_DftVV1MeQkI6jQW8R4x3AB2JyW4lkfJfbeec-9e1JvR6D0ec3-6CVDaT9UnDdiZlL4mtkNtl9Zdk"/>
+<span class="absolute -bottom-0.5 -right-0.5 w-4 h-4 rounded-full bg-primary-container text-on-primary flex items-center justify-center text-[10px]" title="Campus Verified">
+<span class="material-symbols-outlined text-[10px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-on-surface truncate">Asadullah Sadiq</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Class Representative</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md font-label-md text-label-md text-on-surface">
+<span class="px-space-xs py-0.5 rounded bg-surface-container font-mono text-[12px] text-primary">FA21-BCS-042</span>
+</td>
+<td class="py-space-md px-space-md font-body-md text-body-md text-on-surface-variant">
+              asadullah.sadiq@riphah.edu.pk
+            </td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1 px-space-sm py-1 rounded-full bg-secondary-container text-on-secondary-fixed font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                Senior
+              </span>
+</td>
+<td class="py-space-md px-space-md font-body-md text-body-md text-on-surface">
+<div class="flex flex-col">
+<span class="font-medium text-on-surface">Computer Science</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">5th Semester • Sec A</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1 px-space-sm py-1 rounded-full bg-tertiary-container/15 text-tertiary font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span>
+                Active
+              </span>
+</td>
+<td class="py-space-md px-space-md font-body-sm text-body-sm text-on-surface-variant whitespace-nowrap">
+              Oct 12, 2023
+            </td>
+<td class="py-space-md px-space-lg text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="px-space-sm py-1.5 rounded-lg text-primary hover:bg-surface-container font-label-sm text-label-sm transition-all flex items-center gap-1" onclick="openUserDetails('Asadullah Sadiq', 'FA21-BCS-042', 'Senior', 'Computer Science (5th Sem)', 'asadullah.sadiq@riphah.edu.pk', 'Active')">
+<span class="material-symbols-outlined text-[16px]">visibility</span> View
+                </button>
+<button class="px-space-sm py-1.5 rounded-lg text-error hover:bg-error-container font-label-sm text-label-sm transition-all flex items-center gap-1" onclick="promptSuspension('Asadullah Sadiq', 'FA21-BCS-042', 'Senior')">
+<span class="material-symbols-outlined text-[16px]">block</span> Suspend
+                </button>
+</div>
+</td>
+</tr>
+<!-- Row 2: Bilal Ahmed -->
+<tr class="user-row hover:bg-surface-container-low transition-colors" data-cms="FA18-BSE-105" data-email="bilal.ahmed@systems.ltd" data-name="Bilal Ahmed" data-role="Alumni" data-status="Active">
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="relative shrink-0">
+<img class="w-10 h-10 rounded-full object-cover shadow-sm" data-alt="Portrait of an alumni Pakistani software engineer graduate in office workplace with natural window light and professional smile." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0txIZE_EzzPc5AJEl2gDPSRbnzNmVOCfbgTTZyo29oMks0N6lDrvpiIPWTgb6j2VvFhKdatY9yCIFY6meobz_C4x8L8ogTZZEC-7sun5d68fA0erJin5EQXCyu2tiXZKhr_O76mesGcKQ8voOA1X5F9_op5QVfg0JTTa-MD4R-7ZAi5mCiUAniQ-OXqyJrcj5On3wx6zM4fAO7T6IOqtmp2Wn6YGQTCnuiwgwXGY"/>
+<span class="absolute -bottom-0.5 -right-0.5 w-4 h-4 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center text-[10px]" title="Alumni Verified">
+<span class="material-symbols-outlined text-[10px]" style="font-variation-settings: 'FILL' 1;">work</span>
+</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-on-surface truncate">Bilal Ahmed</span>
+<span class="font-body-sm text-body-sm text-tertiary">Alumni Council Member</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md font-label-md text-label-md text-on-surface">
+<span class="px-space-xs py-0.5 rounded bg-surface-container font-mono text-[12px] text-on-surface">FA18-BSE-105</span>
+</td>
+<td class="py-space-md px-space-md font-body-md text-body-md text-on-surface-variant">
+              bilal.ahmed@systems.ltd
+            </td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1 px-space-sm py-1 rounded-full bg-surface-container text-tertiary font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+                Alumni
+              </span>
+</td>
+<td class="py-space-md px-space-md font-body-md text-body-md text-on-surface">
+<div class="flex flex-col">
+<span class="font-medium text-on-surface">Software Engineer</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Systems Limited</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1 px-space-sm py-1 rounded-full bg-tertiary-container/15 text-tertiary font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span>
+                Active
+              </span>
+</td>
+<td class="py-space-md px-space-md font-body-sm text-body-sm text-on-surface-variant whitespace-nowrap">
+              Aug 20, 2022
+            </td>
+<td class="py-space-md px-space-lg text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="px-space-sm py-1.5 rounded-lg text-primary hover:bg-surface-container font-label-sm text-label-sm transition-all flex items-center gap-1" onclick="openUserDetails('Bilal Ahmed', 'FA18-BSE-105', 'Alumni', 'Software Engineer @ Systems Ltd', 'bilal.ahmed@systems.ltd', 'Active')">
+<span class="material-symbols-outlined text-[16px]">visibility</span> View
+                </button>
+<button class="px-space-sm py-1.5 rounded-lg text-error hover:bg-error-container font-label-sm text-label-sm transition-all flex items-center gap-1" onclick="promptSuspension('Bilal Ahmed', 'FA18-BSE-105', 'Alumni')">
+<span class="material-symbols-outlined text-[16px]">block</span> Suspend
+                </button>
+</div>
+</td>
+</tr>
+<!-- Row 3: Usman Ali -->
+<tr class="user-row hover:bg-surface-container-low transition-colors" data-cms="SP23-BCS-118" data-email="usman.ali@riphah.edu.pk" data-name="Usman Ali" data-role="Student" data-status="Active">
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="relative shrink-0">
+<img class="w-10 h-10 rounded-full object-cover shadow-sm" data-alt="Headshot of a friendly young Pakistani freshman student with campus library backdrop and warm ambient interior lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBI4dJqE2Q7nNOJwUrakrp0sy4lwwaDfAkLfwetzlnUiNZCGAaoAI00GQG-hnNJW-a2moj2B8y09FwjnWAThCI3mQc1mGMAMtbOI6HDiNgVl5wOWX-NfrcWy5M-bp69SuckQ4EB4YzkPtzxsPsWuZs7uxzj-QeCsKBQsu-FL4Ny_VDuSDE3clXGKuCEdut99f70toRBPjeLW--gbxxYR6Rme1lz4ttiLM-vA2RfOJ4"/>
+<span class="absolute -bottom-0.5 -right-0.5 w-4 h-4 rounded-full bg-primary-container text-on-primary flex items-center justify-center text-[10px]" title="Campus Verified">
+<span class="material-symbols-outlined text-[10px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-on-surface truncate">Usman Ali</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Undergraduate</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md font-label-md text-label-md text-on-surface">
+<span class="px-space-xs py-0.5 rounded bg-surface-container font-mono text-[12px] text-primary">SP23-BCS-118</span>
+</td>
+<td class="py-space-md px-space-md font-body-md text-body-md text-on-surface-variant">
+              usman.ali@riphah.edu.pk
+            </td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1 px-space-sm py-1 rounded-full bg-surface-container-high text-on-secondary-fixed font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                Student
+              </span>
+</td>
+<td class="py-space-md px-space-md font-body-md text-body-md text-on-surface">
+<div class="flex flex-col">
+<span class="font-medium text-on-surface">Software Eng</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">3rd Semester • Sec B</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1 px-space-sm py-1 rounded-full bg-tertiary-container/15 text-tertiary font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span>
+                Active
+              </span>
+</td>
+<td class="py-space-md px-space-md font-body-sm text-body-sm text-on-surface-variant whitespace-nowrap">
+              Feb 14, 2024
+            </td>
+<td class="py-space-md px-space-lg text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="px-space-sm py-1.5 rounded-lg text-primary hover:bg-surface-container font-label-sm text-label-sm transition-all flex items-center gap-1" onclick="openUserDetails('Usman Ali', 'SP23-BCS-118', 'Student', 'Software Eng (3rd Sem)', 'usman.ali@riphah.edu.pk', 'Active')">
+<span class="material-symbols-outlined text-[16px]">visibility</span> View
+                </button>
+<button class="px-space-sm py-1.5 rounded-lg text-error hover:bg-error-container font-label-sm text-label-sm transition-all flex items-center gap-1" onclick="promptSuspension('Usman Ali', 'SP23-BCS-118', 'Student')">
+<span class="material-symbols-outlined text-[16px]">block</span> Suspend
+                </button>
+</div>
+</td>
+</tr>
+<!-- Row 4: Zainab Fatima -->
+<tr class="user-row hover:bg-surface-container-low transition-colors" data-cms="FA20-BSE-019" data-email="zainab.f@riphah.edu.pk" data-name="Zainab Fatima" data-role="Senior" data-status="Active">
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="relative shrink-0">
+<img class="w-10 h-10 rounded-full object-cover shadow-sm" data-alt="Portrait of an intelligent female computer engineering student wearing modern hijab and eyeglasses in a brightly lit campus innovation center." src="https://lh3.googleusercontent.com/aida-public/AB6AXuByU7vi2VszPp2EqU0F_CZB_q23XkrOZ5nSX_7WfIOyQnZWeIx9aTa3NNSTuY3KMpReqD1_6ftcnHjbX9HtfRVN3gUjK79CU_SVo1JIKNPZCZlLdmdwc3uQ2fLY4UCUgeCicaaFASoZwySYMTw5jAQ-DHHPy4VwZwD5Sl9aVoEhzVE_EK_gBwdgnabpIWF5i7fmAuQZfqziBtRk5i2_cXupkPjZHpWj6s1K8q6hIXo"/>
+<span class="absolute -bottom-0.5 -right-0.5 w-4 h-4 rounded-full bg-primary-container text-on-primary flex items-center justify-center text-[10px]" title="Campus Verified">
+<span class="material-symbols-outlined text-[10px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-on-surface truncate">Zainab Fatima</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Dean's Honor List</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md font-label-md text-label-md text-on-surface">
+<span class="px-space-xs py-0.5 rounded bg-surface-container font-mono text-[12px] text-primary">FA20-BSE-019</span>
+</td>
+<td class="py-space-md px-space-md font-body-md text-body-md text-on-surface-variant">
+              zainab.f@riphah.edu.pk
+            </td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1 px-space-sm py-1 rounded-full bg-secondary-container text-on-secondary-fixed font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                Senior
+              </span>
+</td>
+<td class="py-space-md px-space-md font-body-md text-body-md text-on-surface">
+<div class="flex flex-col">
+<span class="font-medium text-on-surface">Software Eng</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">7th Semester • FYP Lead</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1 px-space-sm py-1 rounded-full bg-tertiary-container/15 text-tertiary font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span>
+                Active
+              </span>
+</td>
+<td class="py-space-md px-space-md font-body-sm text-body-sm text-on-surface-variant whitespace-nowrap">
+              Sep 01, 2022
+            </td>
+<td class="py-space-md px-space-lg text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="px-space-sm py-1.5 rounded-lg text-primary hover:bg-surface-container font-label-sm text-label-sm transition-all flex items-center gap-1" onclick="openUserDetails('Zainab Fatima', 'FA20-BSE-019', 'Senior', 'Software Eng (7th Sem)', 'zainab.f@riphah.edu.pk', 'Active')">
+<span class="material-symbols-outlined text-[16px]">visibility</span> View
+                </button>
+<button class="px-space-sm py-1.5 rounded-lg text-error hover:bg-error-container font-label-sm text-label-sm transition-all flex items-center gap-1" onclick="promptSuspension('Zainab Fatima', 'FA20-BSE-019', 'Senior')">
+<span class="material-symbols-outlined text-[16px]">block</span> Suspend
+                </button>
+</div>
+</td>
+</tr>
+<!-- Row 5: Danial Kashif (Suspended) -->
+<tr class="user-row hover:bg-surface-container-low transition-colors bg-error-container/20" data-cms="SP22-BCS-088" data-email="d.kashif@riphah.edu.pk" data-name="Danial Kashif" data-role="Student" data-status="Suspended">
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="relative shrink-0">
+<img class="w-10 h-10 rounded-full object-cover shadow-sm opacity-80" data-alt="Portrait of an educational student in studio setting with neutral muted lighting looking towards camera." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyeQ3T6oD_0Hv-4JaMpPSjeILiALjkjWFGKTZ5ZwBzy4In601M-lbwfr5zIBK5VugUvSL6WH_8rVXHkjfZSpadEmDe7Xvzp8Ia0unofSI107sxms1HAG8guXlFY6ktlpHnTCLzm_tGSeRut3XDu18C0-PIqSph4TZkI4mThfww65JAlLNzAvo7WFJ4cciucYjzPLzJW8PRXguZYetcHQij_D0ZGpUXFQmzhUXv0V4"/>
+<span class="absolute -bottom-0.5 -right-0.5 w-4 h-4 rounded-full bg-error text-on-error flex items-center justify-center text-[10px]" title="Account Suspended">
+<span class="material-symbols-outlined text-[10px]">close</span>
+</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-on-surface truncate">Danial Kashif</span>
+<span class="font-body-sm text-body-sm text-error">Disciplinary Hold Active</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md font-label-md text-label-md text-on-surface">
+<span class="px-space-xs py-0.5 rounded bg-surface-container font-mono text-[12px] text-error font-medium">SP22-BCS-088</span>
+</td>
+<td class="py-space-md px-space-md font-body-md text-body-md text-on-surface-variant">
+              d.kashif@riphah.edu.pk
+            </td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1 px-space-sm py-1 rounded-full bg-surface-container-high text-on-secondary-fixed font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                Student
+              </span>
+</td>
+<td class="py-space-md px-space-md font-body-md text-body-md text-on-surface">
+<div class="flex flex-col">
+<span class="font-medium text-on-surface">Computer Science</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">4th Semester • Under Review</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1 px-space-sm py-1 rounded-full bg-error-container text-error font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+                Suspended
+              </span>
+</td>
+<td class="py-space-md px-space-md font-body-sm text-body-sm text-on-surface-variant whitespace-nowrap">
+              Nov 10, 2023
+            </td>
+<td class="py-space-md px-space-lg text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="px-space-sm py-1.5 rounded-lg text-primary hover:bg-surface-container font-label-sm text-label-sm transition-all flex items-center gap-1" onclick="openUserDetails('Danial Kashif', 'SP22-BCS-088', 'Student', 'Computer Science (4th Sem)', 'd.kashif@riphah.edu.pk', 'Suspended')">
+<span class="material-symbols-outlined text-[16px]">visibility</span> View
+                </button>
+<button class="px-space-sm py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-tertiary font-label-sm text-label-sm transition-all flex items-center gap-1" onclick="reactivateAccount('Danial Kashif', 'SP22-BCS-088')">
+<span class="material-symbols-outlined text-[16px]">check_circle</span> Re-activate
+                </button>
+</div>
+</td>
+</tr>
+<!-- Row 6: Ayesha Malik -->
+<tr class="user-row hover:bg-surface-container-low transition-colors" data-cms="FA17-BSE-002" data-email="ayesha.malik@devstudio.io" data-name="Ayesha Malik" data-role="Alumni" data-status="Active">
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="relative shrink-0">
+<img class="w-10 h-10 rounded-full object-cover shadow-sm" data-alt="Portrait of an experienced Pakistani female product design lead with clean modern creative office aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCebFXDbVE8mW_EFLAzIRTrFiFEb3rciQTKoXhJqe5a9lHX0Q45iuq1aVZtbXPSyG904BiKd8NtzNWR5tdGatVFqz1Gu0OJI_vmiof0iPHdYv66wAJA6L3EvM3OmtmHGLKIExFpkmytEETxfhFyyCuHuv46AiA5vf4JsKDzPEoWW6ahXAU9P08NatEBCcvgGLXsuVIcxBzRpguWX6ZYUTCOek0VswcI8uCrlM33OYA"/>
+<span class="absolute -bottom-0.5 -right-0.5 w-4 h-4 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center text-[10px]" title="Alumni Verified">
+<span class="material-symbols-outlined text-[10px]" style="font-variation-settings: 'FILL' 1;">work</span>
+</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-on-surface truncate">Ayesha Malik</span>
+<span class="font-body-sm text-body-sm text-tertiary">Verified Mentor</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md font-label-md text-label-md text-on-surface">
+<span class="px-space-xs py-0.5 rounded bg-surface-container font-mono text-[12px] text-on-surface">FA17-BSE-002</span>
+</td>
+<td class="py-space-md px-space-md font-body-md text-body-md text-on-surface-variant">
+              ayesha.malik@devstudio.io
+            </td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1 px-space-sm py-1 rounded-full bg-surface-container text-tertiary font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+                Alumni
+              </span>
+</td>
+<td class="py-space-md px-space-md font-body-md text-body-md text-on-surface">
+<div class="flex flex-col">
+<span class="font-medium text-on-surface">Lead Product Designer</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">DevStudio HQ</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1 px-space-sm py-1 rounded-full bg-tertiary-container/15 text-tertiary font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span>
+                Active
+              </span>
+</td>
+<td class="py-space-md px-space-md font-body-sm text-body-sm text-on-surface-variant whitespace-nowrap">
+              Jun 15, 2021
+            </td>
+<td class="py-space-md px-space-lg text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="px-space-sm py-1.5 rounded-lg text-primary hover:bg-surface-container font-label-sm text-label-sm transition-all flex items-center gap-1" onclick="openUserDetails('Ayesha Malik', 'FA17-BSE-002', 'Alumni', 'Lead Product Designer @ DevStudio', 'ayesha.malik@devstudio.io', 'Active')">
+<span class="material-symbols-outlined text-[16px]">visibility</span> View
+                </button>
+<button class="px-space-sm py-1.5 rounded-lg text-error hover:bg-error-container font-label-sm text-label-sm transition-all flex items-center gap-1" onclick="promptSuspension('Ayesha Malik', 'FA17-BSE-002', 'Alumni')">
+<span class="material-symbols-outlined text-[16px]">block</span> Suspend
+                </button>
+</div>
+</td>
+</tr>
+<!-- Row 7: Dr. Tariq Mahmood -->
+<tr class="user-row hover:bg-surface-container-low transition-colors" data-cms="EMP-8821" data-email="tariq.mahmood@riphah.edu.pk" data-name="Dr. Tariq Mahmood" data-role="Admin" data-status="Active">
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="relative shrink-0">
+<img class="w-10 h-10 rounded-full object-cover shadow-sm" data-alt="Distinguished university professor and faculty administrator in formal academic attire with bookshelves and campus crest background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmDYx19308IG4jb3hMBWrP3ThW8lle1PbrNtXBgEbk0KtZl6Ym0c1VRN2K2-ZhVqsBamZ679qh56pqKiXe-KPvipkAmQLHFlUySXAPqCpHRV7Ma2kpnsC0vbvvDhHQWhWxWBEMv9uZTXva-c052Yt9156-QKMGuUabWJgv40t-0gAJozXiExgKucs3t-Ig1jkrkc_paaV1ZM3mIcQ5nWAOtWiLg_1lAuUEfjOje7A"/>
+<span class="absolute -bottom-0.5 -right-0.5 w-4 h-4 rounded-full bg-primary text-on-primary flex items-center justify-center text-[10px]" title="Faculty Admin">
+<span class="material-symbols-outlined text-[10px]" style="font-variation-settings: 'FILL' 1;">shield</span>
+</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-on-surface truncate">Dr. Tariq Mahmood</span>
+<span class="font-body-sm text-body-sm text-primary font-medium">Head of Computing</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md font-label-md text-label-md text-on-surface">
+<span class="px-space-xs py-0.5 rounded bg-surface-container-highest font-mono text-[12px] text-primary font-semibold">EMP-8821</span>
+</td>
+<td class="py-space-md px-space-md font-body-md text-body-md text-on-surface-variant">
+              tariq.mahmood@riphah.edu.pk
+            </td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1 px-space-sm py-1 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-white"></span>
+                Admin
+              </span>
+</td>
+<td class="py-space-md px-space-md font-body-md text-body-md text-on-surface">
+<div class="flex flex-col">
+<span class="font-medium text-on-surface">Faculty Administrator</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Computer Science Faculty</span>
+</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1 px-space-sm py-1 rounded-full bg-tertiary-container/15 text-tertiary font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span>
+                Active
+              </span>
+</td>
+<td class="py-space-md px-space-md font-body-sm text-body-sm text-on-surface-variant whitespace-nowrap">
+              Jan 10, 2020
+            </td>
+<td class="py-space-md px-space-lg text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="px-space-sm py-1.5 rounded-lg text-primary hover:bg-surface-container font-label-sm text-label-sm transition-all flex items-center gap-1" onclick="openUserDetails('Dr. Tariq Mahmood', 'EMP-8821', 'Admin', 'Faculty Administrator', 'tariq.mahmood@riphah.edu.pk', 'Active')">
+<span class="material-symbols-outlined text-[16px]">visibility</span> View
+                </button>
+<button class="px-space-sm py-1.5 rounded-lg opacity-40 text-on-surface-variant font-label-sm text-label-sm cursor-not-allowed flex items-center gap-1" disabled="" title="Root administrator accounts cannot be suspended via this console">
+<span class="material-symbols-outlined text-[16px]">lock</span> Protected
+                </button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Empty State (Hidden by default) -->
+<div class="hidden p-space-xl flex-col items-center justify-center text-center" id="noResultsState">
+<div class="w-16 h-16 rounded-full bg-surface-container-low flex items-center justify-center text-on-surface-variant mb-space-md">
+<span class="material-symbols-outlined text-[32px]">person_search</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">No users matched your query</h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-sm mt-space-xs">Try adjusting your CMS ID or role filters, or ensure there are no typographical errors.</p>
+<button class="mt-space-md px-space-md py-2 rounded-xl bg-primary-container text-on-primary font-label-md text-label-md" onclick="resetFilters()">Clear Filters</button>
+</div>
+<!-- Pagination Footer -->
+<div class="bg-surface-container-lowest p-space-md flex flex-col sm:flex-row items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Showing <span class="font-semibold text-on-surface">1</span> to <span class="font-semibold text-on-surface">7</span> of <span class="font-semibold text-on-surface">2,845</span> campus users</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Rows per page: 7</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="h-9 px-space-sm rounded-lg bg-surface-container-low text-on-surface-variant hover:text-on-surface hover:bg-surface-container flex items-center justify-center font-label-md text-label-md transition-all">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+<span class="hidden sm:inline">Prev</span>
+</button>
+<button class="w-9 h-9 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md flex items-center justify-center shadow-sm">1</button>
+<button class="w-9 h-9 rounded-lg hover:bg-surface-container-low text-on-surface font-label-md text-label-md flex items-center justify-center transition-all">2</button>
+<button class="w-9 h-9 rounded-lg hover:bg-surface-container-low text-on-surface font-label-md text-label-md flex items-center justify-center transition-all">3</button>
+<span class="w-9 h-9 flex items-center justify-center text-on-surface-variant font-label-md text-label-md">…</span>
+<button class="w-9 h-9 rounded-lg hover:bg-surface-container-low text-on-surface font-label-md text-label-md flex items-center justify-center transition-all">407</button>
+<button class="h-9 px-space-sm rounded-lg bg-surface-container-low text-on-surface-variant hover:text-on-surface hover:bg-surface-container flex items-center justify-center font-label-md text-label-md transition-all">
+<span class="hidden sm:inline">Next</span>
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Interactive Modal / Slide-out Simulator: Suspend Account Dialog -->
+<div class="fixed inset-0 z-50 flex items-center justify-center p-space-md bg-inverse-surface/40 backdrop-blur-sm hidden transition-all" id="suspendModal">
+<div class="bg-surface-container-lowest max-w-lg w-full rounded-xl shadow-xl overflow-hidden p-space-lg flex flex-col gap-space-md">
+<!-- Modal Header -->
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-xl bg-error-container text-error flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]">gavel</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Suspend User Account</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Disciplinary Action • Riphah Sahiwal Academic Registrar</p>
+</div>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface" onclick="closeModal('suspendModal')">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<!-- User Identification Summary Box -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface" id="modalTargetName">Asadullah Sadiq</span>
+<span class="font-label-sm text-label-sm font-mono text-primary" id="modalTargetCms">FA21-BCS-042</span>
+</div>
+<span class="px-space-sm py-1 rounded-full bg-secondary-container text-on-secondary-fixed font-label-sm text-label-sm font-semibold" id="modalTargetRole">Senior</span>
+</div>
+<!-- Institutional Notice / Academic Impact Policy -->
+<div class="p-space-md rounded-xl bg-error-container/30 flex gap-space-sm text-on-surface">
+<span class="material-symbols-outlined text-error shrink-0 text-[20px] mt-0.5">info</span>
+<div class="font-body-sm text-body-sm flex flex-col gap-1">
+<span class="font-semibold text-error">Academic Suspension Policy Notice</span>
+<span>Academic suspension immediately disables <strong>peer private messaging</strong>, <strong>course resource uploads</strong>, and <strong>campus community posting</strong>. Academic coursework history, attendance logs, and previous transcript records are permanently preserved.</span>
+</div>
+</div>
+<!-- Suspension Reason Input -->
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-on-surface">Administrative Reason / Case Reference</label>
+<textarea class="w-full p-space-sm rounded-xl bg-surface-container-low font-body-sm text-body-sm text-on-surface placeholder:text-on-surface-variant outline-none focus:ring-2 focus:ring-error transition-all" placeholder="e.g. Student Code of Conduct violation ref: S-2024-819. Hold pending Disciplinary Committee interview..." rows="3"></textarea>
+</div>
+<!-- Action Buttons -->
+<div class="flex items-center justify-end gap-space-sm pt-space-xs">
+<button class="px-space-md py-2.5 rounded-xl hover:bg-surface-container text-on-surface font-label-md text-label-md transition-all" onclick="closeModal('suspendModal')">
+          Cancel
+        </button>
+<button class="px-space-lg py-2.5 rounded-xl bg-error text-on-error font-label-md text-label-md hover:bg-on-error-container transition-all shadow-md flex items-center gap-1.5" onclick="confirmSuspension()">
+<span class="material-symbols-outlined text-[18px]">block</span>
+<span>Enforce Academic Hold</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Interactive Slide-Over: View User Details Simulator -->
+<div class="fixed inset-0 z-50 flex items-center justify-end bg-inverse-surface/40 backdrop-blur-sm hidden transition-all" id="userDetailsModal">
+<div class="bg-surface-container-lowest w-full max-w-md h-full shadow-2xl p-space-lg flex flex-col justify-between overflow-y-auto">
+<div class="flex flex-col gap-space-lg">
+<!-- Close Bar -->
+<div class="flex items-center justify-between pb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[22px]">badge</span>
+<span class="font-label-lg text-label-lg text-on-surface">Campus Profile Verification</span>
+</div>
+<button class="p-1 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container" onclick="closeModal('userDetailsModal')">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<!-- Academic Identity Card (Style Guidance Component Match) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-md flex flex-col items-center text-center relative overflow-hidden">
+<div class="absolute -top-12 -right-12 w-28 h-28 bg-primary/5 rounded-full blur-xl"></div>
+<div class="relative mb-space-sm">
+<div class="w-20 h-20 rounded-full bg-surface-container-low flex items-center justify-center text-headline-lg font-headline-lg text-primary shadow-sm" id="detailAvatarInitials">
+              AS
+            </div>
+<span class="absolute bottom-0 right-0 w-6 h-6 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface" id="detailName">Asadullah Sadiq</h2>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5" id="detailEmail">asadullah.sadiq@riphah.edu.pk</span>
+<div class="mt-space-md flex flex-wrap gap-space-xs justify-center">
+<span class="px-space-md py-1 rounded-full bg-secondary-container text-on-secondary-fixed font-label-sm text-label-sm font-semibold" id="detailRoleBadge">Senior Student</span>
+<span class="px-space-md py-1 rounded-full bg-tertiary-container/20 text-tertiary font-label-sm text-label-sm font-semibold" id="detailStatusBadge">Verified Active</span>
+</div>
+</div>
+<!-- Quick Credentials Bento Section -->
+<div class="grid grid-cols-2 gap-space-sm">
+<div class="p-space-md rounded-xl bg-surface-container-low">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">CMS Enrollment</span>
+<p class="font-headline-sm text-headline-sm font-mono text-primary mt-1" id="detailCms">FA21-BCS-042</p>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-low">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Affiliation</span>
+<p class="font-headline-sm text-headline-sm text-on-surface mt-1 text-sm" id="detailDept">Computer Science</p>
+</div>
+</div>
+<!-- Activity & Engagement Ledger -->
+<div class="flex flex-col gap-space-sm">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Recent Campus Interactions</span>
+<div class="flex flex-col gap-space-xs">
+<div class="p-space-sm rounded-xl bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[18px]">cloud_upload</span>
+<span class="font-body-sm text-body-sm text-on-surface">Shared 'Algorithm Analysis Notes'</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">2h ago</span>
+</div>
+<div class="p-space-sm rounded-xl bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-tertiary text-[18px]">verified_user</span>
+<span class="font-body-sm text-body-sm text-on-surface">Two-Factor Key Authenticated</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">1d ago</span>
+</div>
+<div class="p-space-sm rounded-xl bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">chat</span>
+<span class="font-body-sm text-body-sm text-on-surface">Joined #CS-2021-Discussion</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">3d ago</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Footer -->
+<div class="pt-space-md flex flex-col gap-space-xs">
+<button class="w-full py-2.5 rounded-xl bg-primary-container text-on-primary font-label-md text-label-md hover:bg-primary transition-all shadow-md" onclick="closeModal('userDetailsModal')">
+          Close Inspector
+        </button>
+</div>
+</div>
+</div>
+<!-- Toast Notification Pill -->
+<div class="fixed bottom-6 right-6 z-50 hidden items-center gap-space-sm px-space-lg py-space-sm rounded-xl bg-inverse-surface text-inverse-on-surface shadow-xl transition-all" id="toastNotification">
+<span class="material-symbols-outlined text-tertiary text-[20px]" id="toastIcon">check_circle</span>
+<span class="font-label-md text-label-md" id="toastMessage">Operation completed successfully</span>
+</div>
+</div>
+<script>
+  // Filter and Interactive State Machine
+  let activeRoleFilter = 'all';
+  let activeStatusFilter = 'all';
+  let currentTargetRow = null;
+
+  const searchInput = document.getElementById('userSearchInput');
+  const clearSearchBtn = document.getElementById('clearSearchBtn');
+  const roleButtons = document.querySelectorAll('.role-filter-btn');
+  const statusFilterSelect = document.getElementById('statusFilter');
+  const tableRows = document.querySelectorAll('.user-row');
+  const noResultsState = document.getElementById('noResultsState');
+
+  // Search input handler
+  searchInput.addEventListener('input', (e) => {
+    const val = e.target.value.trim();
+    clearSearchBtn.classList.toggle('hidden', val.length === 0);
+    applyFilters();
+  });
+
+  clearSearchBtn.addEventListener('click', () => {
+    searchInput.value = '';
+    clearSearchBtn.classList.add('hidden');
+    applyFilters();
+  });
+
+  // Role button selector handler
+  roleButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      roleButtons.forEach(b => {
+        b.classList.remove('bg-surface-container-lowest', 'text-primary', 'shadow-sm');
+        b.classList.add('text-on-surface-variant');
+      });
+      btn.classList.add('bg-surface-container-lowest', 'text-primary', 'shadow-sm');
+      btn.classList.remove('text-on-surface-variant');
+      activeRoleFilter = btn.getAttribute('data-role');
+      applyFilters();
+    });
+  });
+
+  // Status dropdown filter
+  statusFilterSelect.addEventListener('change', (e) => {
+    activeStatusFilter = e.target.value;
+    applyFilters();
+  });
+
+  function applyFilters() {
+    const query = searchInput.value.toLowerCase().trim();
+    let visibleCount = 0;
+
+    tableRows.forEach(row => {
+      const role = row.getAttribute('data-role');
+      const status = row.getAttribute('data-status');
+      const name = (row.getAttribute('data-name') || '').toLowerCase();
+      const cms = (row.getAttribute('data-cms') || '').toLowerCase();
+      const email = (row.getAttribute('data-email') || '').toLowerCase();
+
+      const matchesSearch = query === '' || name.includes(query) || cms.includes(query) || email.includes(query);
+      const matchesRole = activeRoleFilter === 'all' || role.toLowerCase() === activeRoleFilter.toLowerCase();
+      const matchesStatus = activeStatusFilter === 'all' || status.toLowerCase() === activeStatusFilter.toLowerCase();
+
+      if (matchesSearch && matchesRole && matchesStatus) {
+        row.classList.remove('hidden');
+        visibleCount++;
+      } else {
+        row.classList.add('hidden');
+      }
+    });
+
+    if (visibleCount === 0) {
+      noResultsState.classList.remove('hidden');
+    } else {
+      noResultsState.classList.add('hidden');
+    }
+  }
+
+  function resetFilters() {
+    searchInput.value = '';
+    clearSearchBtn.classList.add('hidden');
+    activeRoleFilter = 'all';
+    roleButtons.forEach((b, i) => {
+      if (i === 0) {
+        b.classList.add('bg-surface-container-lowest', 'text-primary', 'shadow-sm');
+        b.classList.remove('text-on-surface-variant');
+      } else {
+        b.classList.remove('bg-surface-container-lowest', 'text-primary', 'shadow-sm');
+        b.classList.add('text-on-surface-variant');
+      }
+    });
+    statusFilterSelect.value = 'all';
+    activeStatusFilter = 'all';
+    applyFilters();
+  }
+
+  // Suspension Modal Logic
+  function promptSuspension(name, cms, role) {
+    document.getElementById('modalTargetName').textContent = name;
+    document.getElementById('modalTargetCms').textContent = cms;
+    document.getElementById('modalTargetRole').textContent = role;
+    currentTargetRow = name;
+    document.getElementById('suspendModal').classList.remove('hidden');
+  }
+
+  function confirmSuspension() {
+    closeModal('suspendModal');
+    showToast(`Account hold enacted for ${currentTargetRow || 'Student'}. Privileges locked.`, 'warning');
+    // Visually update the row status to suspended
+    tableRows.forEach(row => {
+      if (row.getAttribute('data-name') === currentTargetRow) {
+        row.setAttribute('data-status', 'Suspended');
+        row.classList.add('bg-error-container/20');
+        const statusCell = row.querySelectorAll('td')[5];
+        if (statusCell) {
+          statusCell.innerHTML = `<span class="inline-flex items-center gap-1 px-space-sm py-1 rounded-full bg-error-container text-error font-label-sm text-label-sm font-semibold"><span class="w-1.5 h-1.5 rounded-full bg-error"></span>Suspended</span>`;
+        }
+      }
+    });
+  }
+
+  function reactivateAccount(name, cms) {
+    showToast(`Disciplinary hold lifted for ${name} (${cms}). Access restored.`, 'success');
+    tableRows.forEach(row => {
+      if (row.getAttribute('data-name') === name) {
+        row.setAttribute('data-status', 'Active');
+        row.classList.remove('bg-error-container/20');
+        const statusCell = row.querySelectorAll('td')[5];
+        if (statusCell) {
+          statusCell.innerHTML = `<span class="inline-flex items-center gap-1 px-space-sm py-1 rounded-full bg-tertiary-container/15 text-tertiary font-label-sm text-label-sm font-semibold"><span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span>Active</span>`;
+        }
+      }
+    });
+  }
+
+  // User Details Slide-over
+  function openUserDetails(name, cms, role, dept, email, status) {
+    document.getElementById('detailName').textContent = name;
+    document.getElementById('detailCms').textContent = cms;
+    document.getElementById('detailEmail').textContent = email;
+    document.getElementById('detailRoleBadge').textContent = role;
+    document.getElementById('detailDept').textContent = dept;
+    document.getElementById('detailStatusBadge').textContent = status === 'Active' ? 'Verified Active' : 'Disciplinary Hold';
+    document.getElementById('detailAvatarInitials').textContent = name.split(' ').map(n => n[0]).join('').substring(0, 2).toUpperCase();
+    document.getElementById('userDetailsModal').classList.remove('hidden');
+  }
+
+  function closeModal(modalId) {
+    document.getElementById(modalId).classList.add('hidden');
+  }
+
+  // Export CSV mock trigger
+  function handleExportClick() {
+    showToast('Exporting 2,845 user directory records to CSV...', 'download');
+  }
+
+  // Toast feedback helper
+  function showToast(message, type = 'success') {
+    const toast = document.getElementById('toastNotification');
+    const toastMsg = document.getElementById('toastMessage');
+    const toastIcon = document.getElementById('toastIcon');
+
+    toastMsg.textContent = message;
+    if (type === 'warning') {
+      toastIcon.textContent = 'warning';
+      toastIcon.className = 'material-symbols-outlined text-error text-[20px]';
+    } else if (type === 'download') {
+      toastIcon.textContent = 'file_download';
+      toastIcon.className = 'material-symbols-outlined text-primary text-[20px]';
+    } else {
+      toastIcon.textContent = 'check_circle';
+      toastIcon.className = 'material-symbols-outlined text-tertiary text-[20px]';
+    }
+
+    toast.classList.remove('hidden');
+    toast.classList.add('flex');
+
+    setTimeout(() => {
+      toast.classList.add('hidden');
+      toast.classList.remove('flex');
+    }, 3500);
+  }
+</script></main></div></body></html>

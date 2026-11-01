@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      "colors": {
+        "error": "#ba1a1a",
+        "on-surface": "#0b1c30",
+        "surface": "#f8f9ff",
+        "inverse-surface": "#213145",
+        "on-secondary": "#ffffff",
+        "secondary-fixed": "#d5e4f8",
+        "surface-tint": "#0053db",
+        "on-secondary-fixed-variant": "#3a4858",
+        "error-container": "#ffdad6",
+        "tertiary-fixed": "#6ffbbe",
+        "inverse-on-surface": "#eaf1ff",
+        "primary": "#004ac6",
+        "on-tertiary-fixed": "#002113",
+        "primary-container": "#2563eb",
+        "on-background": "#0b1c30",
+        "surface-container-lowest": "#ffffff",
+        "secondary": "#516070",
+        "surface-container-low": "#eff4ff",
+        "surface-bright": "#f8f9ff",
+        "inverse-primary": "#b4c5ff",
+        "surface-container-high": "#dce9ff",
+        "on-error": "#ffffff",
+        "secondary-fixed-dim": "#b9c8db",
+        "on-tertiary-container": "#bdffdb",
+        "on-surface-variant": "#434655",
+        "surface-container-highest": "#d3e4fe",
+        "on-secondary-fixed": "#0e1d2b",
+        "outline-variant": "#c3c6d7",
+        "surface-container": "#e5eeff",
+        "on-primary": "#ffffff",
+        "on-secondary-container": "#576676",
+        "primary-fixed": "#dbe1ff",
+        "on-primary-fixed": "#00174b",
+        "surface-variant": "#d3e4fe",
+        "on-error-container": "#93000a",
+        "tertiary-container": "#007d55",
+        "background": "#f8f9ff",
+        "on-primary-fixed-variant": "#003ea8",
+        "tertiary": "#006242",
+        "on-primary-container": "#eeefff",
+        "on-tertiary": "#ffffff",
+        "primary-fixed-dim": "#b4c5ff",
+        "outline": "#737686",
+        "surface-dim": "#cbdbf5",
+        "secondary-container": "#d5e4f8",
+        "tertiary-fixed-dim": "#4edea3",
+        "on-tertiary-fixed-variant": "#005236"
+      },
+      "borderRadius": {
+        "DEFAULT": "0.25rem",
+        "lg": "0.5rem",
+        "xl": "0.75rem",
+        "full": "9999px"
+      },
+      "spacing": {
+        "space-xs": "0.25rem",
+        "margin": "1.25rem",
+        "space-md": "1rem",
+        "space-xl": "2rem",
+        "gutter": "1rem",
+        "space-lg": "1.5rem",
+        "space-sm": "0.5rem"
+      },
+      "fontFamily": {
+        "body-lg": ["Plus Jakarta Sans"],
+        "label-md": ["Plus Jakarta Sans"],
+        "headline-lg": ["Plus Jakarta Sans"],
+        "headline-sm": ["Plus Jakarta Sans"],
+        "body-sm": ["Plus Jakarta Sans"],
+        "label-sm": ["Plus Jakarta Sans"],
+        "display-lg": ["Plus Jakarta Sans"],
+        "label-lg": ["Plus Jakarta Sans"],
+        "headline-md": ["Plus Jakarta Sans"],
+        "body-md": ["Plus Jakarta Sans"]
+      },
+      "fontSize": {
+        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+        "label-md": ["13px", {"lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+        "headline-lg": ["26px", {"lineHeight": "34px", "letterSpacing": "-0.015em", "fontWeight": "700"}],
+        "headline-sm": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+        "body-sm": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+        "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+        "display-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+        "label-lg": ["15px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+        "headline-md": ["22px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+      }
+    }
+  }
+}</script><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface min-h-screen flex flex-col antialiased selection:bg-primary-fixed"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm"><div class="w-9 h-9 rounded-xl bg-primary-container flex items-center justify-center text-on-primary font-headline-sm font-bold shadow-md"><span class="material-symbols-outlined text-[20px]">hub</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight leading-none">CampConnect</span><span class="font-label-sm text-label-sm text-on-surface-variant font-normal leading-none mt-1">Student Home Dashboard</span></div></div><div class="flex items-center gap-space-xs"><button aria-label="Notifications" class="relative w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors"><span class="material-symbols-outlined text-[24px]">notifications</span><span class="absolute top-2.5 right-2.5 w-2.5 h-2.5 rounded-full bg-error ring-2 ring-surface"></span></button><div class="pl-space-xs flex items-center"><a aria-label="View Profile" class="w-9 h-9 rounded-full ring-2 ring-primary/20 overflow-hidden flex items-center justify-center bg-surface-container hover:ring-primary transition-all" data-path="profile" href="#"><img alt="User Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1V3PTPfNamlqI-WR1eNR0z2N1jo5FVDLI4ouq2VnUUFNCd1UNYhW1Lgc-sxaYs0-VpxdsOGgyLvZrX3SER0yyT12u_skXW_AGu5o1vFbeH2gqEXM-kBeXDVwicVEF40okVbREPNwOpTtyE-uxJePj11xfpWY7TkuARCmspv0cHg1MFO9BwccHwpMa_qMf0eyaAHZ8xHib_kSfcDqoPZKhchbbgzNsqbwUcSDiZNEDT9cikPu6j9Xo1a_nY"/></a></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-24 bg-surface px-margin"><div class="flex flex-col w-full pb-8 space-y-space-lg">
+<!-- Student Profile Welcome Banner -->
+<section class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="relative">
+<img class="w-14 h-14 rounded-full object-cover shadow-sm" data-alt="Close up portrait photo of Usman, a polite young male Pakistani computer science student in his early twenties with glasses, smiling warmly against a bright modern university campus backdrop with subtle ambient sunlight." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB39nwcFiDQdF2WBRwtL-jKZPunt8XUHwasJQMn9g1K5KbgtcQocUXVwbJGdC6Qg8LtXKCXvkqu0BXFFAeczxQUBJ0cmZm1AqakhzS8I7LHvG8MoyloGy9sFJ2qbMrFpI2d7JcrxBe-tNlLROEqHiiUC2xQsAv3qg_2CaUmcYMP4DgIkXqOJ9qutEqOwn7XJ2xpZkQKtychE6XNI8Tw3MCYmFWvgU9L4SJdDBIeNYg"/>
+<span class="absolute bottom-0 right-0 w-3.5 h-3.5 rounded-full bg-tertiary-container ring-2 ring-surface-container-lowest" title="Active Student"></span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1">
+<span class="font-headline-sm text-headline-sm text-on-surface truncate">Good morning, Usman!</span>
+<span class="material-symbols-outlined text-[18px] text-tertiary">verified</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">BS Software Engineering • 3rd Sem</span>
+<div class="flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[14px] text-primary">school</span>
+<span class="font-label-sm text-label-sm text-primary font-semibold truncate">Riphah International University • Sahiwal</span>
+</div>
+</div>
+</div>
+<button aria-label="Student ID Card" class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center text-primary hover:bg-primary-fixed transition-all" onclick="this.classList.toggle('scale-95')">
+<span class="material-symbols-outlined text-[20px]">badge</span>
+</button>
+</div>
+<!-- Academic Term Milestone Progress -->
+<div class="mt-space-md pt-space-sm bg-surface-container-low rounded-lg p-space-sm flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">calendar_today</span>
+<span class="font-label-sm text-label-sm text-on-surface">Fall Semester 2024</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Week 8 of 16</span>
+<div class="w-16 h-2 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="w-1/2 h-full bg-primary-container rounded-full"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Pinned Official University Notice -->
+<section class="relative overflow-hidden rounded-xl bg-gradient-to-r from-primary-container to-primary text-on-primary p-space-md shadow-md">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-lowest/20 backdrop-blur-md text-on-primary font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">push_pin</span>
+          PINNED ANNOUNCEMENT
+        </span>
+<span class="font-label-sm text-label-sm text-on-primary/80">Oct 20, 2024</span>
+</div>
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed animate-pulse"></span>
+</div>
+<div class="mt-space-sm">
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-primary leading-snug">
+        Fall 2024 Capstone Project &amp; FYP Proposals Open
+      </h3>
+<p class="font-body-sm text-body-sm text-on-primary/90 mt-1 line-clamp-2">
+        Department of Computing invites project synopsis submissions. Submit supervisor approval letters via the departmental academic portal before the deadline.
+      </p>
+</div>
+<div class="mt-space-md flex items-center justify-between pt-1">
+<div class="flex items-center gap-1 text-on-primary/90 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px]">account_balance</span>
+<span>Faculty of Computing</span>
+</div>
+<button class="h-9 px-3.5 bg-surface-container-lowest text-primary rounded-lg font-label-md text-label-md flex items-center gap-1 shadow-sm active:scale-95 transition-all" onclick="this.classList.add('opacity-90')">
+<span>View Notice</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</section>
+<!-- Quick Access Hub (6 Core Modules) -->
+<section>
+<div class="flex items-center justify-between mb-space-sm">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Campus Services</h2>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Quick Nav</span>
+</div>
+<div class="grid grid-cols-3 gap-space-sm">
+<!-- 1. Communities -->
+<a class="bg-surface-container-lowest rounded-xl p-space-sm flex flex-col items-center text-center shadow-sm hover:shadow-md transition-all active:scale-95 group" href="#">
+<div class="w-12 h-12 rounded-xl bg-primary-fixed flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[24px]">diversity_3</span>
+</div>
+<span class="mt-2 font-label-md text-label-md text-on-surface">Communities</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Societies</span>
+</a>
+<!-- 2. Projects -->
+<a class="bg-surface-container-lowest rounded-xl p-space-sm flex flex-col items-center text-center shadow-sm hover:shadow-md transition-all active:scale-95 group" href="#">
+<div class="w-12 h-12 rounded-xl bg-secondary-container flex items-center justify-center text-on-secondary-fixed-variant group-hover:bg-primary-container group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[24px]">rocket_launch</span>
+</div>
+<span class="mt-2 font-label-md text-label-md text-on-surface">Projects</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">FYP &amp; Teams</span>
+</a>
+<!-- 3. Messages -->
+<a class="bg-surface-container-lowest rounded-xl p-space-sm flex flex-col items-center text-center shadow-sm hover:shadow-md transition-all active:scale-95 group relative" href="#">
+<div class="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[24px]">forum</span>
+</div>
+<span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-error"></span>
+<span class="mt-2 font-label-md text-label-md text-on-surface">Messages</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Direct Chat</span>
+</a>
+<!-- 4. Resources -->
+<a class="bg-surface-container-lowest rounded-xl p-space-sm flex flex-col items-center text-center shadow-sm hover:shadow-md transition-all active:scale-95 group" href="#">
+<div class="w-12 h-12 rounded-xl bg-tertiary-fixed flex items-center justify-center text-tertiary-container group-hover:bg-tertiary-container group-hover:text-on-tertiary transition-colors">
+<span class="material-symbols-outlined text-[24px]">menu_book</span>
+</div>
+<span class="mt-2 font-label-md text-label-md text-on-surface">Resources</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Past Papers</span>
+</a>
+<!-- 5. Mentorship -->
+<a class="bg-surface-container-lowest rounded-xl p-space-sm flex flex-col items-center text-center shadow-sm hover:shadow-md transition-all active:scale-95 group" href="#">
+<div class="w-12 h-12 rounded-xl bg-primary-fixed-dim flex items-center justify-center text-on-primary-fixed-variant group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[24px]">supervisor_account</span>
+</div>
+<span class="mt-2 font-label-md text-label-md text-on-surface">Mentorship</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Seniors</span>
+</a>
+<!-- 6. Announcements -->
+<a class="bg-surface-container-lowest rounded-xl p-space-sm flex flex-col items-center text-center shadow-sm hover:shadow-md transition-all active:scale-95 group" href="#">
+<div class="w-12 h-12 rounded-xl bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed group-hover:bg-secondary group-hover:text-on-secondary transition-colors">
+<span class="material-symbols-outlined text-[24px]">campaign</span>
+</div>
+<span class="mt-2 font-label-md text-label-md text-on-surface">Notices</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Academic</span>
+</a>
+</div>
+</section>
+<!-- Horizontal Scroll Action Pill Bar -->
+<section class="overflow-x-auto -mx-margin px-margin flex items-center gap-space-xs no-scrollbar py-0.5">
+<button class="flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-primary text-on-primary font-label-md text-label-md shadow-sm whitespace-nowrap active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[16px]">travel_explore</span>
+<span>Explore Communities</span>
+</button>
+<button class="flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow-sm whitespace-nowrap hover:bg-surface-container active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[16px] text-primary">search</span>
+<span>Find Projects</span>
+</button>
+<button class="flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow-sm whitespace-nowrap hover:bg-surface-container active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[16px] text-primary">groups_2</span>
+<span>Connect with Seniors</span>
+</button>
+<button class="flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow-sm whitespace-nowrap hover:bg-surface-container active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[16px] text-primary">folder_open</span>
+<span>Browse Resources</span>
+</button>
+</section>
+<!-- Peer & Alumni Mentors (Horizontal Cards) -->
+<section>
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-1.5">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Available Mentors</h2>
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+</div>
+<a class="font-label-md text-label-md text-primary hover:underline flex items-center" href="#">
+        See All
+        <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</a>
+</div>
+<div class="overflow-x-auto -mx-margin px-margin flex gap-space-md no-scrollbar py-1">
+<!-- Mentor 1: Ayesha Malik -->
+<div class="w-64 flex-shrink-0 bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-start justify-between">
+<img class="w-12 h-12 rounded-full object-cover shadow-sm" data-alt="Professional avatar photo of Ayesha Malik, a friendly Pakistani young woman wearing a teal headscarf with modern corporate aesthetic, soft studio lighting on white background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6w0r-t3Ltz9El04xT8OhpLv6eoZ81uzXf45a7mN42SAWDsQTWRBxl1cnKq0EP6Wt9Ilq3RebsFyltjloVMPVPGU4EDdJQmFOP4dsw_4udEIzSMkJrYaG4dVCglh8gfjChrHfl5v16BgD00JGWTj6GrTOeUlH1M_JHbyhwtwkhdiGNBSFIpNSnIup1KJfEXeUXD3CsmTrkGjwFnmPXbgix-RTpEbinlSUia8Q53Vc"/>
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed text-primary font-label-sm text-label-sm">
+              Alumni Mentor
+            </span>
+</div>
+<h4 class="mt-3 font-headline-sm text-headline-sm text-on-surface font-semibold">Ayesha Malik</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Lead Product Designer @ DevStudio</p>
+<div class="mt-3 flex flex-wrap gap-1">
+<span class="px-2 py-0.5 rounded-md bg-surface-container text-on-surface-variant font-label-sm text-label-sm">UI/UX</span>
+<span class="px-2 py-0.5 rounded-md bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Flutter</span>
+</div>
+</div>
+<button class="mt-4 w-full h-10 rounded-lg bg-surface-container text-primary font-label-md text-label-md flex items-center justify-center hover:bg-primary hover:text-on-primary transition-colors">
+          View Profile
+        </button>
+</div>
+<!-- Mentor 2: Bilal Ahmed -->
+<div class="w-64 flex-shrink-0 bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-start justify-between">
+<img class="w-12 h-12 rounded-full object-cover shadow-sm" data-alt="Friendly confident portrait of Bilal Ahmed, a male Pakistani senior software engineer with a trim beard wearing navy smart-casual shirt, natural office lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFi4hw-h_IIB6Ivt8eG7sRvpEtXUyMwLrUjLh7WsXJNwlDdHhjHZihC-XkJ4fM7c3w52NRtZyC0V0bgnRD7qRUjv45KE4Pi29Wsesgy5kiEOpfb0Ga3uPr9LqH9JUib310EjzAJmhQmRhjLgXTJB0aSlX0kJpUvThs5sBkgMT96w9lsurew-Ed2SZXwIvRu7wgV6cTylbuZlX3m57egyAL6KjrQxqsdoMC5xJLMas"/>
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed text-primary font-label-sm text-label-sm">
+              Alumni Mentor
+            </span>
+</div>
+<h4 class="mt-3 font-headline-sm text-headline-sm text-on-surface font-semibold">Bilal Ahmed</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Sr. Software Engineer @ Systems Ltd</p>
+<div class="mt-3 flex flex-wrap gap-1">
+<span class="px-2 py-0.5 rounded-md bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Cloud Arch</span>
+<span class="px-2 py-0.5 rounded-md bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Microservices</span>
+</div>
+</div>
+<button class="mt-4 w-full h-10 rounded-lg bg-surface-container text-primary font-label-md text-label-md flex items-center justify-center hover:bg-primary hover:text-on-primary transition-colors">
+          View Profile
+        </button>
+</div>
+<!-- Mentor 3: Zainab Fatima -->
+<div class="w-64 flex-shrink-0 bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-start justify-between">
+<img class="w-12 h-12 rounded-full object-cover shadow-sm" data-alt="Profile photo of Zainab Fatima, a bright 7th semester female university computer science student smiling in a campus library with books softly blurred in the background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTFuQLYBLR06M7b625E_1tBN7WWGeTj-yTgOfsUbjoLYurjBkOy1jqavYhqYsWs6xGj6f6Fggxq_4P_dbZXG38nsIJjAO7CbyBLl8rafP8n2Dls2xHImXEY2BAKO1_nb0C4-shUmlTk-ES5IJfpN4vbI1EeHr2REL4kh8nDwCpj80zpW6JOd5rTQs_zonEwF6eLzdBsRBXQxklehrHomXwAWhcl9vKosvOiC5yIF4"/>
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm">
+              Peer Mentor
+            </span>
+</div>
+<h4 class="mt-3 font-headline-sm text-headline-sm text-on-surface font-semibold">Zainab Fatima</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Senior Student • 7th Sem BSSE</p>
+<div class="mt-3 flex flex-wrap gap-1">
+<span class="px-2 py-0.5 rounded-md bg-surface-container text-on-surface-variant font-label-sm text-label-sm">AI Research</span>
+<span class="px-2 py-0.5 rounded-md bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Mobile Apps</span>
+</div>
+</div>
+<button class="mt-4 w-full h-10 rounded-lg bg-surface-container text-primary font-label-md text-label-md flex items-center justify-center hover:bg-primary hover:text-on-primary transition-colors">
+          View Profile
+        </button>
+</div>
+</div>
+</section>
+<!-- Open Project Opportunities -->
+<section class="space-y-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Project Opportunities</h2>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm font-semibold">FYP &amp; Teams</span>
+</div>
+<a class="font-label-md text-label-md text-primary hover:underline flex items-center" href="#">
+        Explore
+        <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</a>
+</div>
+<!-- Project 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between gap-space-sm">
+<div>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-tertiary-container font-label-sm text-label-sm font-semibold">
+            4 Collaborators Needed
+          </span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold mt-2">
+            AI-Based Student Assistant
+          </h3>
+</div>
+<div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">smart_toy</span>
+</div>
+</div>
+<div class="mt-3 flex items-center gap-2 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px] text-secondary">person</span>
+<span>Project Lead: <strong class="text-on-surface">Asadullah Sadiq</strong></span>
+</div>
+<div class="mt-3 flex items-center gap-2">
+<span class="px-2 py-0.5 rounded-md bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Flutter</span>
+<span class="px-2 py-0.5 rounded-md bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Python</span>
+<span class="px-2 py-0.5 rounded-md bg-surface-container text-on-surface-variant font-label-sm text-label-sm">NLP</span>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Posted 1 day ago</span>
+<button class="h-9 px-4 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md active:scale-95 transition-all">
+          View Project
+        </button>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between gap-space-sm">
+<div>
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-label-sm font-semibold">
+            2 Embedded Devs Needed
+          </span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold mt-2">
+            Smart Campus Parking System
+          </h3>
+</div>
+<div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">sensors</span>
+</div>
+</div>
+<div class="mt-3 flex items-center gap-2 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px] text-secondary">person</span>
+<span>Project Lead: <strong class="text-on-surface">Bilal Ahmed</strong></span>
+</div>
+<div class="mt-3 flex items-center gap-2">
+<span class="px-2 py-0.5 rounded-md bg-surface-container text-on-surface-variant font-label-sm text-label-sm">IoT</span>
+<span class="px-2 py-0.5 rounded-md bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Embedded C++</span>
+<span class="px-2 py-0.5 rounded-md bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Raspberry Pi</span>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Posted 3 days ago</span>
+<button class="h-9 px-4 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md active:scale-95 transition-all">
+          View Project
+        </button>
+</div>
+</div>
+</section>
+<!-- Community Discussions -->
+<section class="space-y-space-sm">
+<div class="flex items-center justify-between">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Community Discussions</h2>
+<a class="font-label-md text-label-md text-primary hover:underline flex items-center" href="#">
+        Feed
+        <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</a>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded-md bg-primary-fixed text-primary font-label-sm text-label-sm font-semibold">
+            CS &amp; SE Society
+          </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">• 2h ago</span>
+</div>
+<button aria-label="Bookmark" class="text-on-surface-variant hover:text-primary">
+<span class="material-symbols-outlined text-[18px]">bookmark_border</span>
+</button>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold leading-snug">
+        Tips for clearing CS-304 Database Systems Midterms?
+      </h3>
+<div class="mt-2 flex items-center gap-2">
+<img class="w-6 h-6 rounded-full object-cover" data-alt="Small thumbnail avatar of Hamza Tariq, young Pakistani university student with cheerful expression, soft indoor lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8Ro7ffGukQTYciiuukgG_f-DwagTUHgvxLYmL0G94-J92Pay0ykt8TAEzeJumhkDncolctCXeJD9aYkGSgvwt8Xok3p4dLB0AdBU7YK7jM8fggrRod7WnnHxioRn8eFp_mJBTiA6qA1w0V-A50tF5rdpzOlnraxybrWQigpAPyLrq1oHf3H5kp_fVG5Mx_6I5nR93VohmuMMg8zj2XU25XO805Z7YqpA5KAIQcmI"/>
+<span class="font-body-sm text-body-sm text-on-surface-variant">
+          Posted by <span class="text-on-surface font-medium">Hamza Tariq</span>
+</span>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between">
+<div class="flex items-center gap-4 text-on-surface-variant font-label-md text-label-md">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px] text-primary">chat_bubble_outline</span>
+<span>14 replies</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px] text-tertiary">thumb_up</span>
+<span>28 upvotes</span>
+</div>
+</div>
+<button class="h-8 px-3 rounded-lg bg-surface-container text-primary font-label-md text-label-md hover:bg-primary hover:text-on-primary transition-colors flex items-center gap-1">
+<span>View Discussion</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Latest Academic Resources (Downloadable Only) -->
+<section class="space-y-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Verified Resources</h2>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-tertiary-container font-label-sm text-label-sm font-semibold">Available</span>
+</div>
+<a class="font-label-md text-label-md text-primary hover:underline flex items-center" href="#">
+        All Files
+        <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</a>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<div class="flex items-start gap-space-sm">
+<div class="w-12 h-12 rounded-xl bg-error-container text-error flex items-center justify-center flex-shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[26px]">picture_as_pdf</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="px-2 py-0.5 rounded-md bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
+              PDF • 2.8 MB
+            </span>
+<span class="font-label-sm text-label-sm text-tertiary font-semibold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+              Verified
+            </span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-semibold mt-1 leading-snug">
+            Database Systems Midterm Solved Past Papers (2021-2024)
+          </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+            Uploaded by <span class="font-medium text-on-surface">Asadullah Sadiq</span> • Department of Computing
+          </p>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between">
+<div class="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] text-tertiary">download_for_offline</span>
+<span>184 campus downloads</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="h-9 px-3.5 rounded-lg bg-surface-container text-primary font-label-md text-label-md flex items-center gap-1.5 hover:bg-primary hover:text-on-primary transition-all active:scale-95" id="downloadBtn" onclick="const label=this.querySelector('.btn-label'); label.innerText='Downloading...'; setTimeout(()=&gt;{ label.innerText='Downloaded'; this.classList.add('bg-tertiary-container','text-on-tertiary'); }, 1200);">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span class="btn-label">Download</span>
+</button>
+<button class="h-9 px-3 rounded-lg bg-surface-container-high text-on-surface font-label-md text-label-md hover:bg-surface-variant transition-colors">
+            View Resource
+          </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Quick Study Tip / Institutional Quote footer note -->
+<section class="rounded-xl bg-surface-container-low p-space-md flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">lightbulb</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="font-label-sm text-label-sm text-on-surface font-semibold">Academic Reminder</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Midterm examinations schedule will be released on portal by Friday.</p>
+</div>
+</section>
+</div></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/85 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.03)]" data-active-classes="text-primary-container font-semibold"><div class="flex items-center justify-around h-16 px-space-xs"><a class="flex-1 flex flex-col items-center justify-center min-h-[44px] py-1 text-on-surface-variant hover:text-on-surface transition-colors" data-path="home" href="#"><span class="material-symbols-outlined text-[22px]">home</span><span class="font-label-sm text-label-sm mt-0.5">Home</span></a><a class="flex-1 flex flex-col items-center justify-center min-h-[44px] py-1 text-on-surface-variant hover:text-on-surface transition-colors" data-path="community" href="#"><span class="material-symbols-outlined text-[22px]">groups</span><span class="font-label-sm text-label-sm mt-0.5">Community</span></a><a class="flex-1 flex flex-col items-center justify-center min-h-[44px] py-1 text-on-surface-variant hover:text-on-surface transition-colors" data-path="projects" href="#"><span class="material-symbols-outlined text-[22px]">folder_open</span><span class="font-label-sm text-label-sm mt-0.5">Projects</span></a><a class="flex-1 flex flex-col items-center justify-center min-h-[44px] py-1 text-on-surface-variant hover:text-on-surface transition-colors" data-path="messages" href="#"><span class="material-symbols-outlined text-[22px]">chat_bubble</span><span class="font-label-sm text-label-sm mt-0.5">Messages</span></a><a class="flex-1 flex flex-col items-center justify-center min-h-[44px] py-1 text-on-surface-variant hover:text-on-surface transition-colors" data-path="profile" href="#"><span class="material-symbols-outlined text-[22px]">person</span><span class="font-label-sm text-label-sm mt-0.5">Profile</span></a></div></nav></body></html>

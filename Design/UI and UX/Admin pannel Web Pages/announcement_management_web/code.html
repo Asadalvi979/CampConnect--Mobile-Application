@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"surface-container-lowest":"#ffffff","error":"#ba1a1a","on-secondary-fixed-variant":"#3a4858","on-tertiary-container":"#bdffdb","on-surface":"#0b1c30","on-background":"#0b1c30","on-primary-container":"#eeefff","on-secondary-fixed":"#0e1d2b","on-primary":"#ffffff","on-tertiary":"#ffffff","surface-bright":"#f8f9ff","background":"#f8f9ff","surface-container-highest":"#d3e4fe","tertiary":"#006242","surface-container":"#e5eeff","on-error-container":"#93000a","secondary-container":"#d5e4f8","tertiary-fixed":"#6ffbbe","primary-fixed-dim":"#b4c5ff","surface":"#f8f9ff","secondary-fixed-dim":"#b9c8db","primary":"#004ac6","on-tertiary-fixed-variant":"#005236","primary-container":"#2563eb","on-secondary":"#ffffff","surface-container-low":"#eff4ff","inverse-primary":"#b4c5ff","on-secondary-container":"#576676","surface-tint":"#0053db","on-surface-variant":"#434655","secondary":"#516070","error-container":"#ffdad6","on-primary-fixed":"#00174b","outline-variant":"#c3c6d7","surface-container-high":"#dce9ff","primary-fixed":"#dbe1ff","surface-dim":"#cbdbf5","inverse-on-surface":"#eaf1ff","surface-variant":"#d3e4fe","tertiary-fixed-dim":"#4edea3","secondary-fixed":"#d5e4f8","on-error":"#ffffff","inverse-surface":"#213145","outline":"#737686","tertiary-container":"#007d55","on-tertiary-fixed":"#002113","on-primary-fixed-variant":"#003ea8"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{"space-sm":"0.5rem","space-md":"1rem","space-xl":"2rem",gutter:"1rem","space-xs":"0.25rem",margin:"1.25rem","space-lg":"1.5rem"},fontFamily:{"headline-sm":["Plus Jakarta Sans"],"body-lg":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"],"label-md":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"],"display-lg":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"label-sm":["Plus Jakarta Sans"],"label-lg":["Plus Jakarta Sans"]},fontSize:{"headline-sm":["18px",{lineHeight:"24px",fontWeight:"600"}],"body-lg":["16px",{lineHeight:"24px",fontWeight:"400"}],"headline-lg":["26px",{lineHeight:"34px",letterSpacing:"-0.015em",fontWeight:"700"}],"label-md":["13px",{lineHeight:"18px",letterSpacing:"0.01em",fontWeight:"600"}],"body-md":["14px",{lineHeight:"20px",fontWeight:"400"}],"body-sm":["12px",{lineHeight:"16px",fontWeight:"400"}],"display-lg":["32px",{lineHeight:"40px",letterSpacing:"-0.02em",fontWeight:"700"}],"headline-md":["22px",{lineHeight:"28px",letterSpacing:"-0.01em",fontWeight:"600"}],"label-sm":["11px",{lineHeight:"14px",letterSpacing:"0.02em",fontWeight:"500"}],"label-lg":["15px",{lineHeight:"20px",letterSpacing:"0.01em",fontWeight:"600"}]}}}};</script></head><body class="bg-background font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between"><div class="flex flex-col"><div class="h-16 px-space-lg flex items-center gap-space-sm bg-surface-container-lowest"><div class="w-9 h-9 rounded-xl bg-primary-container flex items-center justify-center text-on-primary shadow-sm"><span class="material-symbols-outlined text-[22px]">school</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface leading-tight">CampConnect</span><span class="font-label-sm text-label-sm text-on-surface-variant leading-tight">Admin Console</span></div></div><div class="px-space-md pt-space-lg"><div class="px-space-sm pb-space-xs font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Main Navigation</div><nav class="flex flex-col gap-space-xs" data-active-classes="bg-primary-container text-on-primary font-label-lg rounded-xl shadow-md"><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-xl font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px]">dashboard</span><span>Dashboard</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-xl font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all" data-path="user-management" href="#"><span class="material-symbols-outlined text-[20px]">group</span><span>User Management</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-xl font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all" data-path="resource-moderation" href="#"><span class="material-symbols-outlined text-[20px]">verified</span><span>Resource Moderation</span></a><a aria-current="page" class="flex items-center gap-space-md px-space-md py-space-sm transition-all bg-primary-container text-on-primary font-label-lg rounded-xl shadow-md" data-path="announcement-management" href="#"><span class="material-symbols-outlined text-[20px]">campaign</span><span>Announcement Management</span></a></nav></div></div><div class="p-space-md bg-surface-container-lowest"><div class="p-space-sm rounded-xl bg-surface-container-low flex items-center justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)] mb-space-xs"><div class="flex items-center gap-space-sm min-w-0"><div class="w-9 h-9 rounded-full bg-secondary-container flex items-center justify-center text-primary font-headline-sm text-label-md shrink-0">AD</div><div class="flex flex-col min-w-0"><span class="font-label-md text-label-md text-on-surface truncate">University Admin</span><span class="font-label-sm text-label-sm text-on-surface-variant truncate">Administrator</span></div></div><span class="material-symbols-outlined text-tertiary text-[18px]">verified_user</span></div><a class="flex items-center gap-space-sm w-full px-space-md py-space-sm rounded-xl font-label-md text-label-md text-on-surface-variant hover:bg-error-container hover:text-on-error-container transition-all" data-path="login" href="#"><span class="material-symbols-outlined text-[20px]">logout</span><span>Sign Out</span></a></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-xl"><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-xs font-label-md text-label-md text-on-surface-variant"><span class="material-symbols-outlined text-[18px]">home</span><span>/</span><span class="text-on-surface font-label-lg text-label-lg">Admin Panel</span></div><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-space-md text-outline text-[18px]">search</span><input class="w-72 h-10 pl-10 pr-space-md rounded-xl bg-surface-container-low text-on-surface placeholder:text-on-surface-variant font-body-sm text-body-sm outline-none focus:ring-2 focus:ring-primary-container transition-all" placeholder="Search users, documents, logs..." type="text"/></div></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs px-space-md py-1 rounded-full bg-secondary-container text-on-secondary-fixed"><span class="w-2 h-2 rounded-full bg-tertiary-container animate-pulse"></span><span class="font-label-sm text-label-sm font-medium">Riphah Sahiwal Campus</span></div><button class="relative p-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-error"></span></button><img alt="Profile" class="w-8 h-8 rounded-full object-cover shadow-[0_1px_8px_rgba(0,0,0,0.04)]" src="https://lh3.googleusercontent.com/aida/AEtjO1V3PTPfNamlqI-WR1eNR0z2N1jo5FVDLI4ouq2VnUUFNCd1UNYhW1Lgc-sxaYs0-VpxdsOGgyLvZrX3SER0yyT12u_skXW_AGu5o1vFbeH2gqEXM-kBeXDVwicVEF40okVbREPNwOpTtyE-uxJePj11xfpWY7TkuARCmspv0cHg1MFO9BwccHwpMa_qMf0eyaAHZ8xHib_kSfcDqoPZKhchbbgzNsqbwUcSDiZNEDT9cikPu6j9Xo1a_nY"/></div></header><main class="w-full pt-16 bg-background min-h-screen px-space-xl py-space-xl"><div class="flex flex-col w-full gap-space-lg">
+<!-- Header & Top Action -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md bg-surface-container-lowest p-space-lg rounded-xl shadow-sm">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs text-primary font-label-md text-label-md">
+<span class="material-symbols-outlined text-[18px]">campaign</span>
+<span>INSTITUTIONAL BROADCAST ENGINE</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface">Announcement Management</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">
+        Create, publish, and schedule institutional university announcements for students, seniors, and alumni.
+      </p>
+</div>
+<div class="flex items-center gap-space-sm shrink-0">
+<button class="flex items-center gap-space-xs px-space-md py-2.5 rounded-xl bg-surface-container text-on-surface hover:bg-surface-container-high transition-all font-label-md text-label-md" id="quickStatsBtn">
+<span class="material-symbols-outlined text-[18px]">analytics</span>
+<span>Engagement Stats</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-lg py-2.5 rounded-xl bg-primary-container text-on-primary hover:bg-primary shadow-md transition-all font-label-lg text-label-lg" id="topCreateBtn">
+<span class="material-symbols-outlined text-[20px]">add</span>
+<span>Create Announcement</span>
+</button>
+</div>
+</div>
+<!-- Key Metrics Row (Visual Richness / SVG Progress) -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-space-md">
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Total Broadcasts</span>
+<span class="font-display-lg text-display-lg text-on-surface">24</span>
+<span class="font-body-sm text-body-sm text-tertiary flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]">trending_up</span>+12% this month
+        </span>
+</div>
+<div class="w-12 h-12 rounded-xl bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[24px]">send</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Total Impressions</span>
+<span class="font-display-lg text-display-lg text-on-surface">6,410</span>
+<span class="font-body-sm text-body-sm text-tertiary flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]">visibility</span>94% delivery rate
+        </span>
+</div>
+<div class="w-12 h-12 rounded-xl bg-secondary-container flex items-center justify-center text-on-secondary-fixed">
+<span class="material-symbols-outlined text-[24px]">visibility</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Pinned Notices</span>
+<span class="font-display-lg text-display-lg text-on-surface">2</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Top priority slots filled</span>
+</div>
+<div class="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">push_pin</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Avg Read Rate</span>
+<span class="font-display-lg text-display-lg text-on-surface">78.4%</span>
+<span class="font-body-sm text-body-sm text-tertiary">Verified student logins</span>
+</div>
+<div class="relative w-12 h-12 flex items-center justify-center">
+<svg class="w-12 h-12 -rotate-90" viewbox="0 0 36 36">
+<path class="text-surface-container" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3.5"></path>
+<path class="text-primary-container" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="78.4, 100" stroke-linecap="round" stroke-width="3.5"></path>
+</svg>
+<span class="absolute font-label-sm text-label-sm text-primary font-semibold">78%</span>
+</div>
+</div>
+</div>
+<!-- Two-Column Management Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- LEFT COLUMN: Active & Past Announcements List (1.6fr -> col-span-7) -->
+<div class="lg:col-span-7 flex flex-col gap-space-md">
+<!-- Filter Tabs & Quick Search -->
+<div class="bg-surface-container-lowest p-space-sm rounded-xl shadow-sm flex flex-col sm:flex-row items-center justify-between gap-space-sm">
+<div class="flex items-center p-1 bg-surface-container-low rounded-xl w-full sm:w-auto" role="tablist">
+<button class="tab-btn px-space-md py-2 rounded-lg font-label-md text-label-md bg-surface-container-lowest text-primary shadow-sm transition-all flex items-center gap-space-xs" id="tabAll" onclick="switchFilter('all')">
+<span>All Announcements</span>
+<span class="px-1.5 py-0.5 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface">8</span>
+</button>
+<button class="tab-btn px-space-md py-2 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all flex items-center gap-space-xs" id="tabPublished" onclick="switchFilter('published')">
+<span>Published</span>
+<span class="px-1.5 py-0.5 rounded-full bg-surface-container-low font-label-sm text-label-sm text-on-surface-variant">6</span>
+</button>
+<button class="tab-btn px-space-md py-2 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all flex items-center gap-space-xs" id="tabDrafts" onclick="switchFilter('draft')">
+<span>Drafts</span>
+<span class="px-1.5 py-0.5 rounded-full bg-surface-container-low font-label-sm text-label-sm text-on-surface-variant">2</span>
+</button>
+</div>
+<div class="relative w-full sm:w-64">
+<span class="material-symbols-outlined absolute left-space-sm top-2.5 text-outline text-[18px]">search</span>
+<input class="w-full h-9 pl-9 pr-space-sm rounded-xl bg-surface-container-low text-on-surface placeholder:text-on-surface-variant font-body-sm text-body-sm outline-none focus:bg-surface-container-lowest focus:shadow-sm transition-all" id="listSearchInput" oninput="filterAnnouncements()" placeholder="Filter notices..." type="text"/>
+</div>
+</div>
+<!-- Announcements Stream -->
+<div class="flex flex-col gap-space-md" id="announcementList">
+<!-- CARD 1 -->
+<article class="announcement-item bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-md transition-all flex flex-col gap-space-md" data-status="published" data-title="Fall 2024 Capstone Project &amp; FYP Proposal Submissions Open">
+<div class="flex items-start justify-between gap-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="px-space-sm py-1 rounded-full bg-tertiary text-on-tertiary font-label-sm text-label-sm flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary animate-pulse"></span>
+                Published
+              </span>
+<span class="px-space-sm py-1 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">school</span>
+                Project &amp; Hackathon
+              </span>
+<span class="px-space-sm py-1 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]" style="font-variation-settings: 'FILL' 1;">push_pin</span>
+                Pinned
+              </span>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+<span class="font-label-md text-label-md text-on-surface">1,840</span> views
+            </div>
+</div>
+<div class="flex flex-col gap-space-xs">
+<h2 class="font-headline-sm text-headline-sm text-on-surface hover:text-primary transition-colors cursor-pointer">
+              Fall 2024 Capstone Project &amp; FYP Proposal Submissions Open
+            </h2>
+<div class="flex items-center gap-space-sm text-on-surface-variant font-body-sm text-body-sm">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">calendar_today</span> Oct 20, 2024
+              </span>
+<span>•</span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">account_circle</span> Administrator
+              </span>
+<span>•</span>
+<span class="text-tertiary font-label-sm text-label-sm">Audience: 7th &amp; 8th Semesters</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">
+            All 7th semester BSSE and BSCS students must submit their capstone abstract and team roster through the Projects module by Nov 15. Late proposals will require manual department review and board justification.
+          </p>
+<!-- Micro Engagement Bar -->
+<div class="pt-space-xs flex items-center justify-between border-t border-transparent">
+<div class="flex items-center gap-space-md text-on-surface-variant font-body-sm text-body-sm">
+<span class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[16px]">chat_bubble_outline</span> 38 Replies
+              </span>
+<span class="flex items-center gap-1 text-tertiary">
+<span class="material-symbols-outlined text-[16px]">check_circle</span> 92% Read Confirmation
+              </span>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="px-space-md py-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md transition-all flex items-center gap-1" onclick="editNotice('Fall 2024 Capstone Project &amp; FYP Proposal Submissions Open', 'Project &amp; Hackathon', 'All 7th semester BSSE and BSCS students must submit their capstone abstract and team roster through the Projects module by Nov 15.')">
+<span class="material-symbols-outlined text-[16px]">edit</span>
+<span>Edit</span>
+</button>
+<button class="px-space-md py-1.5 rounded-lg bg-surface-container-low hover:bg-error-container hover:text-on-error-container text-on-surface-variant font-label-md text-label-md transition-all flex items-center gap-1" onclick="archiveNotice(this)">
+<span class="material-symbols-outlined text-[16px]">archive</span>
+<span>Archive</span>
+</button>
+</div>
+</div>
+</article>
+<!-- CARD 2 -->
+<article class="announcement-item bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-md transition-all flex flex-col gap-space-md" data-status="published" data-title="Campus Mentorship Program - Fall Alumni Registration Drive">
+<div class="flex items-start justify-between gap-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="px-space-sm py-1 rounded-full bg-tertiary text-on-tertiary font-label-sm text-label-sm flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary"></span>
+                Published
+              </span>
+<span class="px-space-sm py-1 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">groups</span>
+                Mentorship
+              </span>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+<span class="font-label-md text-label-md text-on-surface">2,120</span> views
+            </div>
+</div>
+<div class="flex flex-col gap-space-xs">
+<h2 class="font-headline-sm text-headline-sm text-on-surface hover:text-primary transition-colors cursor-pointer">
+              Campus Mentorship Program - Fall Alumni Registration Drive
+            </h2>
+<div class="flex items-center gap-space-sm text-on-surface-variant font-body-sm text-body-sm">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">calendar_today</span> Oct 10, 2024
+              </span>
+<span>•</span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">account_circle</span> Administrator
+              </span>
+<span>•</span>
+<span class="text-tertiary font-label-sm text-label-sm">Audience: Alumni &amp; Graduating Seniors</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">
+            Alumni working in software, AI, and design sectors are invited to register as semester mentors for junior batches. Cohort matching kicks off November 1st with bi-weekly hybrid touchpoints.
+          </p>
+<div class="pt-space-xs flex items-center justify-between">
+<div class="flex items-center gap-space-md text-on-surface-variant font-body-sm text-body-sm">
+<span class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[16px]">how_to_reg</span> 142 Signups
+              </span>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="px-space-md py-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md transition-all flex items-center gap-1" onclick="editNotice('Campus Mentorship Program - Fall Alumni Registration Drive', 'Mentorship', 'Alumni working in software, AI, and design sectors are invited to register as semester mentors for junior batches.')">
+<span class="material-symbols-outlined text-[16px]">edit</span>
+<span>Edit</span>
+</button>
+<button class="px-space-md py-1.5 rounded-lg bg-surface-container-low hover:bg-error-container hover:text-on-error-container text-on-surface-variant font-label-md text-label-md transition-all flex items-center gap-1" onclick="archiveNotice(this)">
+<span class="material-symbols-outlined text-[16px]">archive</span>
+<span>Archive</span>
+</button>
+</div>
+</div>
+</article>
+<!-- CARD 3 -->
+<article class="announcement-item bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-md transition-all flex flex-col gap-space-md" data-status="published" data-title="Academic Resource Sharing Honor Code &amp; Copyright Policy Update">
+<div class="flex items-start justify-between gap-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="px-space-sm py-1 rounded-full bg-tertiary text-on-tertiary font-label-sm text-label-sm flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary"></span>
+                Published
+              </span>
+<span class="px-space-sm py-1 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">policy</span>
+                Academic Notice
+              </span>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+<span class="font-label-md text-label-md text-on-surface">2,450</span> views
+            </div>
+</div>
+<div class="flex flex-col gap-space-xs">
+<h2 class="font-headline-sm text-headline-sm text-on-surface hover:text-primary transition-colors cursor-pointer">
+              Academic Resource Sharing Honor Code &amp; Copyright Policy Update
+            </h2>
+<div class="flex items-center gap-space-sm text-on-surface-variant font-body-sm text-body-sm">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">calendar_today</span> Sep 28, 2024
+              </span>
+<span>•</span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">shield</span> Academic Affairs
+              </span>
+<span>•</span>
+<span class="text-tertiary font-label-sm text-label-sm">Audience: All Campus Units</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">
+            Reminder on uploading peer lecture notes and fair-use guidelines. Commercial textbook uploads are prohibited and will trigger automated digital copyright hold protocols.
+          </p>
+<div class="pt-space-xs flex items-center justify-between">
+<div class="flex items-center gap-space-md text-on-surface-variant font-body-sm text-body-sm">
+<span class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">verified</span> Institutional Standard
+              </span>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="px-space-md py-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md transition-all flex items-center gap-1" onclick="editNotice('Academic Resource Sharing Honor Code &amp; Copyright Policy Update', 'Academic Notice', 'Reminder on uploading peer lecture notes and fair-use guidelines. Commercial textbook uploads are prohibited.')">
+<span class="material-symbols-outlined text-[16px]">edit</span>
+<span>Edit</span>
+</button>
+<button class="px-space-md py-1.5 rounded-lg bg-surface-container-low hover:bg-error-container hover:text-on-error-container text-on-surface-variant font-label-md text-label-md transition-all flex items-center gap-1" onclick="archiveNotice(this)">
+<span class="material-symbols-outlined text-[16px]">archive</span>
+<span>Archive</span>
+</button>
+</div>
+</div>
+</article>
+<!-- CARD 4: Draft -->
+<article class="announcement-item bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-md transition-all flex flex-col gap-space-md" data-status="draft" data-title="Midterm Examination Schedule &amp; Seating Plan Released">
+<div class="flex items-start justify-between gap-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="px-space-sm py-1 rounded-full bg-secondary-container text-on-secondary-fixed font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">edit_note</span>
+                Draft
+              </span>
+<span class="px-space-sm py-1 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">assignment</span>
+                Examination
+              </span>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+<span>Created 2 days ago</span>
+</div>
+</div>
+<div class="flex flex-col gap-space-xs">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">
+              Midterm Examination Schedule &amp; Seating Plan Released
+            </h2>
+<div class="flex items-center gap-space-sm text-on-surface-variant font-body-sm text-body-sm">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">person</span> Drafted by Examination Cell
+              </span>
+<span>•</span>
+<span class="text-error font-label-sm text-label-sm">Pending Controller Approval</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">
+            Fall midterm exam datesheets for CS, SE, and EE programs are scheduled to start Monday, Nov 11. Individual student seating allocations and exam center roll slips are undergoing final verification.
+          </p>
+<div class="pt-space-xs flex items-center justify-between">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-body-sm text-body-sm">
+<span class="w-2 h-2 rounded-full bg-secondary-fixed"></span>
+<span>Saved in draft vault</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="px-space-md py-1.5 rounded-xl bg-primary-container text-on-primary font-label-md text-label-md hover:bg-primary shadow-sm transition-all flex items-center gap-1" onclick="editNotice('Midterm Examination Schedule &amp; Seating Plan Released', 'Examination', 'Fall midterm exam datesheets for CS, SE, and EE programs are scheduled to start Monday, Nov 11.')">
+<span class="material-symbols-outlined text-[16px]">edit</span>
+<span>Resume Editing</span>
+</button>
+<button class="px-space-md py-1.5 rounded-lg bg-surface-container-low hover:bg-error-container hover:text-on-error-container text-on-surface-variant font-label-md text-label-md transition-all flex items-center gap-1" onclick="deleteNotice(this)">
+<span class="material-symbols-outlined text-[16px]">delete</span>
+<span>Delete</span>
+</button>
+</div>
+</div>
+</article>
+</div>
+</div>
+<!-- RIGHT COLUMN: Create / Edit Workspace (1.4fr -> col-span-5) -->
+<div class="lg:col-span-5 flex flex-col gap-space-md sticky top-20">
+<!-- Workspace Card -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-md flex flex-col gap-space-lg transition-all" id="workspaceCard">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-primary-container flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[18px]">edit_square</span>
+</div>
+<div class="flex flex-col">
+<h2 class="font-headline-sm text-headline-sm text-on-surface" id="formHeader">Create New University Announcement</h2>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Live broadcast editor</span>
+</div>
+</div>
+<button class="p-1 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" onclick="resetForm()" title="Clear form">
+<span class="material-symbols-outlined text-[20px]">refresh</span>
+</button>
+</div>
+<!-- Form Elements -->
+<form class="flex flex-col gap-space-md" id="announcementForm" onsubmit="handlePublish(event)">
+<!-- Announcement Title -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md text-on-surface flex items-center justify-between" for="announcementTitle">
+<span>Announcement Title</span>
+<span class="text-error text-label-sm font-label-sm">* Required</span>
+</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-space-md text-outline text-[20px]">title</span>
+<input class="w-full h-[52px] pl-12 pr-space-md rounded-xl bg-surface-container-lowest text-on-surface placeholder:text-on-surface-variant font-body-md text-body-md outline-none transition-all shadow-sm focus:shadow-md focus:bg-surface-container-lowest" id="announcementTitle" placeholder="e.g. Annual Campus Hackathon 2024 Registration" required="" type="text"/>
+</div>
+</div>
+<!-- Category / Tag Dropdown -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md text-on-surface" for="announcementCategory">Category / Classification</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-space-md text-outline text-[20px]">category</span>
+<select class="w-full h-[52px] pl-12 pr-space-md rounded-xl bg-surface-container-lowest text-on-surface font-body-md text-body-md outline-none appearance-none cursor-pointer shadow-sm focus:shadow-md transition-all" id="announcementCategory">
+<option value="Academic Notice">Academic Notice</option>
+<option value="Examination">Examination</option>
+<option value="Project &amp; Hackathon">Project &amp; Hackathon</option>
+<option value="Mentorship">Mentorship</option>
+<option value="General">General Campus Life</option>
+</select>
+<span class="material-symbols-outlined absolute right-space-md text-on-surface-variant pointer-events-none text-[20px]">expand_more</span>
+</div>
+</div>
+<!-- Rich Text Announcement Description -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<label class="font-label-md text-label-md text-on-surface">Announcement Description</label>
+<span class="font-label-sm text-label-sm text-on-surface-variant" id="charCounter">0 / 2,000</span>
+</div>
+<!-- Editor Container -->
+<div class="rounded-xl overflow-hidden shadow-sm bg-surface-container-lowest">
+<!-- Formatting Toolbar -->
+<div class="flex items-center gap-1 p-space-xs bg-surface-container-low">
+<button class="p-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" onclick="formatText('bold')" title="Bold" type="button">
+<span class="material-symbols-outlined text-[18px]">format_bold</span>
+</button>
+<button class="p-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" onclick="formatText('italic')" title="Italic" type="button">
+<span class="material-symbols-outlined text-[18px]">format_italic</span>
+</button>
+<button class="p-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" onclick="formatText('bullet')" title="Bullet List" type="button">
+<span class="material-symbols-outlined text-[18px]">format_list_bulleted</span>
+</button>
+<button class="p-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" onclick="formatText('link')" title="Hyperlink" type="button">
+<span class="material-symbols-outlined text-[18px]">link</span>
+</button>
+<div class="w-px h-4 bg-outline-variant mx-1"></div>
+<button class="p-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" onclick="formatText('quote')" title="Quote" type="button">
+<span class="material-symbols-outlined text-[18px]">format_quote</span>
+</button>
+<button class="p-1.5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" onclick="formatText('code')" title="Code snippet" type="button">
+<span class="material-symbols-outlined text-[18px]">code</span>
+</button>
+</div>
+<!-- Multiline Textarea -->
+<textarea class="w-full p-space-md bg-surface-container-lowest text-on-surface placeholder:text-on-surface-variant font-body-md text-body-md outline-none resize-none" id="announcementDescription" maxlength="2000" oninput="updateCharCount()" placeholder="Write detailed notice contents, schedules, deadlines, and contact coordinates here..." required="" rows="5"></textarea>
+</div>
+</div>
+<!-- Pinned Announcement Toggle -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex items-center justify-between cursor-pointer" onclick="togglePinCheckbox()">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">push_pin</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Pin announcement</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Affix to the top of all student home dashboards</span>
+</div>
+</div>
+<input class="w-5 h-5 rounded accent-primary-container cursor-pointer" id="pinnedToggle" onclick="event.stopPropagation()" type="checkbox"/>
+</div>
+<!-- Target Audience Institutional Note -->
+<div class="p-space-md rounded-xl bg-surface-container flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">verified_user</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-wider font-semibold">Institutional Governance Notice</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                Visible across all CampConnect registered students, seniors, and alumni as per institutional policy. Push notifications will be dispatched instantly upon publication.
+              </p>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex flex-col gap-space-xs pt-space-xs">
+<button class="w-full h-[52px] rounded-xl bg-primary-container text-on-primary hover:bg-primary shadow-md hover:shadow-lg transition-all font-label-lg text-label-lg flex items-center justify-center gap-space-xs" type="submit">
+<span class="material-symbols-outlined text-[20px]">send</span>
+<span id="submitBtnText">Publish Announcement</span>
+</button>
+<div class="grid grid-cols-2 gap-space-sm mt-1">
+<button class="h-11 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md transition-all flex items-center justify-center gap-1" onclick="saveAsDraft()" type="button">
+<span class="material-symbols-outlined text-[18px]">save</span>
+<span>Save as Draft</span>
+</button>
+<button class="h-11 rounded-xl bg-surface-container-lowest hover:bg-surface-container-low text-on-surface-variant font-label-md text-label-md transition-all flex items-center justify-center" onclick="resetForm()" type="button">
+                Cancel
+              </button>
+</div>
+</div>
+</form>
+</div>
+<!-- Campus Media & Attachment Banner -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex items-center gap-space-md">
+<div class="w-16 h-16 rounded-xl overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="A pristine modern university campus quad bathed in soft morning daylight with academic students holding digital tablets in deep blue and slate tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdmvtzuTetiWAPjEQb-CZpRgvTJmRgBP2RkBgYhjbxq53W7TA_IT1aygaO1TS2xgfvOpiY_bNoo7gIZDjDLoqOeDAN_gnQWraY1IeEaBtyj527MTePZChmCoOjBAha2TeBWczOZvB1n8w_BBjVb6GOg2bYm58Sguoi7eEfdTfT4sTLyhc7tBMQ31QL71sJY73ax6U81Nzve0-I_sMx6UPXytODroaV1Lh18Z5L694"/>
+</div>
+<div class="flex flex-col justify-center min-w-0">
+<span class="font-label-md text-label-md text-on-surface truncate">Fall 2024 Academic Calendar Ready</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Attachments and official circular seals are automatically watermarked.</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Confirmation Preview Dialog Modal (Hidden by default) -->
+<div class="fixed inset-0 bg-on-surface/40 backdrop-blur-sm z-50 flex items-center justify-center p-space-md hidden" id="confirmationModal">
+<div class="bg-surface-container-lowest max-w-lg w-full rounded-xl shadow-xl p-space-lg flex flex-col gap-space-md animate-in fade-in zoom-in-95 duration-150">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs text-primary font-label-md text-label-md">
+<span class="material-symbols-outlined text-[20px]">verified</span>
+<span>BROADCAST CONFIRMATION</span>
+</div>
+<button class="p-1 rounded-lg text-on-surface-variant hover:bg-surface-container transition-all" onclick="closeModal()">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="flex flex-col gap-space-xs">
+<h3 class="font-headline-sm text-headline-sm text-on-surface" id="modalTitle">Publish this Announcement?</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          This notice will be immediately published to 3,400+ active students and academic peers. Push notifications and email alerts will trigger instantly.
+        </p>
+</div>
+<!-- Live Summary Preview -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm" id="modalCategoryBadge">Academic Notice</span>
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-label-sm text-label-sm hidden" id="modalPinnedBadge">Pinned</span>
+</div>
+<span class="font-label-lg text-label-lg text-on-surface font-bold" id="modalHeadline"></span>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-3" id="modalSnippet"></p>
+</div>
+<div class="flex items-center justify-end gap-space-sm pt-space-xs">
+<button class="px-space-md py-2.5 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md transition-all" onclick="closeModal()">
+          Back to Editing
+        </button>
+<button class="px-space-lg py-2.5 rounded-xl bg-primary-container hover:bg-primary text-on-primary font-label-lg text-label-lg shadow-md transition-all flex items-center gap-1" onclick="executePublish()">
+<span class="material-symbols-outlined text-[18px]">send</span>
+<span>Confirm &amp; Broadcast</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Notification Toast -->
+<div class="fixed bottom-6 right-6 bg-inverse-surface text-inverse-on-surface px-space-lg py-space-md rounded-xl shadow-xl flex items-center gap-space-md transition-all duration-300 transform translate-y-24 opacity-0 pointer-events-none z-50" id="toastNotification">
+<span class="material-symbols-outlined text-tertiary-fixed text-[24px]">check_circle</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md" id="toastHeading">Notice Broadcasted</span>
+<span class="font-body-sm text-body-sm opacity-80" id="toastMessage">Announcement is now live on all student feeds.</span>
+</div>
+</div>
+</div>
+<script>
+  function updateCharCount() {
+    const textarea = document.getElementById('announcementDescription');
+    const counter = document.getElementById('charCounter');
+    counter.textContent = `${textarea.value.length} / 2,000`;
+  }
+
+  function togglePinCheckbox() {
+    const cb = document.getElementById('pinnedToggle');
+    cb.checked = !cb.checked;
+  }
+
+  function formatText(command) {
+    const textarea = document.getElementById('announcementDescription');
+    const start = textarea.selectionStart;
+    const end = textarea.selectionEnd;
+    const selected = textarea.value.substring(start, end);
+    let replacement = '';
+
+    if (command === 'bold') replacement = `**${selected || 'bold text'}**`;
+    else if (command === 'italic') replacement = `*${selected || 'italic text'}*`;
+    else if (command === 'bullet') replacement = `\n• ${selected || 'Bullet item'}`;
+    else if (command === 'link') replacement = `[${selected || 'Link text'}](https://)`;
+    else if (command === 'quote') replacement = `\n> ${selected || 'Important excerpt'}`;
+    else if (command === 'code') replacement = `\`${selected || 'code snippet'}\``;
+
+    textarea.setRangeText(replacement, start, end, 'select');
+    textarea.focus();
+    updateCharCount();
+  }
+
+  function editNotice(title, category, summary) {
+    document.getElementById('announcementTitle').value = title;
+    document.getElementById('announcementCategory').value = category;
+    document.getElementById('announcementDescription').value = summary;
+    document.getElementById('formHeader').textContent = 'Edit Announcement';
+    document.getElementById('submitBtnText').textContent = 'Update Announcement';
+    updateCharCount();
+
+    const workspace = document.getElementById('workspaceCard');
+    workspace.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    workspace.classList.add('shadow-xl');
+    setTimeout(() => workspace.classList.remove('shadow-xl'), 1200);
+  }
+
+  function resetForm() {
+    document.getElementById('announcementForm').reset();
+    document.getElementById('formHeader').textContent = 'Create New University Announcement';
+    document.getElementById('submitBtnText').textContent = 'Publish Announcement';
+    updateCharCount();
+  }
+
+  function handlePublish(e) {
+    e.preventDefault();
+    const title = document.getElementById('announcementTitle').value.trim();
+    const cat = document.getElementById('announcementCategory').value;
+    const desc = document.getElementById('announcementDescription').value.trim();
+    const pinned = document.getElementById('pinnedToggle').checked;
+
+    if (!title || !desc) return;
+
+    document.getElementById('modalHeadline').textContent = title;
+    document.getElementById('modalCategoryBadge').textContent = cat;
+    document.getElementById('modalSnippet').textContent = desc;
+
+    const pinnedBadge = document.getElementById('modalPinnedBadge');
+    if (pinned) {
+      pinnedBadge.classList.remove('hidden');
+    } else {
+      pinnedBadge.classList.add('hidden');
+    }
+
+    document.getElementById('confirmationModal').classList.remove('hidden');
+  }
+
+  function closeModal() {
+    document.getElementById('confirmationModal').classList.add('hidden');
+  }
+
+  function executePublish() {
+    closeModal();
+    const title = document.getElementById('announcementTitle').value;
+    const cat = document.getElementById('announcementCategory').value;
+    const desc = document.getElementById('announcementDescription').value;
+    const pinned = document.getElementById('pinnedToggle').checked;
+
+    const list = document.getElementById('announcementList');
+    const newArticle = document.createElement('article');
+    newArticle.className = 'announcement-item bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-md transition-all flex flex-col gap-space-md';
+    newArticle.setAttribute('data-status', 'published');
+    newArticle.setAttribute('data-title', title);
+
+    newArticle.innerHTML = `
+      <div class="flex items-start justify-between gap-space-md">
+        <div class="flex items-center gap-space-sm">
+          <span class="px-space-sm py-1 rounded-full bg-tertiary text-on-tertiary font-label-sm text-label-sm flex items-center gap-1">
+            <span class="w-1.5 h-1.5 rounded-full bg-on-tertiary animate-pulse"></span>
+            Published
+          </span>
+          <span class="px-space-sm py-1 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm flex items-center gap-1">
+            <span class="material-symbols-outlined text-[14px]">school</span>
+            ${cat}
+          </span>
+          ${pinned ? `<span class="px-space-sm py-1 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-label-sm text-label-sm flex items-center gap-1"><span class="material-symbols-outlined text-[13px]" style="font-variation-settings: 'FILL' 1;">push_pin</span>Pinned</span>` : ''}
+        </div>
+        <div class="flex items-center gap-space-xs text-on-surface-variant font-body-sm text-body-sm">
+          <span class="material-symbols-outlined text-[16px]">visibility</span>
+          <span class="font-label-md text-label-md text-on-surface">1</span> view
+        </div>
+      </div>
+      <div class="flex flex-col gap-space-xs">
+        <h2 class="font-headline-sm text-headline-sm text-on-surface">${title}</h2>
+        <div class="flex items-center gap-space-sm text-on-surface-variant font-body-sm text-body-sm">
+          <span class="flex items-center gap-1"><span class="material-symbols-outlined text-[15px]">calendar_today</span> Just now</span>
+          <span>•</span>
+          <span class="flex items-center gap-1"><span class="material-symbols-outlined text-[15px]">account_circle</span> Administrator</span>
+        </div>
+      </div>
+      <p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">${desc}</p>
+      <div class="pt-space-xs flex items-center justify-between">
+        <div class="flex items-center gap-space-md text-on-surface-variant font-body-sm text-body-sm">
+          <span class="text-tertiary font-label-sm text-label-sm">Active & Delivered</span>
+        </div>
+        <div class="flex items-center gap-space-xs">
+          <button onclick="editNotice('${title.replace(/'/g, "\\'")}', '${cat}', '${desc.replace(/'/g, "\\'")}')" class="px-space-md py-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md transition-all flex items-center gap-1">
+            <span class="material-symbols-outlined text-[16px]">edit</span>
+            <span>Edit</span>
+          </button>
+          <button onclick="archiveNotice(this)" class="px-space-md py-1.5 rounded-lg bg-surface-container-low hover:bg-error-container hover:text-on-error-container text-on-surface-variant font-label-md text-label-md transition-all flex items-center gap-1">
+            <span class="material-symbols-outlined text-[16px]">archive</span>
+            <span>Archive</span>
+          </button>
+        </div>
+      </div>
+    `;
+
+    list.insertBefore(newArticle, list.firstChild);
+    resetForm();
+    showToast('Notice Published Successfully', 'Immediate campus broadcast initiated.');
+  }
+
+  function saveAsDraft() {
+    const title = document.getElementById('announcementTitle').value.trim() || 'Untitled Draft Notice';
+    const cat = document.getElementById('announcementCategory').value;
+    const desc = document.getElementById('announcementDescription').value.trim();
+
+    const list = document.getElementById('announcementList');
+    const newArticle = document.createElement('article');
+    newArticle.className = 'announcement-item bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-md transition-all flex flex-col gap-space-md';
+    newArticle.setAttribute('data-status', 'draft');
+    newArticle.setAttribute('data-title', title);
+
+    newArticle.innerHTML = `
+      <div class="flex items-start justify-between gap-space-md">
+        <div class="flex items-center gap-space-sm">
+          <span class="px-space-sm py-1 rounded-full bg-secondary-container text-on-secondary-fixed font-label-sm text-label-sm flex items-center gap-1">
+            <span class="material-symbols-outlined text-[14px]">edit_note</span>
+            Draft
+          </span>
+          <span class="px-space-sm py-1 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm flex items-center gap-1">
+            ${cat}
+          </span>
+        </div>
+        <span class="text-on-surface-variant font-body-sm text-body-sm">Just now</span>
+      </div>
+      <div class="flex flex-col gap-space-xs">
+        <h2 class="font-headline-sm text-headline-sm text-on-surface">${title}</h2>
+      </div>
+      <p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">${desc || 'No content provided yet.'}</p>
+      <div class="pt-space-xs flex items-center justify-between">
+        <span class="font-label-sm text-label-sm text-on-surface-variant">Saved in local workspace</span>
+        <div class="flex items-center gap-space-xs">
+          <button onclick="editNotice('${title.replace(/'/g, "\\'")}', '${cat}', '${desc.replace(/'/g, "\\'")}')" class="px-space-md py-1.5 rounded-xl bg-primary-container text-on-primary font-label-md text-label-md hover:bg-primary shadow-sm transition-all flex items-center gap-1">
+            <span class="material-symbols-outlined text-[16px]">edit</span>
+            <span>Resume</span>
+          </button>
+          <button onclick="deleteNotice(this)" class="px-space-md py-1.5 rounded-lg bg-surface-container-low hover:bg-error-container hover:text-on-error-container text-on-surface-variant font-label-md text-label-md transition-all flex items-center gap-1">
+            <span class="material-symbols-outlined text-[16px]">delete</span>
+            <span>Delete</span>
+          </button>
+        </div>
+      </div>
+    `;
+
+    list.insertBefore(newArticle, list.firstChild);
+    resetForm();
+    showToast('Saved to Drafts', 'Your changes have been safely archived.');
+  }
+
+  function archiveNotice(button) {
+    const card = button.closest('.announcement-item');
+    card.style.opacity = '0.4';
+    card.style.transform = 'scale(0.98)';
+    setTimeout(() => {
+      card.remove();
+      showToast('Announcement Archived', 'The notice was removed from student visibility.');
+    }, 250);
+  }
+
+  function deleteNotice(button) {
+    const card = button.closest('.announcement-item');
+    card.remove();
+    showToast('Draft Removed', 'Draft announcement was permanently deleted.');
+  }
+
+  let activeFilter = 'all';
+  function switchFilter(filter) {
+    activeFilter = filter;
+    const tabs = {
+      all: document.getElementById('tabAll'),
+      published: document.getElementById('tabPublished'),
+      draft: document.getElementById('tabDrafts')
+    };
+
+    Object.keys(tabs).forEach(key => {
+      const btn = tabs[key];
+      if (key === filter) {
+        btn.className = 'tab-btn px-space-md py-2 rounded-lg font-label-md text-label-md bg-surface-container-lowest text-primary shadow-sm transition-all flex items-center gap-space-xs';
+      } else {
+        btn.className = 'tab-btn px-space-md py-2 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all flex items-center gap-space-xs';
+      }
+    });
+
+    filterAnnouncements();
+  }
+
+  function filterAnnouncements() {
+    const searchVal = document.getElementById('listSearchInput').value.toLowerCase();
+    const items = document.querySelectorAll('.announcement-item');
+
+    items.forEach(item => {
+      const status = item.getAttribute('data-status');
+      const title = (item.getAttribute('data-title') || '').toLowerCase();
+      const matchesFilter = (activeFilter === 'all') || (status === activeFilter);
+      const matchesSearch = title.includes(searchVal);
+
+      if (matchesFilter && matchesSearch) {
+        item.classList.remove('hidden');
+      } else {
+        item.classList.add('hidden');
+      }
+    });
+  }
+
+  function showToast(heading, msg) {
+    const toast = document.getElementById('toastNotification');
+    document.getElementById('toastHeading').textContent = heading;
+    document.getElementById('toastMessage').textContent = msg;
+
+    toast.classList.remove('translate-y-24', 'opacity-0', 'pointer-events-none');
+    toast.classList.add('translate-y-0', 'opacity-100');
+
+    setTimeout(() => {
+      toast.classList.remove('translate-y-0', 'opacity-100');
+      toast.classList.add('translate-y-24', 'opacity-0', 'pointer-events-none');
+    }, 3200);
+  }
+
+  document.getElementById('topCreateBtn').addEventListener('click', () => {
+    const formInput = document.getElementById('announcementTitle');
+    formInput.focus();
+    formInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  });
+
+  document.getElementById('quickStatsBtn').addEventListener('click', () => {
+    showToast('Analytics Refreshed', 'Real-time telemetry gathered across all student apps.');
+  });
+</script></main></div></body></html>

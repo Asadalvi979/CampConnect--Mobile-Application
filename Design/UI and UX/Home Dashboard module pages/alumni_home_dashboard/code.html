@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      "colors": {
+        "error": "#ba1a1a",
+        "on-surface": "#0b1c30",
+        "surface": "#f8f9ff",
+        "inverse-surface": "#213145",
+        "on-secondary": "#ffffff",
+        "secondary-fixed": "#d5e4f8",
+        "surface-tint": "#0053db",
+        "on-secondary-fixed-variant": "#3a4858",
+        "error-container": "#ffdad6",
+        "tertiary-fixed": "#6ffbbe",
+        "inverse-on-surface": "#eaf1ff",
+        "primary": "#004ac6",
+        "on-tertiary-fixed": "#002113",
+        "primary-container": "#2563eb",
+        "on-background": "#0b1c30",
+        "surface-container-lowest": "#ffffff",
+        "secondary": "#516070",
+        "surface-container-low": "#eff4ff",
+        "surface-bright": "#f8f9ff",
+        "inverse-primary": "#b4c5ff",
+        "surface-container-high": "#dce9ff",
+        "on-error": "#ffffff",
+        "secondary-fixed-dim": "#b9c8db",
+        "on-tertiary-container": "#bdffdb",
+        "on-surface-variant": "#434655",
+        "surface-container-highest": "#d3e4fe",
+        "on-secondary-fixed": "#0e1d2b",
+        "outline-variant": "#c3c6d7",
+        "surface-container": "#e5eeff",
+        "on-primary": "#ffffff",
+        "on-secondary-container": "#576676",
+        "primary-fixed": "#dbe1ff",
+        "on-primary-fixed": "#00174b",
+        "surface-variant": "#d3e4fe",
+        "on-error-container": "#93000a",
+        "tertiary-container": "#007d55",
+        "background": "#f8f9ff",
+        "on-primary-fixed-variant": "#003ea8",
+        "tertiary": "#006242",
+        "on-primary-container": "#eeefff",
+        "on-tertiary": "#ffffff",
+        "primary-fixed-dim": "#b4c5ff",
+        "outline": "#737686",
+        "surface-dim": "#cbdbf5",
+        "secondary-container": "#d5e4f8",
+        "tertiary-fixed-dim": "#4edea3",
+        "on-tertiary-fixed-variant": "#005236"
+      },
+      "borderRadius": {
+        "DEFAULT": "0.25rem",
+        "lg": "0.5rem",
+        "xl": "0.75rem",
+        "full": "9999px"
+      },
+      "spacing": {
+        "space-xs": "0.25rem",
+        "margin": "1.25rem",
+        "space-md": "1rem",
+        "space-xl": "2rem",
+        "gutter": "1rem",
+        "space-lg": "1.5rem",
+        "space-sm": "0.5rem"
+      },
+      "fontFamily": {
+        "body-lg": ["Plus Jakarta Sans"],
+        "label-md": ["Plus Jakarta Sans"],
+        "headline-lg": ["Plus Jakarta Sans"],
+        "headline-sm": ["Plus Jakarta Sans"],
+        "body-sm": ["Plus Jakarta Sans"],
+        "label-sm": ["Plus Jakarta Sans"],
+        "display-lg": ["Plus Jakarta Sans"],
+        "label-lg": ["Plus Jakarta Sans"],
+        "headline-md": ["Plus Jakarta Sans"],
+        "body-md": ["Plus Jakarta Sans"]
+      },
+      "fontSize": {
+        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+        "label-md": ["13px", {"lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+        "headline-lg": ["26px", {"lineHeight": "34px", "letterSpacing": "-0.015em", "fontWeight": "700"}],
+        "headline-sm": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+        "body-sm": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+        "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+        "display-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+        "label-lg": ["15px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+        "headline-md": ["22px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+      }
+    }
+  }
+}</script><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface min-h-screen flex flex-col antialiased selection:bg-primary-fixed"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm"><div class="w-9 h-9 rounded-xl bg-primary-container flex items-center justify-center text-on-primary font-headline-sm font-bold shadow-md"><span class="material-symbols-outlined text-[20px]">hub</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight leading-none">CampConnect</span><span class="font-label-sm text-label-sm text-on-surface-variant font-normal leading-none mt-1">Alumni Home Dashboard</span></div></div><div class="flex items-center gap-space-xs"><button aria-label="Notifications" class="relative w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors"><span class="material-symbols-outlined text-[24px]">notifications</span><span class="absolute top-2.5 right-2.5 w-2.5 h-2.5 rounded-full bg-error ring-2 ring-surface"></span></button><div class="pl-space-xs flex items-center"><a aria-label="View Profile" class="w-9 h-9 rounded-full ring-2 ring-primary/20 overflow-hidden flex items-center justify-center bg-surface-container hover:ring-primary transition-all" data-path="profile" href="#"><img alt="User Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1V3PTPfNamlqI-WR1eNR0z2N1jo5FVDLI4ouq2VnUUFNCd1UNYhW1Lgc-sxaYs0-VpxdsOGgyLvZrX3SER0yyT12u_skXW_AGu5o1vFbeH2gqEXM-kBeXDVwicVEF40okVbREPNwOpTtyE-uxJePj11xfpWY7TkuARCmspv0cHg1MFO9BwccHwpMa_qMf0eyaAHZ8xHib_kSfcDqoPZKhchbbgzNsqbwUcSDiZNEDT9cikPu6j9Xo1a_nY"/></a></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-24 bg-surface px-margin"><div class="flex flex-col w-full space-y-space-lg">
+<!-- Welcome / Alumni Profile Header Card -->
+<div class="w-full bg-surface-container-lowest rounded-xl p-space-md shadow-sm relative overflow-hidden">
+<div class="absolute -right-10 -bottom-10 w-36 h-36 bg-primary-fixed/30 rounded-full blur-2xl pointer-events-none"></div>
+<div class="flex items-start justify-between gap-space-sm relative z-10">
+<div class="flex items-center gap-space-sm">
+<div class="relative">
+<img class="w-14 h-14 rounded-xl object-cover shadow-sm" data-alt="Professional South Asian male software engineer with glasses smiling warmly in crisp corporate navy blazer against modern university campus backdrop with bright natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1epUZ_oVzO7-mDB6N4P4hOMoKPC6XlYuwFguprJW9APpevF6Ic1Tia2p2jKFgiYzUgWXobyENw30_uOwUgAntruU2wuQ6dnEN-e-RaEECEDoXw0LSxJ6cyHhcYeA9GlbXwn2zQ0VuZnP681MdmqY6atG203GxFhAE_F0OfvqSPN_8uZz1E-j3tLzw9jJcB1fLykYGffjfxIA99a6zDyTNvM1G1kS2US-MD5sPaw0"/>
+<div class="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-tertiary-container flex items-center justify-center text-on-tertiary shadow-sm" title="Verified Alumni">
+<span class="material-symbols-outlined text-[13px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-1.5 flex-wrap">
+<h1 class="font-headline-sm text-headline-sm text-on-surface truncate">Welcome back, Bilal!</h1>
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-semibold">Class of ’21</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate mt-0.5">Alumni Mentor • Senior SE @ Systems Ltd</p>
+<div class="flex items-center gap-2 mt-1.5">
+<span class="inline-flex items-center gap-1 text-tertiary font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-container"></span> Mentoring Active
+            </span>
+<span class="text-outline-variant font-label-sm text-label-sm">•</span>
+<span class="text-secondary font-label-sm text-label-sm">Sahiwal Campus Chapter</span>
+</div>
+</div>
+</div>
+<button aria-label="Share profile link" class="w-9 h-9 rounded-xl bg-surface-container-low flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">share</span>
+</button>
+</div>
+<!-- Mentorship Trust Banner -->
+<div class="mt-space-md p-space-sm bg-surface-container-low rounded-lg flex items-center gap-2.5">
+<div class="w-7 h-7 rounded-md bg-primary/10 flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[17px]">school</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-snug">
+        Official alumni mentorships run under institutional oversight. Direct student messaging activates once a request is formally accepted.
+      </p>
+</div>
+</div>
+<!-- Quick Actions Grid -->
+<section class="space-y-space-sm">
+<div class="flex items-center justify-between px-0.5">
+<h2 class="font-label-lg text-label-lg text-on-surface tracking-wide">Quick Navigation</h2>
+<span class="font-label-sm text-label-sm text-secondary">Alumni Console</span>
+</div>
+<div class="grid grid-cols-2 gap-space-sm">
+<button class="bg-surface-container-lowest p-space-md rounded-xl text-left shadow-sm flex flex-col justify-between hover:bg-surface-container-low transition-all active:scale-[0.98]">
+<div class="w-10 h-10 rounded-xl bg-primary-fixed flex items-center justify-center text-primary mb-3">
+<span class="material-symbols-outlined text-[22px]">pending_actions</span>
+</div>
+<div>
+<span class="font-headline-sm text-headline-sm text-on-surface block leading-tight">Requests</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 block">Review candidate profiles</span>
+</div>
+</button>
+<button class="bg-surface-container-lowest p-space-md rounded-xl text-left shadow-sm flex flex-col justify-between hover:bg-surface-container-low transition-all active:scale-[0.98]">
+<div class="w-10 h-10 rounded-xl bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed-variant mb-3">
+<span class="material-symbols-outlined text-[22px]">groups_2</span>
+</div>
+<div>
+<span class="font-headline-sm text-headline-sm text-on-surface block leading-tight">Communities</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 block">Department &amp; batch hubs</span>
+</div>
+</button>
+<button class="bg-surface-container-lowest p-space-md rounded-xl text-left shadow-sm flex flex-col justify-between hover:bg-surface-container-low transition-all active:scale-[0.98]">
+<div class="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center text-primary mb-3">
+<span class="material-symbols-outlined text-[22px]">rocket_launch</span>
+</div>
+<div>
+<span class="font-headline-sm text-headline-sm text-on-surface block leading-tight">Projects</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 block">FYPs &amp; tech prototypes</span>
+</div>
+</button>
+<button class="bg-surface-container-lowest p-space-md rounded-xl text-left shadow-sm flex flex-col justify-between hover:bg-surface-container-low transition-all active:scale-[0.98]">
+<div class="w-10 h-10 rounded-xl bg-tertiary-fixed flex items-center justify-center text-tertiary mb-3">
+<span class="material-symbols-outlined text-[22px]">cloud_upload</span>
+</div>
+<div>
+<span class="font-headline-sm text-headline-sm text-on-surface block leading-tight">Resources</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 block">Guides, roadmaps, kits</span>
+</div>
+</button>
+</div>
+</section>
+<!-- Mentorship Inquiries & Requests (3 Pending) -->
+<section class="space-y-space-sm">
+<div class="flex items-center justify-between px-0.5">
+<div class="flex items-center gap-2">
+<h2 class="font-label-lg text-label-lg text-on-surface">Mentorship Requests</h2>
+<span class="px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm font-bold">3 Pending</span>
+</div>
+<button class="font-label-md text-label-md text-primary hover:underline">View All</button>
+</div>
+<!-- Request 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm space-y-3">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<img class="w-11 h-11 rounded-lg object-cover shadow-sm" data-alt="Profile portrait of male undergraduate Pakistani student wearing collared navy shirt standing in modern university laboratory setting smiling confidently" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1CaQorTPSTzkZXHCltOZNV5ridlwDP8VBGvuH1I2L0zl0U8E6Pfe3OVKHTeAYKuhjowXvGlCyhorMFMtjH7pqBfl6AbeMGgWj0_KKMB9UT03eul_TXkDXm6YP0YkV5QhziaJl8kp0mTe3QTfJVBm12L7Rc2KIFNa27sHEJ890DDEur5a8HFwrGp9_Ab5mt7M3VPRqvFexY5uSl11zCMzapiAMTPVe2XOsR9nn2xM"/>
+<div class="min-w-0">
+<h3 class="font-headline-sm text-headline-sm text-on-surface truncate">Asadullah Sadiq</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">5th Sem • BS Software Engineering</p>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-container font-label-sm text-label-sm text-secondary font-medium shrink-0">2d ago</span>
+</div>
+<div class="p-space-sm bg-surface-container-low rounded-lg">
+<p class="font-body-sm text-body-sm text-on-surface">
+          “Requesting career and system design guidance for Spring 2025. Aiming for cloud microservices track.”
+        </p>
+</div>
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-1.5 text-secondary font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[17px]">verified_user</span>
+<span>Verified Student</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface font-label-md text-label-md hover:bg-surface-container transition-colors">Decline</button>
+<button class="px-3.5 py-1.5 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md shadow-sm hover:bg-primary transition-all">Accept Request</button>
+</div>
+</div>
+</div>
+<!-- Request 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm space-y-3">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<img class="w-11 h-11 rounded-lg object-cover shadow-sm" data-alt="Portrait of female computer science student wearing modest pastel headscarf and studying near university library bookshelves with warm golden daylight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDX7Q4LBBMttDom8S2YIQFvRxhDsqDLHW8E-m0PyaIhnLkjJvv_74u94yBmIw8D-9ZcoexhJWN7Uiuq0B64LFKYZy_TFkONtrXF-BsGLJw_Hc6czj2cR15Ol_Gs0VwWK65KZRLuH7QUoh714xHI2s6C_2qcG-a5HvOx5T_P4CzLKu9AgU5MJTLEq0TjuE_HTcezhhQxo3z0mlxWCHt99MODmi1QNNdvw9nl3NpAbt4"/>
+<div class="min-w-0">
+<h3 class="font-headline-sm text-headline-sm text-on-surface truncate">Hira Naveed</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">8th Sem • BS Computer Science</p>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-container font-label-sm text-label-sm text-secondary font-medium shrink-0">Yesterday</span>
+</div>
+<div class="p-space-sm bg-surface-container-low rounded-lg">
+<p class="font-body-sm text-body-sm text-on-surface">
+          “Seeking AI capstone architecture review before midterm evaluations next month.”
+        </p>
+</div>
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-1.5 text-secondary font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[17px]">hub</span>
+<span>Capstone Track</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface font-label-md text-label-md hover:bg-surface-container transition-colors">Decline</button>
+<button class="px-3.5 py-1.5 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md shadow-sm hover:bg-primary transition-all">Accept Request</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Active Mentorships -->
+<section class="space-y-space-sm">
+<div class="flex items-center justify-between px-0.5">
+<div class="flex items-center gap-2">
+<h2 class="font-label-lg text-label-lg text-on-surface">Active Mentorships</h2>
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-semibold">2 Students</span>
+</div>
+<span class="font-body-sm text-body-sm text-secondary">Spring ’25 Cycle</span>
+</div>
+<!-- Active Mentee 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<div class="flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-primary font-bold shrink-0">
+            AS
+          </div>
+<div class="min-w-0">
+<h3 class="font-headline-sm text-headline-sm text-on-surface truncate">Asadullah Sadiq</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">BSSE • Career Pathway</p>
+</div>
+</div>
+<a class="px-3 py-1.5 rounded-lg bg-surface-container text-primary font-label-md text-label-md hover:bg-primary-fixed transition-colors shrink-0" href="#">
+          Open Workspace
+        </a>
+</div>
+<div class="mt-3 pt-3 border-t border-surface-container-high/40 flex items-center justify-between text-body-sm">
+<div class="flex items-center gap-1.5 text-on-surface">
+<span class="material-symbols-outlined text-[17px] text-primary">calendar_clock</span>
+<span>Next sync: <strong>Tomorrow 4:00 PM</strong></span>
+</div>
+<span class="text-tertiary font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">chat</span> Chat Enabled
+        </span>
+</div>
+</div>
+<!-- Active Mentee 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<div class="flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed font-bold shrink-0">
+            HT
+          </div>
+<div class="min-w-0">
+<h3 class="font-headline-sm text-headline-sm text-on-surface truncate">Hamza Tariq</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">BSCS • System Architecture</p>
+</div>
+</div>
+<a class="px-3 py-1.5 rounded-lg bg-surface-container text-primary font-label-md text-label-md hover:bg-primary-fixed transition-colors shrink-0" href="#">
+          Open Workspace
+        </a>
+</div>
+<div class="mt-3 pt-3 border-t border-surface-container-high/40 space-y-1.5">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-on-surface-variant">Monthly Milestone Goal</span>
+<span class="text-primary font-semibold">2 of 3 met (66%)</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-primary-container rounded-full" style="width: 66%;"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Project Collaboration & Industry Advisory -->
+<section class="space-y-space-sm">
+<div class="flex items-center justify-between px-0.5">
+<h2 class="font-label-lg text-label-lg text-on-surface">Industry Advisory Board</h2>
+<span class="font-label-sm text-label-sm text-secondary">FYP 2025</span>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm relative overflow-hidden">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="space-y-1">
+<span class="px-2 py-0.5 rounded-md bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold">Advisory Request</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface pt-1">AI-Based Student Assistant</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Department of Computer Science • Final Year Project</p>
+</div>
+<div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[22px]">smart_toy</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2.5">
+        Students require an external industry mentor to critique their LLM orchestration architecture, evaluation metrics, and API cost containment strategies.
+      </p>
+<div class="mt-3.5 flex items-center justify-between pt-2">
+<div class="flex items-center gap-1.5 text-secondary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+<span>Est. 1 hr/bi-weekly</span>
+</div>
+<button class="px-4 py-2 rounded-xl bg-primary text-on-primary font-label-md text-label-md shadow-sm hover:bg-primary-container transition-all">
+          Review Project
+        </button>
+</div>
+</div>
+</section>
+<!-- Community Discussions -->
+<section class="space-y-space-sm">
+<div class="flex items-center justify-between px-0.5">
+<h2 class="font-label-lg text-label-lg text-on-surface">Career Discussions</h2>
+<button class="font-label-md text-label-md text-primary hover:underline">Explore Forum</button>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm space-y-2.5">
+<div class="flex items-center justify-between">
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Alumni Career Forum</span>
+<span class="font-label-sm text-label-sm text-secondary">3h ago</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface leading-snug">
+        Transitioning from University to Software Industry in Pakistan
+      </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+        Key pitfalls junior graduates face during tech stack selections, hiring interviews at Lahore/Islamabad tech companies, and building verifiable GitHub projects.
+      </p>
+<div class="pt-2 flex items-center justify-between">
+<div class="flex items-center gap-3 text-secondary font-label-sm text-label-sm">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">forum</span> 28 replies
+          </span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">thumb_up</span> 44 likes
+          </span>
+</div>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface font-label-md text-label-md hover:bg-surface-container transition-colors">
+          Join Discussion
+        </button>
+</div>
+</div>
+</section>
+<!-- Resource & Knowledge Sharing -->
+<section class="space-y-space-sm">
+<div class="flex items-center justify-between px-0.5">
+<h2 class="font-label-lg text-label-lg text-on-surface">Knowledge Sharing</h2>
+<span class="font-label-sm text-label-sm text-secondary">Contribution Hub</span>
+</div>
+<div class="grid grid-cols-1 gap-space-sm">
+<!-- Upload shortcut -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-xl bg-primary-fixed flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[22px]">post_add</span>
+</div>
+<div class="min-w-0">
+<h3 class="font-headline-sm text-headline-sm text-on-surface truncate">Share Learning Material</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Upload interview prep, slides, or tech guides</p>
+</div>
+</div>
+<button class="px-3.5 py-2 rounded-xl bg-surface-container-high text-primary font-label-md text-label-md hover:bg-primary hover:text-on-primary transition-all shrink-0">
+          Upload
+        </button>
+</div>
+<!-- Published Resource Metric Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex items-center justify-between">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-xl bg-tertiary-fixed flex items-center justify-center text-tertiary shrink-0">
+<span class="material-symbols-outlined text-[22px]">terminal</span>
+</div>
+<div class="min-w-0">
+<h4 class="font-label-lg text-label-lg text-on-surface truncate">Published Cloud Cheatsheet</h4>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="font-body-sm text-body-sm text-tertiary font-medium">86 downloads</span>
+<span class="text-outline-variant">•</span>
+<span class="font-body-sm text-body-sm text-secondary">Updated Nov 2024</span>
+</div>
+</div>
+</div>
+<button aria-label="View downloads stats" class="w-8 h-8 rounded-lg bg-surface-container-low flex items-center justify-center text-secondary hover:text-on-surface">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Institutional Announcement (Campus Registration Drive) -->
+<section class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm space-y-3 relative overflow-hidden">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-md bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed">
+<span class="material-symbols-outlined text-[16px]">campaign</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface font-semibold">Campus Administration Notice</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary">Riphah Sahiwal</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Campus Mentorship Program – Fall Drive</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+        Inviting distinguished alumni to expand intake caps for final year capstone panels and portfolio reviews.
+      </p>
+</div>
+<div class="space-y-1.5 bg-surface-container-low p-space-sm rounded-lg">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-on-surface-variant">Alumni Registration Quota</span>
+<span class="text-primary font-bold">71% Enrolled (142 / 200)</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-primary-container rounded-full" style="width: 71%;"></div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1">
+<span class="font-body-sm text-body-sm text-secondary">Closes in 5 days</span>
+<button class="px-3.5 py-1.5 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md hover:bg-primary transition-all">
+        View Notice
+      </button>
+</div>
+</section>
+<!-- Mentorship Disclaimer / Bottom Delight Micro-Banner -->
+<div class="text-center py-2">
+<p class="font-body-sm text-body-sm text-secondary">
+      Need assistance with your alumni verification? <a class="text-primary font-semibold hover:underline" href="#">Contact Campus Alumni Office</a>
+</p>
+</div>
+</div>
+<script>
+  // Simple micro-interaction for active cards and action feedback
+  document.querySelectorAll('button').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      // Optional light tap effect
+      this.classList.add('opacity-90');
+      setTimeout(() => this.classList.remove('opacity-90'), 150);
+    });
+  });
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/85 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.03)]" data-active-classes="text-primary-container font-semibold"><div class="flex items-center justify-around h-16 px-space-xs"><a class="flex-1 flex flex-col items-center justify-center min-h-[44px] py-1 text-on-surface-variant hover:text-on-surface transition-colors" data-path="home" href="#"><span class="material-symbols-outlined text-[22px]">home</span><span class="font-label-sm text-label-sm mt-0.5">Home</span></a><a class="flex-1 flex flex-col items-center justify-center min-h-[44px] py-1 text-on-surface-variant hover:text-on-surface transition-colors" data-path="community" href="#"><span class="material-symbols-outlined text-[22px]">groups</span><span class="font-label-sm text-label-sm mt-0.5">Community</span></a><a class="flex-1 flex flex-col items-center justify-center min-h-[44px] py-1 text-on-surface-variant hover:text-on-surface transition-colors" data-path="projects" href="#"><span class="material-symbols-outlined text-[22px]">folder_open</span><span class="font-label-sm text-label-sm mt-0.5">Projects</span></a><a class="flex-1 flex flex-col items-center justify-center min-h-[44px] py-1 text-on-surface-variant hover:text-on-surface transition-colors" data-path="messages" href="#"><span class="material-symbols-outlined text-[22px]">chat_bubble</span><span class="font-label-sm text-label-sm mt-0.5">Messages</span></a><a class="flex-1 flex flex-col items-center justify-center min-h-[44px] py-1 text-on-surface-variant hover:text-on-surface transition-colors" data-path="profile" href="#"><span class="material-symbols-outlined text-[22px]">person</span><span class="font-label-sm text-label-sm mt-0.5">Profile</span></a></div></nav></body></html>

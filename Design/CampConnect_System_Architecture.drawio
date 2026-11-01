@@ -1,0 +1,100 @@
+<mxfile host="Electron">
+  <diagram name="CampConnect System Architecture" id="0">
+    <mxGraphModel dx="1520" dy="906" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="820" math="0" shadow="0" adaptiveColors="auto">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" parent="1" style="text;html=1;fontSize=20;fontStyle=1;align=left;" value="CampConnect – System Architecture (Three-Tier, Client-Server)" vertex="1">
+          <mxGeometry height="34" width="800" x="40" y="12" as="geometry" />
+        </mxCell>
+        <mxCell id="pres" parent="1" style="swimlane;startSize=30;html=1;fillColor=#EAF1FB;strokeColor=#6C8EBF;fontSize=14;fontStyle=1;rounded=0;" value="Presentation Layer – Flutter Mobile Application" vertex="1">
+          <mxGeometry height="120" width="760" x="40" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="p1" parent="pres" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#6C8EBF;fontSize=12;" value="Student Interface" vertex="1">
+          <mxGeometry height="50" width="130" x="25" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="p2" parent="pres" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#6C8EBF;fontSize=12;" value="Senior Interface" vertex="1">
+          <mxGeometry height="50" width="130" x="170" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="p3" parent="pres" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#6C8EBF;fontSize=12;" value="Alumni Interface" vertex="1">
+          <mxGeometry height="50" width="130" x="315" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="p4" parent="pres" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#6C8EBF;fontSize=12;" value="Admin Interface" vertex="1">
+          <mxGeometry height="50" width="130" x="460" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="p5" parent="pres" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#6C8EBF;fontSize=12;" value="Secure Token Storage (JWT)" vertex="1">
+          <mxGeometry height="50" width="130" x="605" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="biz" parent="1" style="swimlane;startSize=30;html=1;fillColor=#EEF7EE;strokeColor=#82B366;fontSize=14;fontStyle=1;rounded=0;" value="Business Logic Layer – Dart Backend API – Framework Not Decided" vertex="1">
+          <mxGeometry height="250" width="760" x="40" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="b1" parent="biz" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#82B366;fontSize=12;" value="Authentication &amp; Authorization" vertex="1">
+          <mxGeometry height="50" width="130" x="25" y="45" as="geometry" />
+        </mxCell>
+        <mxCell id="b2" parent="biz" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#82B366;fontSize=12;" value="User &amp; Profile Management" vertex="1">
+          <mxGeometry height="50" width="130" x="170" y="45" as="geometry" />
+        </mxCell>
+        <mxCell id="b3" parent="biz" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#82B366;fontSize=12;" value="Community Management" vertex="1">
+          <mxGeometry height="50" width="130" x="315" y="45" as="geometry" />
+        </mxCell>
+        <mxCell id="b4" parent="biz" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#82B366;fontSize=12;" value="Posts &amp; Discussions" vertex="1">
+          <mxGeometry height="50" width="130" x="460" y="45" as="geometry" />
+        </mxCell>
+        <mxCell id="b5" parent="biz" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#82B366;fontSize=12;" value="Mentorship Management" vertex="1">
+          <mxGeometry height="50" width="130" x="605" y="45" as="geometry" />
+        </mxCell>
+        <mxCell id="b6" parent="biz" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#82B366;fontSize=12;" value="Academic Resource Management" vertex="1">
+          <mxGeometry height="50" width="130" x="25" y="105" as="geometry" />
+        </mxCell>
+        <mxCell id="b7" parent="biz" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#82B366;fontSize=12;" value="Project Collaboration" vertex="1">
+          <mxGeometry height="50" width="130" x="170" y="105" as="geometry" />
+        </mxCell>
+        <mxCell id="b8" parent="biz" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#82B366;fontSize=12;" value="Messaging&lt;br&gt;&lt;small&gt;(REST only)&lt;/small&gt;" vertex="1">
+          <mxGeometry height="50" width="130" x="315" y="105" as="geometry" />
+        </mxCell>
+        <mxCell id="b9" parent="biz" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#82B366;fontSize=12;" value="Notification Management" vertex="1">
+          <mxGeometry height="50" width="130" x="460" y="105" as="geometry" />
+        </mxCell>
+        <mxCell id="b10" parent="biz" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#82B366;fontSize=12;" value="Administration &amp; Moderation" vertex="1">
+          <mxGeometry height="50" width="130" x="605" y="105" as="geometry" />
+        </mxCell>
+        <mxCell id="dal" parent="biz" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;fontSize=13;fontStyle=1;" value="Data Access Layer" vertex="1">
+          <mxGeometry height="50" width="710" x="25" y="175" as="geometry" />
+        </mxCell>
+        <mxCell id="data" parent="1" style="swimlane;startSize=30;html=1;fillColor=#FFF7E6;strokeColor=#D79B00;fontSize=14;fontStyle=1;rounded=0;" value="Data Layer – MariaDB Database" vertex="1">
+          <mxGeometry height="190" width="760" x="40" y="570" as="geometry" />
+        </mxCell>
+        <mxCell id="db" parent="data" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=12;fillColor=#FFE6CC;strokeColor=#D79B00;fontSize=13;fontStyle=1;" value="MariaDB" vertex="1">
+          <mxGeometry height="70" width="200" x="280" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="dnote" parent="data" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=11;fillColor=#FFFFFF;strokeColor=#CCCCCC;" value="Users &amp; Profiles · Skills · Communities &amp; Memberships · Posts, Comments &amp; Likes · Mentorship Requests · Resources &amp; Reports · Projects &amp; Interests · Conversations &amp; Messages (metadata + file references) · Notifications &amp; Announcements" vertex="1">
+          <mxGeometry height="50" width="710" x="25" y="125" as="geometry" />
+        </mxCell>
+        <mxCell id="otp" parent="1" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;fillColor=#F5F5F5;strokeColor=#666666;fontSize=13;" value="Email OTP Service&lt;br&gt;&lt;small&gt;(provider not decided)&lt;/small&gt;" vertex="1">
+          <mxGeometry height="70" width="220" x="920" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="fs" parent="1" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;fillColor=#F5F5F5;strokeColor=#666666;fontSize=13;" value="File Storage&lt;br&gt;&lt;small&gt;(provider not decided)&lt;/small&gt;" vertex="1">
+          <mxGeometry height="70" width="220" x="920" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="authnote" parent="1" style="shape=note;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;fontSize=11;align=left;verticalAlign=top;spacingLeft=6;size=12;" value="&lt;b&gt;Authentication flow&lt;/b&gt;&lt;br&gt;1. Login / register in Flutter&lt;br&gt;2. API request to backend&lt;br&gt;3. Backend asks OTP service to send code&lt;br&gt;4. Backend validates credentials &amp; account status&lt;br&gt;5. Backend issues JWT&lt;br&gt;6. Flutter stores JWT and sends it with each request" vertex="1">
+          <mxGeometry height="170" width="220" x="920" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="msgnote" parent="1" style="shape=note;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;fontSize=11;align=left;verticalAlign=top;spacingLeft=6;size=12;" value="&lt;b&gt;Messaging (Release 1)&lt;/b&gt;&lt;br&gt;Text, image and file sharing through REST requests. No real-time delivery. Needs an accepted message or mentorship request." vertex="1">
+          <mxGeometry height="110" width="220" x="920" y="530" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="pres" style="endArrow=classic;startArrow=classic;html=1;strokeColor=#333333;strokeWidth=2;fontSize=12;labelBackgroundColor=#FFFFFF;" target="biz" value="HTTPS REST API (JWT)">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="dal" style="endArrow=classic;startArrow=classic;html=1;strokeColor=#333333;strokeWidth=2;fontSize=12;labelBackgroundColor=#FFFFFF;" target="db" value="SQL queries / results">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="biz" style="edgeStyle=orthogonalEdgeStyle;endArrow=classic;html=1;strokeColor=#333333;strokeWidth=2;fontSize=12;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.26;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="otp" value="OTP delivery request">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="biz" style="edgeStyle=orthogonalEdgeStyle;endArrow=classic;startArrow=classic;html=1;strokeColor=#333333;strokeWidth=2;fontSize=12;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.82;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="fs" value="Upload / retrieve files">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

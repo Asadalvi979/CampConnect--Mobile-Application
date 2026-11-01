@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { width: 100vw; margin: 0; padding: 0; } body { overscroll-behavior: none; } .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); } .pt-safe { padding-top: env(safe-area-inset-top, 0px); } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "secondary-container": "#d5e4f8", "error": "#ba1a1a", "surface-container-low": "#eff4ff", "on-secondary-fixed": "#0e1d2b", "surface-bright": "#f8f9ff", "outline": "#737686", "primary": "#004ac6", "on-tertiary-fixed": "#002113", "surface": "#f8f9ff", "on-primary-fixed": "#00174b", "on-primary-fixed-variant": "#003ea8", "inverse-on-surface": "#eaf1ff", "tertiary-container": "#007d55", "on-tertiary": "#ffffff", "primary-fixed": "#dbe1ff", "on-secondary-container": "#576676", "outline-variant": "#c3c6d7", "on-tertiary-fixed-variant": "#005236", "tertiary-fixed-dim": "#4edea3", "surface-container-high": "#dce9ff", "on-primary-container": "#eeefff", "on-surface-variant": "#434655", "on-secondary-fixed-variant": "#3a4858", "surface-container": "#e5eeff", "on-error-container": "#93000a", "inverse-surface": "#213145", "on-secondary": "#ffffff", "primary-fixed-dim": "#b4c5ff", "primary-container": "#2563eb", "background": "#f8f9ff", "on-error": "#ffffff", "error-container": "#ffdad6", "surface-variant": "#d3e4fe", "on-primary": "#ffffff", "surface-container-highest": "#d3e4fe", "on-surface": "#0b1c30", "on-background": "#0b1c30", "on-tertiary-container": "#bdffdb", "inverse-primary": "#b4c5ff", "surface-dim": "#cbdbf5", "surface-tint": "#0053db", "secondary-fixed": "#d5e4f8", "tertiary-fixed": "#6ffbbe", "surface-container-lowest": "#ffffff", "secondary": "#516070", "secondary-fixed-dim": "#b9c8db", "tertiary": "#006242" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "gutter": "1rem", "margin": "1.25rem", "space-lg": "1.5rem", "space-md": "1rem", "space-sm": "0.5rem", "space-xl": "2rem", "space-xs": "0.25rem" }, fontFamily: { "body-lg": ["Plus Jakarta Sans"], "display-lg": ["Plus Jakarta Sans"], "label-lg": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "label-sm": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"] }, fontSize: { "body-lg": ["16px", { lineHeight: "24px", fontWeight: "400" }], "display-lg": ["32px", { lineHeight: "40px", letterSpacing: "-0.02em", fontWeight: "700" }], "label-lg": ["15px", { lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "600" }], "headline-lg": ["26px", { lineHeight: "34px", letterSpacing: "-0.015em", fontWeight: "700" }], "headline-sm": ["18px", { lineHeight: "24px", fontWeight: "600" }], "label-sm": ["11px", { lineHeight: "14px", letterSpacing: "0.02em", fontWeight: "500" }], "label-md": ["13px", { lineHeight: "18px", letterSpacing: "0.01em", fontWeight: "600" }], "body-sm": ["12px", { lineHeight: "16px", fontWeight: "400" }], "headline-md": ["22px", { lineHeight: "28px", letterSpacing: "-0.01em", fontWeight: "600" }], "body-md": ["14px", { lineHeight: "20px", fontWeight: "400" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-space-sm flex items-center justify-between"><div class="flex items-center gap-space-xs"><button aria-label="Go back" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface hover:bg-surface-container transition-colors" onclick="history.back()"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><h1 class="font-headline-sm text-headline-sm text-on-surface line-clamp-1">Comments Screen</h1></div><div class="flex items-center gap-space-xs"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-safe bg-surface"><div class="flex flex-col w-full">
+<!-- Original Post Context Card -->
+<div class="px-margin pt-space-sm pb-space-xs">
+<div class="bg-surface-container-low rounded-xl p-space-md shadow-sm">
+<div class="flex items-center justify-between mb-space-xs">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-primary-fixed shrink-0">
+<img class="w-full h-full object-cover" data-alt="Portrait photo of a young university student named Asadullah with warm friendly smile wearing navy blue campus hoodie with soft natural lighting and institutional library background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuVfINY2a01qVSSxw3us22X81hOwL_D2Grnq0eyf3mQ8oPkzSBgf3D8nzJBytwhI0W2TuNdHtg4v49VG_s3Ye7JMrz4JNfBZ1DfG8eCRXT0n03f0RhTzjYQxFJm83eYJiSlFdim16qo58tymTu7d037gigBiaPXZWmvMp5S4ND-1jJAQrOGRqgHY1P15t3nI95bubSGip-OQzYPRjkziIgErK3Uq1nZgAnBvaJ_hI"/>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="font-label-lg text-label-lg text-on-surface truncate">Asadullah Sadiq</span>
+<span class="bg-primary/10 text-primary font-label-sm text-label-sm px-2 py-0.5 rounded-full">Author</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Computer Science • Batch '25</p>
+</div>
+</div>
+<div class="flex items-center gap-1 bg-surface-container px-2.5 py-1 rounded-full shrink-0">
+<span class="material-symbols-outlined text-primary text-[16px]">forum</span>
+<span class="font-label-md text-label-md text-primary font-semibold">14</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface line-clamp-2 mt-1">
+        Excited to share our team's upcoming open-source campus initiative: Smart Campus Parking IoT solution with real-time slot telemetry and indoor guidance!
+      </p>
+<div class="flex items-center justify-between mt-space-sm pt-space-xs">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[15px] text-tertiary">verified</span>
+<span>Verified Student Project</span>
+</div>
+<button class="font-label-sm text-label-sm text-primary flex items-center gap-0.5 font-medium">
+          View full post
+          <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Discussion Header Filter Bar -->
+<div class="px-margin pt-space-sm pb-space-xs flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-label-lg text-label-lg text-on-surface">Thread Discussion</span>
+<span class="bg-surface-container font-label-sm text-label-sm text-on-surface-variant px-2 py-0.5 rounded-full">4 new</span>
+</div>
+<button class="flex items-center gap-1 text-on-surface-variant font-label-md text-label-md hover:text-on-surface">
+<span>Top comments</span>
+<span class="material-symbols-outlined text-[18px]">expand_more</span>
+</button>
+</div>
+<!-- Vertically Scrollable Discussion Thread List -->
+<div class="px-margin flex flex-col gap-space-md pb-28">
+<!-- Comment 1 (With Nested Reply) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<div class="flex items-start gap-space-sm">
+<div class="w-9 h-9 rounded-full overflow-hidden bg-secondary-container shrink-0">
+<img class="w-full h-full object-cover" data-alt="Warm studio headshot of Zainab Fatima, a female university senior student wearing modern glasses and teal blazer with confident bright smile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwWIRQX8CALApPY7v2Jf0MnEkpdVul4FlsFi6AHL49u8ynOHiec7Qe6ZM9TogLb1vWz3J14nVMgC5oJYeLKo74E4UZSQQmovWaXbrxotRqOPZG-5JCqojhx0-gVcNt5BICVQKvjtaJ0uQbesM_sa6LsWmlKniDZks5Ucljzpfkv6LjYXj5LUDRIl-mIjYBktlGKyC5uBMAaVKMr5n9ffW8gwoWq2uL6SXAqgEKGsI"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<div class="min-w-0">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="font-label-lg text-label-lg text-on-surface">Zainab Fatima</span>
+<span class="bg-surface-container font-label-sm text-label-sm text-on-surface-variant px-2 py-0.5 rounded-full">Senior • Peer Mentor</span>
+</div>
+<span class="font-body-sm text-body-sm text-outline">1h ago</span>
+</div>
+<button aria-label="Comment options" class="w-8 h-8 rounded-full flex items-center justify-center text-outline hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+<p class="font-body-md text-body-md text-on-surface mt-space-xs">
+            This looks super promising Asadullah! I can help review the Flutter state management setup with Riverpod if needed.
+          </p>
+<!-- Interaction Row -->
+<div class="flex items-center gap-space-md mt-space-sm">
+<button class="flex items-center gap-1 font-label-md text-label-md text-primary bg-primary/5 px-2.5 py-1 rounded-full">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">thumb_up</span>
+<span>4</span>
+</button>
+<button class="font-label-md text-label-md text-on-surface-variant hover:text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">reply</span>
+<span>Reply</span>
+</button>
+</div>
+<!-- Nested Reply Thread -->
+<div class="mt-space-md bg-surface-container-low rounded-xl p-space-sm pl-space-md flex items-start gap-space-sm">
+<div class="w-8 h-8 rounded-full overflow-hidden bg-primary-fixed shrink-0">
+<img class="w-full h-full object-cover" data-alt="Portrait of student Asadullah with warm expression against bright campus backdrop" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOH-g9DFEIilgWtPmM42yuPKHPbrB_qSwbqSmz04dUGc2UD44gfgVhFBeu1jNu9HxehKRW-XHKEykblaaqlIwFCLL52GihX4GYpfovjt4Jz0R1duDzQVJzlNvRgQkGRpG-aKonuTmes6ydl65wMLjXO2P0Eeks2fMysIVmtzmB6gbqUsVU-_zQwESjjiUk6A-90cJMMPTUSi6rY-KteYJQ9njZNuI3wKw07TzwJHo"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="font-label-md text-label-md text-on-surface">Asadullah Sadiq</span>
+<span class="bg-primary text-on-primary font-label-sm text-label-sm px-1.5 py-0.2 rounded-full">Author</span>
+<span class="font-body-sm text-body-sm text-outline">• 40m ago</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface mt-1">
+                Thanks Zainab! Would love your feedback on Riverpod architecture. Let's connect tomorrow in Lab 2.
+              </p>
+<div class="flex items-center gap-space-md mt-2">
+<button class="flex items-center gap-1 font-label-sm text-label-sm text-on-surface-variant hover:text-primary">
+<span class="material-symbols-outlined text-[15px]">thumb_up</span>
+<span>1</span>
+</button>
+<button class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary">Reply</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Comment 2: Bilal Ahmed -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<div class="flex items-start gap-space-sm">
+<div class="w-9 h-9 rounded-full overflow-hidden bg-secondary-fixed shrink-0">
+<img class="w-full h-full object-cover" data-alt="Professional avatar photo of alumni engineer Bilal Ahmed in casual collared shirt against modern tech office glass interior" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiaRNV4812Ig9zLqK94UEj7kw1N-WAlwametkLC1BQfIARq9LziB0FOLFXaWUTC1ZDBIk9iQTHZi3zYX4iWJ37JliHJaCcoSseJeOq1HEp3I8Qq9AyLB4ibxQOCItxAmY_q5UrUZzXNGhc4bXkR5bUD5b0d3z7I1AmJrDuUlpZsRDXgmoTONgosEA7uwDujQkWBkB1aiyP4U2I4pJDBSArys8_pMx4Cdf-zUEBtbw"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<div class="min-w-0">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="font-label-lg text-label-lg text-on-surface">Bilal Ahmed</span>
+<span class="bg-secondary-container font-label-sm text-label-sm text-on-secondary-container px-2 py-0.5 rounded-full">Alumni • TechCorp</span>
+</div>
+<span class="font-body-sm text-body-sm text-outline">45m ago</span>
+</div>
+<button aria-label="Comment options" class="w-8 h-8 rounded-full flex items-center justify-center text-outline hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+<p class="font-body-md text-body-md text-on-surface mt-space-xs">
+            Great initiative! Make sure to consider message broker failover if campus Wi-Fi drops. Feel free to ping me for architecture advice.
+          </p>
+<div class="flex items-center gap-space-md mt-space-sm">
+<button class="flex items-center gap-1 font-label-md text-label-md text-primary bg-primary/5 px-2.5 py-1 rounded-full">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">thumb_up</span>
+<span>7</span>
+</button>
+<button class="font-label-md text-label-md text-on-surface-variant hover:text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">reply</span>
+<span>Reply</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Comment 3: Hamza Tariq -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<div class="flex items-start gap-space-sm">
+<div class="w-9 h-9 rounded-full overflow-hidden bg-primary-fixed-dim shrink-0">
+<img class="w-full h-full object-cover" data-alt="Headshot photo of senior university male student Hamza Tariq wearing round spectacles and charcoal hoodie in a maker laboratory" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAi8jgZmxPnXNcKBb2n2PZX8e2VGbLyWm3oMIYuwypkbdaXN7hHy4DbNTatP6RWTL5QXOTZW65PISFxcL1aFroKpq-5z4o7kSp4vjCH2WiomoC94Tm_sQLykL0i46xZf5DGZ8j5U1Vq_rUjUKRjU2-zt9xw_CsZphnocVTwbrGqj72hS6PSiSkpQfMPgdfjWmQ0d0uCs0ZVXdLD8Rfwr7MjpnRu9Wri5AyhE8q3pPk"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<div class="min-w-0">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="font-label-lg text-label-lg text-on-surface">Hamza Tariq</span>
+<span class="bg-surface-container font-label-sm text-label-sm text-on-surface-variant px-2 py-0.5 rounded-full">Senior</span>
+</div>
+<span class="font-body-sm text-body-sm text-outline">30m ago</span>
+</div>
+<button aria-label="Comment options" class="w-8 h-8 rounded-full flex items-center justify-center text-outline hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+<p class="font-body-md text-body-md text-on-surface mt-space-xs">
+            I have hands-on experience with Raspberry Pi &amp; MQTT brokers. Count me in for the hardware interfacing part!
+          </p>
+<div class="flex items-center gap-space-md mt-space-sm">
+<button class="flex items-center gap-1 font-label-md text-label-md text-on-surface-variant hover:text-primary bg-surface-container px-2.5 py-1 rounded-full">
+<span class="material-symbols-outlined text-[16px]">thumb_up</span>
+<span>2</span>
+</button>
+<button class="font-label-md text-label-md text-on-surface-variant hover:text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">reply</span>
+<span>Reply</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Comment 4: Ayesha Malik -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<div class="flex items-start gap-space-sm">
+<div class="w-9 h-9 rounded-full overflow-hidden bg-tertiary-fixed shrink-0">
+<img class="w-full h-full object-cover" data-alt="Polished portrait of young female alumni designer Ayesha Malik smiling brightly with minimal earrings and creative studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDryZmHywkNV67wZL1HUzGzWUUrVuy2KoWRQqVTHXakuhimL974b7BCzRDv5FqQowNjvXWUy8CzJqsd6GnoPmbQeKCm1vXsDQxHB9Lo18NY1ZDMCuDibBSy_Sh2FsC0trB3zwsa06z3dCebsdmIToXFQi1BlfvsZVU_qblBckCnUe6sBmMdhk9IhYPPxCoIhb0pQHQEo-OoNA1i0-x7mdaaZDtiWtX90r8WqN2zCoM"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<div class="min-w-0">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="font-label-lg text-label-lg text-on-surface">Ayesha Malik</span>
+<span class="bg-secondary-container font-label-sm text-label-sm text-on-secondary-container px-2 py-0.5 rounded-full">Alumni</span>
+</div>
+<span class="font-body-sm text-body-sm text-outline">15m ago</span>
+</div>
+<button aria-label="Comment options" class="w-8 h-8 rounded-full flex items-center justify-center text-outline hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+<p class="font-body-md text-body-md text-on-surface mt-space-xs">
+            The mobile UI concept looks very clean! I'd love to contribute to the Figma component system.
+          </p>
+<div class="flex items-center gap-space-md mt-space-sm">
+<button class="flex items-center gap-1 font-label-md text-label-md text-primary bg-primary/5 px-2.5 py-1 rounded-full">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">thumb_up</span>
+<span>3</span>
+</button>
+<button class="font-label-md text-label-md text-on-surface-variant hover:text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">reply</span>
+<span>Reply</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Community Guideline Prompt Card -->
+<div class="bg-surface-container-low rounded-xl p-space-sm px-space-md flex items-center justify-between">
+<div class="flex items-center gap-2 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-primary text-[18px]">school</span>
+<span>Keep comments constructive &amp; peer-friendly</span>
+</div>
+<span class="material-symbols-outlined text-outline text-[16px]">info</span>
+</div>
+</div>
+<!-- Fixed Bottom Comment Composer Bar -->
+<div class="fixed bottom-0 left-0 right-0 z-40 bg-surface/95 backdrop-blur-lg shadow-xl px-margin py-3 pb-safe">
+<div class="max-w-[440px] mx-auto flex items-center gap-space-sm">
+<!-- Active User Avatar -->
+<div class="w-10 h-10 rounded-full overflow-hidden bg-primary-fixed shrink-0">
+<img class="w-full h-full object-cover" data-alt="Small round avatar of student author Asadullah smiling wearing casual university attire" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtqgF9qQypGmzGxWQkDf3IIVMbFVIIavfBgHReDvdb1QjQSyie1nbgTXC8Cl4Clu52paK-pfPvxccbQ0g4wXbWQBXSOzcOS1lRz9l-2kEF-Yq7R1JZ1Ozn1pO5VWn6IAHEVnPX-WeBrbStgDpD06mWD-VTYY5rRP87Om_aAGdsMxW-smZvlbqdYopCBANwYS5cC9iSTpRSeXiBXQ-s7DaBPfKKAWLb92UzNcyGZtA"/>
+</div>
+<!-- Input Box Container -->
+<div class="flex-1 bg-surface-container-lowest rounded-full px-space-md py-2 flex items-center gap-2 shadow-sm focus-within:shadow-md transition-shadow">
+<input class="w-full bg-transparent font-body-md text-body-md text-on-surface placeholder:text-outline focus:outline-none" id="commentInput" placeholder="Write a comment as Asadullah..." type="text"/>
+<button aria-label="Insert Emoji or Attachment" class="text-outline hover:text-primary flex items-center justify-center p-1 rounded-full transition-colors">
+<span class="material-symbols-outlined text-[20px]">sentiment_satisfied</span>
+</button>
+<button aria-label="Attach File" class="text-outline hover:text-primary flex items-center justify-center p-1 rounded-full transition-colors">
+<span class="material-symbols-outlined text-[20px]">attach_file</span>
+</button>
+</div>
+<!-- Primary Send CTA Button (#2563EB) -->
+<button aria-label="Send comment" class="w-11 h-11 rounded-full bg-primary-container text-on-primary flex items-center justify-center shadow-md active:scale-95 transition-transform shrink-0" id="sendCommentBtn">
+<span class="material-symbols-outlined text-[20px]">send</span>
+</button>
+</div>
+</div>
+</div>
+<script>
+  (function() {
+    const input = document.getElementById('commentInput');
+    const sendBtn = document.getElementById('sendCommentBtn');
+
+    if (sendBtn && input) {
+      sendBtn.addEventListener('click', () => {
+        if (input.value.trim() !== '') {
+          // Playful tap feedback
+          sendBtn.classList.add('scale-110');
+          setTimeout(() => {
+            sendBtn.classList.remove('scale-110');
+            input.value = '';
+            input.placeholder = 'Comment posted! Add another...';
+            setTimeout(() => {
+              input.placeholder = 'Write a comment as Asadullah...';
+            }, 2500);
+          }, 150);
+        } else {
+          input.focus();
+        }
+      });
+
+      input.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+          sendBtn.click();
+        }
+      });
+    }
+  })();
+</script></main></body></html>

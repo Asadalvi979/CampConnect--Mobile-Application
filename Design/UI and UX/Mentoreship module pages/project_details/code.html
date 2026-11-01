@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;font-family:'Plus Jakarta Sans',sans-serif;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"surface-variant":"#d3e4fe","error-container":"#ffdad6","on-secondary":"#ffffff","inverse-primary":"#b4c5ff","secondary":"#516070","error":"#ba1a1a","tertiary-fixed":"#6ffbbe","surface-container-highest":"#d3e4fe","on-tertiary-container":"#bdffdb","secondary-fixed":"#d5e4f8","primary-container":"#2563eb","secondary-fixed-dim":"#b9c8db","on-error-container":"#93000a","inverse-surface":"#213145","primary-fixed-dim":"#b4c5ff","surface-container-lowest":"#ffffff","on-background":"#0b1c30","surface-container":"#e5eeff","on-tertiary":"#ffffff","surface-tint":"#0053db","tertiary-fixed-dim":"#4edea3","outline-variant":"#c3c6d7","on-primary-fixed":"#00174b","surface-dim":"#cbdbf5","surface-container-high":"#dce9ff","on-primary-fixed-variant":"#003ea8","on-tertiary-fixed-variant":"#005236","on-secondary-container":"#576676","secondary-container":"#d5e4f8","on-surface-variant":"#434655","surface-bright":"#f8f9ff","on-error":"#ffffff","primary":"#004ac6","on-tertiary-fixed":"#002113","outline":"#737686","on-secondary-fixed":"#0e1d2b","on-primary-container":"#eeefff","surface-container-low":"#eff4ff","background":"#f8f9ff","on-secondary-fixed-variant":"#3a4858","primary-fixed":"#dbe1ff","surface":"#f8f9ff","inverse-on-surface":"#eaf1ff","on-primary":"#ffffff","tertiary":"#006242","on-surface":"#0b1c30","tertiary-container":"#007d55"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"gutter":"1rem","margin":"1.25rem","space-lg":"1.5rem","space-md":"1rem","space-xl":"2rem","space-sm":"0.5rem","space-xs":"0.25rem"},"fontFamily":{"body-lg":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"label-lg":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"],"label-sm":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"label-md":["Plus Jakarta Sans"],"display-lg":["Plus Jakarta Sans"]},"fontSize":{"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}],"headline-lg":["26px",{"lineHeight":"34px","letterSpacing":"-0.015em","fontWeight":"700"}],"headline-sm":["18px",{"lineHeight":"24px","fontWeight":"600"}],"headline-md":["22px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"600"}],"label-lg":["15px",{"lineHeight":"20px","letterSpacing":"0.01em","fontWeight":"600"}],"body-sm":["12px",{"lineHeight":"16px","fontWeight":"400"}],"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.02em","fontWeight":"500"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"label-md":["13px",{"lineHeight":"18px","letterSpacing":"0.01em","fontWeight":"600"}],"display-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.02em","fontWeight":"700"}]}}}};</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface text-on-surface min-h-screen flex flex-col antialiased selection:bg-primary-fixed selection:text-on-primary-fixed"><header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] pt-safe"><div class="h-16 px-space-sm flex items-center justify-between"><div class="flex items-center gap-space-xs"><button aria-label="Go back" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface hover:bg-surface-container transition-colors" onclick="history.back()"><span class="material-symbols-outlined text-[22px]">arrow_back</span></button><h1 class="font-headline-sm text-headline-sm text-on-surface truncate max-w-[200px]">Project Details</h1></div><div class="flex items-center gap-space-xs"><button aria-label="More options" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors"><span class="material-symbols-outlined text-[22px]">more_vert</span></button><div class="w-11 h-11 flex items-center justify-center"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-2 ring-primary-container/20" src="https://lh3.googleusercontent.com/aida/AEtjO1V3PTPfNamlqI-WR1eNR0z2N1jo5FVDLI4ouq2VnUUFNCd1UNYhW1Lgc-sxaYs0-VpxdsOGgyLvZrX3SER0yyT12u_skXW_AGu5o1vFbeH2gqEXM-kBeXDVwicVEF40okVbREPNwOpTtyE-uxJePj11xfpWY7TkuARCmspv0cHg1MFO9BwccHwpMa_qMf0eyaAHZ8xHib_kSfcDqoPZKhchbbgzNsqbwUcSDiZNEDT9cikPu6j9Xo1a_nY"/></div></div></div></header><main class="flex flex-col relative w-full pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full pb-32">
+<div class="relative w-full h-52 overflow-hidden">
+<div class="bg-cover bg-center w-full h-full transform scale-105 transition-transform duration-700" data-alt="A modern collaborative university computer science innovation lab with dual monitors displaying Python code and neural network graphs, ambient cool blue LED lighting, notebook sketches, sleek minimalist workspace aesthetic" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCVyngqKJgxrZDHi7wJ_CIgrM1pt7A01bNJJvsCoIfEU3eKWdvMl_ccWvVY-MSZdLE4SuIBHpYr54q6h68pjMklkfLBDUC_WiALZH-th8hEdP4vRDkqp22ik8f_rq5t3uHBO1hz93jgO6oXkYVEnjGmqioC1Mysame0aOqGIFWxuWcNWVNVqt1CcpKRBj5NNv0QwPbmszoZqLY_wBNnCKzQjRZmQtdzQy3MY_Sj9EM')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent"></div>
+<div class="absolute top-4 left-4 right-4 flex flex-wrap items-center gap-space-xs">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-md shadow-sm text-primary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">smart_toy</span>
+        Artificial Intelligence
+      </span>
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-tertiary-container text-on-tertiary-container font-label-sm text-label-sm shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container animate-pulse"></span>
+        Actively Recruiting (2 spots left)
+      </span>
+</div>
+</div>
+<div class="px-margin flex flex-col gap-space-lg -mt-8 relative z-10">
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-start justify-between gap-space-xs">
+<h2 class="font-headline-md text-headline-md text-on-surface">AI-Based Student Assistant</h2>
+<button aria-label="Bookmark Project" class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-secondary active:scale-95 transition-all" id="bookmarkBtn">
+<span class="material-symbols-outlined text-[20px]" id="bookmarkIcon">bookmark_border</span>
+</button>
+</div>
+<div class="flex items-center gap-space-sm bg-surface-container-low p-space-sm rounded-lg">
+<div class="relative">
+<img class="w-11 h-11 rounded-full object-cover shadow-sm" data-alt="Young South Asian male university software engineering student with glasses smiling warmly, wearing a navy hoodie in a bright campus computer lab" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGthKTi89FY1lrDuM8dOhL7fqce-_7eyexAVGonlJ9v8TfVhUHzv0Q8hDDr3gYFEsl9yKUXlixOIANLYqpzEHZhFg1c9l7VEMiAwaLoCVVPjdtfus6siit0p8u2tt7LI5OSCQgUdh98COCOBawZNMtGHm0BpHCUMXs0B9g84m0hJIlTEcdasp8Td6tb4-YYbC8U0nbETE-kHug_toWzgk8rrrMq3jQyOGnKJa1Wso"/>
+<span class="absolute -bottom-0.5 -right-0.5 w-4 h-4 bg-tertiary rounded-full flex items-center justify-center text-on-tertiary text-[10px]">
+<span class="material-symbols-outlined text-[11px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-label-md text-label-md text-on-surface truncate">Asadullah Sadiq</span>
+<span class="text-secondary font-body-sm text-body-sm">• Lead</span>
+</div>
+<span class="font-body-sm text-body-sm text-secondary truncate">Student • 5th Semester BSSE</span>
+</div>
+<div class="ml-auto text-right">
+<span class="font-label-sm text-label-sm text-outline flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">schedule</span>
+            3d ago
+          </span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed pt-1">
+        An intelligent campus conversational assistant leveraging LLMs and retrieval-augmented generation to provide instantaneous answers to timetable shifts, university administrative rules, exam syllabi, and library desk occupancy.
+      </p>
+</div>
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[20px]">terminal</span>
+          Required Technical Skills
+        </h3>
+<span class="font-label-sm text-label-sm text-secondary">6 competencies</span>
+</div>
+<div class="flex flex-wrap gap-2 pt-1">
+<span class="px-3.5 py-1.5 rounded-full bg-secondary-container text-on-secondary-container font-label-md text-label-md flex items-center gap-1.5 shadow-sm">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+          Python
+        </span>
+<span class="px-3.5 py-1.5 rounded-full bg-secondary-container text-on-secondary-container font-label-md text-label-md flex items-center gap-1.5 shadow-sm">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+          FastAPI
+        </span>
+<span class="px-3.5 py-1.5 rounded-full bg-secondary-container text-on-secondary-container font-label-md text-label-md flex items-center gap-1.5 shadow-sm">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+          Flutter
+        </span>
+<span class="px-3.5 py-1.5 rounded-full bg-secondary-container text-on-secondary-container font-label-md text-label-md flex items-center gap-1.5 shadow-sm">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+          LangChain
+        </span>
+<span class="px-3.5 py-1.5 rounded-full bg-secondary-container text-on-secondary-container font-label-md text-label-md flex items-center gap-1.5 shadow-sm">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+          PostgreSQL
+        </span>
+<span class="px-3.5 py-1.5 rounded-full bg-secondary-container text-on-secondary-container font-label-md text-label-md flex items-center gap-1.5 shadow-sm">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+          UI/UX Design
+        </span>
+</div>
+</div>
+<div class="flex flex-col gap-space-sm">
+<h3 class="font-headline-sm text-headline-sm text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[20px]">handshake</span>
+        Collaboration Scope
+      </h3>
+<div class="flex flex-col gap-space-xs">
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex gap-3.5 items-start">
+<div class="w-9 h-9 rounded-lg bg-primary-fixed flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[20px]">flag</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface">Project Objective</span>
+<p class="font-body-md text-body-md text-on-surface-variant mt-0.5">
+              Build a seamless mobile and web conversational assistant integrated with Riphah University student portal APIs.
+            </p>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex gap-3.5 items-start">
+<div class="w-9 h-9 rounded-lg bg-secondary-fixed flex items-center justify-center text-secondary shrink-0">
+<span class="material-symbols-outlined text-[20px]">volunteer_activism</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface">Expected Contributions</span>
+<p class="font-body-md text-body-md text-on-surface-variant mt-0.5">
+              We need 1 Flutter mobile developer for the chat interface and 1 Backend engineer familiar with Python FastAPI and vector embeddings.
+            </p>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex gap-3.5 items-start">
+<div class="w-9 h-9 rounded-lg bg-surface-container-highest flex items-center justify-center text-primary-container shrink-0">
+<span class="material-symbols-outlined text-[20px]">timelapse</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface">Team Requirements</span>
+<p class="font-body-md text-body-md text-on-surface-variant mt-0.5">
+              Looking for dedicated students who can commit 6-8 hours weekly. Good grasp of Git/GitHub workflow required.
+            </p>
+</div>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[20px]">group</span>
+          Current Team (2/4)
+        </h3>
+<span class="font-label-sm text-label-sm text-tertiary font-bold bg-tertiary-fixed/30 px-2.5 py-0.5 rounded-full">50% Staffed</span>
+</div>
+<div class="grid grid-cols-1 gap-2.5">
+<div class="bg-surface-container-lowest p-space-sm rounded-xl shadow-sm flex items-center gap-3">
+<img class="w-12 h-12 rounded-full object-cover" data-alt="University male student headshot, confident posture, dark hair, wearing casual collared shirt against neutral college library backdrop" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjD8IEL1lVibNP0nSTuDz-YT1gtqTr8NM1yIXbPgqC-QIaiWWAo03yi13Z5VpM23osxRtRCCpyUQ7vUIVuci2OwcirNuDqD-Wq7hl5BCjXr_S8SyP7Q_4RxFoFLrb5iPyLPBJ9LaI5HMEwve5ghjmwmazcCBAndI09aE8RLVjEVF_lboIX4ZZ62Ysb2EyZEgo1Sp8YOXFhYCAaRNsYGs4cE44jWL4K2HLAldaLNfQ"/>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-label-lg text-label-lg text-on-surface truncate">Asadullah Sadiq</span>
+<span class="bg-primary/10 text-primary font-label-sm text-label-sm px-2 py-0.2 rounded-full">Lead</span>
+</div>
+<span class="font-body-sm text-body-sm text-secondary truncate">Project Lead &amp; Backend • 5th Sem</span>
+</div>
+<button aria-label="Message Asadullah" class="ml-auto w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-secondary hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]">chat_bubble_outline</span>
+</button>
+</div>
+<div class="bg-surface-container-lowest p-space-sm rounded-xl shadow-sm flex items-center gap-3">
+<img class="w-12 h-12 rounded-full object-cover" data-alt="Enthusiastic university software engineering student with glasses smiling indoors, holding notebook, bright academic department background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4bOf70dfMDsmaazsZ3b7-C8L65Ki3XDDSav4KUI5J6A-nVVxs3RyjkwBjpax17tjggojK9XVbkMmHYcKMblvVDwWe_j1tqdioytF6IQCv6UVR-YCRzlkXfIuq1C_fcQf5FXFt6-g9UeFayW07SpOY07tKNNd0Oq-cPAHcp_aClExIg1notgRBbd-Vzppnc14d0BZRKIrupC5edwEncPaGOFI6sohlAFNpJQW8IYY"/>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-label-lg text-label-lg text-on-surface truncate">Usman Ali</span>
+</div>
+<span class="font-body-sm text-body-sm text-secondary truncate">Frontend Developer • 3rd Sem</span>
+</div>
+<button aria-label="Message Usman" class="ml-auto w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-secondary hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]">chat_bubble_outline</span>
+</button>
+</div>
+<div class="bg-surface-container-low rounded-xl p-space-sm flex items-center gap-3 shadow-sm">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center text-primary-container shadow-inner">
+<span class="material-symbols-outlined text-[22px]">person_add</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-primary">+ Open Role: Flutter UI</span>
+<span class="font-body-sm text-body-sm text-secondary">Chat UX, state management, mobile layout</span>
+</div>
+<span class="ml-auto px-2.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm">Open</span>
+</div>
+<div class="bg-surface-container-low rounded-xl p-space-sm flex items-center gap-3 shadow-sm">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center text-primary-container shadow-inner">
+<span class="material-symbols-outlined text-[22px]">neurology</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-primary">+ Open Role: ML Engineer</span>
+<span class="font-body-sm text-body-sm text-secondary">RAG pipelines, vector store fine-tuning</span>
+</div>
+<span class="ml-auto px-2.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm">Open</span>
+</div>
+</div>
+</div>
+</div>
+<div class="fixed bottom-0 left-0 right-0 p-margin bg-surface/90 backdrop-blur-xl shadow-xl flex flex-col gap-2.5 z-40 pb-safe">
+<button class="w-full h-[52px] rounded-[14px] bg-primary-container hover:bg-primary active:bg-on-primary-fixed-variant text-on-primary font-label-lg text-label-lg flex items-center justify-center gap-2 shadow-md transition-all" id="expressInterestBtn">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">front_hand</span>
+<span>Express Interest</span>
+</button>
+<div class="flex items-center justify-center">
+<button class="px-3.5 py-1.5 rounded-full bg-secondary-fixed text-on-secondary-fixed hover:bg-secondary-fixed-dim transition-colors flex items-center gap-1.5 font-label-sm text-label-sm" id="manageProjectBtn">
+<span class="material-symbols-outlined text-[15px]">manage_accounts</span>
+<span>You created this project?</span>
+<span class="font-bold underline text-primary">Manage Interests (3 Pending)</span>
+</button>
+</div>
+</div>
+<div class="fixed top-20 left-1/2 -translate-x-1/2 bg-inverse-surface text-inverse-on-surface px-4 py-2.5 rounded-xl shadow-lg flex items-center gap-2 text-label-md font-label-md z-50 opacity-0 pointer-events-none transition-all duration-300 transform -translate-y-2" id="feedbackToast">
+<span class="material-symbols-outlined text-tertiary-fixed text-[20px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span id="toastMsg">Application submitted to Asadullah!</span>
+</div>
+</div>
+<script>
+  const expressBtn = document.getElementById('expressInterestBtn');
+  const bookmarkBtn = document.getElementById('bookmarkBtn');
+  const bookmarkIcon = document.getElementById('bookmarkIcon');
+  const manageBtn = document.getElementById('manageProjectBtn');
+  const toast = document.getElementById('feedbackToast');
+  const toastMsg = document.getElementById('toastMsg');
+
+  function showToast(text) {
+    toastMsg.textContent = text;
+    toast.classList.remove('opacity-0', '-translate-y-2', 'pointer-events-none');
+    toast.classList.add('opacity-100', 'translate-y-0');
+    setTimeout(() => {
+      toast.classList.remove('opacity-100', 'translate-y-0');
+      toast.classList.add('opacity-0', '-translate-y-2', 'pointer-events-none');
+    }, 2800);
+  }
+
+  let interested = false;
+  expressBtn.addEventListener('click', () => {
+    interested = !interested;
+    if (interested) {
+      expressBtn.innerHTML = `
+        <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">done</span>
+        <span>Interest Submitted</span>
+      `;
+      expressBtn.classList.remove('bg-primary-container');
+      expressBtn.classList.add('bg-tertiary');
+      showToast('Interest confirmed! The team lead will review your profile.');
+    } else {
+      expressBtn.innerHTML = `
+        <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">front_hand</span>
+        <span>Express Interest</span>
+      `;
+      expressBtn.classList.remove('bg-tertiary');
+      expressBtn.classList.add('bg-primary-container');
+      showToast('Interest withdrawn.');
+    }
+  });
+
+  let bookmarked = false;
+  bookmarkBtn.addEventListener('click', () => {
+    bookmarked = !bookmarked;
+    if (bookmarked) {
+      bookmarkIcon.textContent = 'bookmark';
+      bookmarkIcon.style.fontVariationSettings = "'FILL' 1";
+      bookmarkBtn.classList.add('text-primary');
+      bookmarkBtn.classList.remove('text-secondary');
+      showToast('Project saved to your bookmarks.');
+    } else {
+      bookmarkIcon.textContent = 'bookmark_border';
+      bookmarkIcon.style.fontVariationSettings = "'FILL' 0";
+      bookmarkBtn.classList.remove('text-primary');
+      bookmarkBtn.classList.add('text-secondary');
+      showToast('Project removed from saved.');
+    }
+  });
+
+  manageBtn.addEventListener('click', () => {
+    showToast('Redirecting to Applications Dashboard...');
+  });
+</script></main></body></html>

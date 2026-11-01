@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-surface": "#0b1c30", "on-primary": "#ffffff", "on-background": "#0b1c30", "tertiary-container": "#007d55", "secondary-fixed-dim": "#b9c8db", "error-container": "#ffdad6", "on-tertiary-fixed-variant": "#005236", "secondary-container": "#d5e4f8", "surface-bright": "#f8f9ff", "surface-variant": "#d3e4fe", "error": "#ba1a1a", "surface-tint": "#0053db", "primary": "#004ac6", "tertiary-fixed": "#6ffbbe", "outline-variant": "#c3c6d7", "primary-fixed": "#dbe1ff", "secondary": "#516070", "surface": "#f8f9ff", "on-secondary": "#ffffff", "primary-fixed-dim": "#b4c5ff", "outline": "#737686", "surface-container-high": "#dce9ff", "surface-container": "#e5eeff", "on-secondary-fixed-variant": "#3a4858", "primary-container": "#2563eb", "on-tertiary-container": "#bdffdb", "tertiary": "#006242", "surface-dim": "#cbdbf5", "surface-container-low": "#eff4ff", "surface-container-lowest": "#ffffff", "tertiary-fixed-dim": "#4edea3", "on-tertiary": "#ffffff", "on-surface-variant": "#434655", "inverse-surface": "#213145", "background": "#f8f9ff", "on-secondary-container": "#576676", "on-error-container": "#93000a", "surface-container-highest": "#d3e4fe", "on-primary-container": "#eeefff", "inverse-primary": "#b4c5ff", "on-error": "#ffffff", "on-secondary-fixed": "#0e1d2b", "on-primary-fixed-variant": "#003ea8", "secondary-fixed": "#d5e4f8", "inverse-on-surface": "#eaf1ff", "on-tertiary-fixed": "#002113", "on-primary-fixed": "#00174b" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-xl": "2rem", "margin": "1.25rem", "space-sm": "0.5rem", "space-md": "1rem", "space-lg": "1.5rem", "space-xs": "0.25rem", "gutter": "1rem" }, fontFamily: { "headline-lg": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"], "display-lg": ["Plus Jakarta Sans"], "label-lg": ["Plus Jakarta Sans"], "label-sm": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"] }, fontSize: { "headline-lg": ["26px", { lineHeight: "34px", letterSpacing: "-0.015em", fontWeight: "700" }], "body-lg": ["16px", { lineHeight: "24px", fontWeight: "400" }], "display-lg": ["32px", { lineHeight: "40px", letterSpacing: "-0.02em", fontWeight: "700" }], "label-lg": ["15px", { lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "600" }], "label-sm": ["11px", { lineHeight: "14px", letterSpacing: "0.02em", fontWeight: "500" }], "label-md": ["13px", { lineHeight: "18px", letterSpacing: "0.01em", fontWeight: "600" }], "headline-md": ["22px", { lineHeight: "28px", letterSpacing: "-0.01em", fontWeight: "600" }], "headline-sm": ["18px", { lineHeight: "24px", fontWeight: "600" }], "body-sm": ["12px", { lineHeight: "16px", fontWeight: "400" }], "body-md": ["14px", { lineHeight: "20px", fontWeight: "400" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-14 px-margin flex items-center justify-between"><div class="flex items-center gap-space-sm"><button aria-label="Go back" class="w-11 h-11 -ml-space-xs rounded-full flex items-center justify-center text-on-surface hover:bg-surface-container transition-colors" onclick="history.back()" type="button"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><h1 class="font-headline-sm text-headline-sm text-on-surface">Edit Profile</h1></div><div class="flex items-center gap-space-sm"><button class="h-11 px-space-md rounded-full bg-primary-container text-on-primary font-label-md text-label-md flex items-center justify-center hover:opacity-95 transition-opacity" id="save-profile-btn" type="button">Save</button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full pt-14 pb-safe bg-surface min-h-screen"><div class="flex flex-col w-full px-margin pb-space-xl">
+<!-- Sub-header Breadcrumb / Screen Title -->
+<div class="py-space-md flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Settings</h2>
+<p class="font-body-sm text-body-sm text-secondary">Manage your institutional account &amp; preferences</p>
+</div>
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary shadow-sm">
+<span class="material-symbols-outlined text-[20px]">manage_accounts</span>
+</div>
+</div>
+</div>
+<!-- User Quick Identity Glance -->
+<section class="mt-space-xs mb-space-lg">
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm relative overflow-hidden">
+<!-- Decorative brand accent glow -->
+<div class="absolute -right-8 -top-8 w-28 h-28 rounded-full bg-secondary-container/40 blur-xl pointer-events-none"></div>
+<div class="flex items-start gap-space-md relative z-10">
+<div class="relative shrink-0">
+<img class="w-14 h-14 rounded-full object-cover shadow-sm bg-surface-container" data-alt="Close-up portrait of Asadullah Sadiq, a South Asian male university student with short neat dark hair wearing a crisp polo shirt, natural soft campus daylight, neutral academic building backdrop, high quality photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC73Y9a2xOupnsAFVhydIGuyuHfC9X2vQB2RabhacR2KkMUHkubDBwfepoBDeUEWL851AxQahGRm4EH8FoyJxR18bnB900NLEf8PM4kVXorKiYqaRQTTKEKgThKuvX6SebfA2is_DKZi3kfzWnGtBAU03LdkgCkq6J58v2noEAzm-oWA2vs9yRqvMiUX-V2F8eHAgyGnbwuvxbTprbHKbx5_lx2_WZZNFGF3R_WEFg"/>
+<div class="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-tertiary flex items-center justify-center shadow">
+<span class="material-symbols-outlined text-[13px] text-on-tertiary" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+</div>
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center justify-between gap-space-xs">
+<h3 class="font-headline-sm text-headline-sm text-on-surface truncate">Asadullah Sadiq</h3>
+<span class="px-space-xs py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm shrink-0">
+              Active
+            </span>
+</div>
+<div class="flex items-center gap-space-xs mt-0.5">
+<span class="font-label-sm text-label-sm text-primary font-semibold">Student</span>
+<span class="text-outline text-[10px]">•</span>
+<span class="font-body-sm text-body-sm text-secondary">5th Semester (CS)</span>
+</div>
+<div class="flex items-center gap-1.5 mt-1.5 text-secondary truncate">
+<span class="material-symbols-outlined text-[15px] shrink-0 text-outline">school</span>
+<span class="font-body-sm text-body-sm truncate text-on-surface-variant">asadullah.sadiq@riphah.edu.pk</span>
+</div>
+</div>
+</div>
+<!-- Quick Status Badges -->
+<div class="grid grid-cols-2 gap-space-sm mt-space-md pt-space-sm bg-surface-container-low rounded-lg p-space-sm">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-full bg-surface-container-lowest flex items-center justify-center text-primary shadow-xs">
+<span class="material-symbols-outlined text-[16px]">domain</span>
+</div>
+<div class="min-w-0">
+<p class="font-label-sm text-label-sm text-secondary truncate">Campus</p>
+<p class="font-label-md text-label-md text-on-surface truncate">Sahiwal</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-full bg-surface-container-lowest flex items-center justify-center text-tertiary shadow-xs">
+<span class="material-symbols-outlined text-[16px]">verified_user</span>
+</div>
+<div class="min-w-0">
+<p class="font-label-sm text-label-sm text-secondary truncate">SSO Status</p>
+<p class="font-label-md text-label-md text-tertiary truncate">Authorized</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 1: Account -->
+<section class="mb-space-lg">
+<div class="px-1 mb-2 flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-semibold">Account</span>
+<span class="font-label-sm text-label-sm text-outline">Academic Identity</span>
+</div>
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col">
+<!-- Row 1: Edit Profile -->
+<button class="w-full p-space-md flex items-center justify-between text-left hover:bg-surface-container-low transition-colors group" type="button">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-10 h-10 rounded-xl bg-secondary-container flex items-center justify-center text-primary shrink-0 transition-transform group-active:scale-95">
+<span class="material-symbols-outlined text-[22px]">badge</span>
+</div>
+<div class="min-w-0">
+<p class="font-label-lg text-label-lg text-on-surface">Edit Profile</p>
+<p class="font-body-sm text-body-sm text-secondary truncate">Update personal and academic information</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline text-[20px] shrink-0 ml-2">chevron_right</span>
+</button>
+<!-- Row Separator -->
+<div class="h-[1px] w-full bg-surface-container-low"></div>
+<!-- Row 2: Profile Settings -->
+<button class="w-full p-space-md flex items-center justify-between text-left hover:bg-surface-container-low transition-colors group" type="button">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-10 h-10 rounded-xl bg-secondary-container flex items-center justify-center text-primary shrink-0 transition-transform group-active:scale-95">
+<span class="material-symbols-outlined text-[22px]">tune</span>
+</div>
+<div class="min-w-0">
+<p class="font-label-lg text-label-lg text-on-surface">Profile Settings</p>
+<p class="font-body-sm text-body-sm text-secondary truncate">Manage directory visibility &amp; preferences</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline text-[20px] shrink-0 ml-2">chevron_right</span>
+</button>
+<!-- Row Separator -->
+<div class="h-[1px] w-full bg-surface-container-low"></div>
+<!-- Row 3: Account Information -->
+<button class="w-full p-space-md flex items-center justify-between text-left hover:bg-surface-container-low transition-colors group" type="button">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-10 h-10 rounded-xl bg-secondary-container flex items-center justify-center text-primary shrink-0 transition-transform group-active:scale-95">
+<span class="material-symbols-outlined text-[22px]">lock_person</span>
+</div>
+<div class="min-w-0">
+<p class="font-label-lg text-label-lg text-on-surface">Account Information</p>
+<p class="font-body-sm text-body-sm text-secondary truncate">View student credentials &amp; login security</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline text-[20px] shrink-0 ml-2">chevron_right</span>
+</button>
+</div>
+</section>
+<!-- Section 2: Notifications -->
+<section class="mb-space-lg">
+<div class="px-1 mb-2 flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-semibold">Notifications</span>
+<span class="font-label-sm text-label-sm text-outline">Real-time alerts</span>
+</div>
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col">
+<!-- Toggle Row 1: App Notifications -->
+<div class="w-full p-space-md flex items-center justify-between">
+<div class="flex items-center gap-space-md min-w-0 pr-2">
+<div class="w-10 h-10 rounded-xl bg-secondary-container flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[22px]" style="font-variation-settings: 'FILL' 1;">notifications</span>
+</div>
+<div class="min-w-0">
+<p class="font-label-lg text-label-lg text-on-surface">App Notifications</p>
+<p class="font-body-sm text-body-sm text-secondary truncate">Mentorship alerts, peer messages &amp; updates</p>
+</div>
+</div>
+<!-- Interactive Switch Toggle (Enabled State) -->
+<button aria-checked="true" class="w-12 h-7 rounded-full bg-primary-container p-0.5 flex items-center justify-end transition-colors shrink-0 focus:outline-none" id="toggle-app-notif" role="switch" type="button">
+<span class="w-6 h-6 rounded-full bg-on-primary shadow-sm transform transition-transform"></span>
+</button>
+</div>
+<!-- Row Separator -->
+<div class="h-[1px] w-full bg-surface-container-low"></div>
+<!-- Toggle Row 2: Email Notifications -->
+<div class="w-full p-space-md flex items-center justify-between">
+<div class="flex items-center gap-space-md min-w-0 pr-2">
+<div class="w-10 h-10 rounded-xl bg-secondary-container flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[22px]">mail</span>
+</div>
+<div class="min-w-0">
+<p class="font-label-lg text-label-lg text-on-surface">Email Notifications</p>
+<p class="font-body-sm text-body-sm text-secondary truncate">Weekly digests and campus announcements</p>
+</div>
+</div>
+<!-- Interactive Switch Toggle (Disabled State) -->
+<button aria-checked="false" class="w-12 h-7 rounded-full bg-surface-container-high p-0.5 flex items-center justify-start transition-colors shrink-0 focus:outline-none" id="toggle-email-notif" role="switch" type="button">
+<span class="w-6 h-6 rounded-full bg-on-primary shadow-sm transform transition-transform"></span>
+</button>
+</div>
+</div>
+</section>
+<!-- Section 3: Campus Support & Legal -->
+<section class="mb-space-lg">
+<div class="px-1 mb-2 flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-semibold">Support</span>
+<span class="font-label-sm text-label-sm text-outline">Helpdesk &amp; Policies</span>
+</div>
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col">
+<!-- Row 1: Help & Support -->
+<button class="w-full p-space-md flex items-center justify-between text-left hover:bg-surface-container-low transition-colors group" type="button">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-10 h-10 rounded-xl bg-secondary-container flex items-center justify-center text-primary shrink-0 transition-transform group-active:scale-95">
+<span class="material-symbols-outlined text-[22px]">contact_support</span>
+</div>
+<div class="min-w-0">
+<p class="font-label-lg text-label-lg text-on-surface">Help &amp; Support</p>
+<p class="font-body-sm text-body-sm text-secondary truncate">Campus IT helpdesk, guides &amp; FAQs</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline text-[20px] shrink-0 ml-2">chevron_right</span>
+</button>
+<!-- Row Separator -->
+<div class="h-[1px] w-full bg-surface-container-low"></div>
+<!-- Row 2: About CampConnect -->
+<button class="w-full p-space-md flex items-center justify-between text-left hover:bg-surface-container-low transition-colors group" type="button">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-10 h-10 rounded-xl bg-secondary-container flex items-center justify-center text-primary shrink-0 transition-transform group-active:scale-95">
+<span class="material-symbols-outlined text-[22px]">info</span>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-1.5">
+<p class="font-label-lg text-label-lg text-on-surface">About CampConnect</p>
+<span class="px-1.5 py-0.2 rounded bg-surface-container-high text-on-surface-variant font-label-sm text-[10px]">v1.2.0</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary truncate">Riphah Sahiwal Campus Edition</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline text-[20px] shrink-0 ml-2">chevron_right</span>
+</button>
+<!-- Row Separator -->
+<div class="h-[1px] w-full bg-surface-container-low"></div>
+<!-- Row 3: Privacy Policy -->
+<button class="w-full p-space-md flex items-center justify-between text-left hover:bg-surface-container-low transition-colors group" type="button">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-10 h-10 rounded-xl bg-secondary-container flex items-center justify-center text-primary shrink-0 transition-transform group-active:scale-95">
+<span class="material-symbols-outlined text-[22px]">shield_lock</span>
+</div>
+<div class="min-w-0">
+<p class="font-label-lg text-label-lg text-on-surface">Privacy Policy</p>
+<p class="font-body-sm text-body-sm text-secondary truncate">View student data protection guidelines</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline text-[20px] shrink-0 ml-2">chevron_right</span>
+</button>
+<!-- Row Separator -->
+<div class="h-[1px] w-full bg-surface-container-low"></div>
+<!-- Row 4: Terms & Conditions -->
+<button class="w-full p-space-md flex items-center justify-between text-left hover:bg-surface-container-low transition-colors group" type="button">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-10 h-10 rounded-xl bg-secondary-container flex items-center justify-center text-primary shrink-0 transition-transform group-active:scale-95">
+<span class="material-symbols-outlined text-[22px]">gavel</span>
+</div>
+<div class="min-w-0">
+<p class="font-label-lg text-label-lg text-on-surface">Terms &amp; Conditions</p>
+<p class="font-body-sm text-body-sm text-secondary truncate">University digital conduct guidelines</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline text-[20px] shrink-0 ml-2">chevron_right</span>
+</button>
+</div>
+</section>
+<!-- Section 4: Log Out Danger Action -->
+<section class="mt-space-sm mb-space-lg">
+<button class="w-full bg-surface-container-lowest hover:bg-error-container/40 p-space-md rounded-xl shadow-sm flex items-center justify-between transition-colors text-left group" id="open-logout-btn" type="button">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-10 h-10 rounded-xl bg-error-container text-error flex items-center justify-center shrink-0 transition-transform group-active:scale-95">
+<span class="material-symbols-outlined text-[22px]">logout</span>
+</div>
+<div class="min-w-0">
+<p class="font-label-lg text-label-lg text-error">Log Out</p>
+<p class="font-body-sm text-body-sm text-secondary truncate">Sign out of your active session on this device</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-error text-[20px] shrink-0 ml-2">arrow_forward</span>
+</button>
+</section>
+<!-- Institutional Footer Note -->
+<footer class="mt-space-xs text-center flex flex-col items-center gap-1">
+<div class="flex items-center gap-1.5 text-outline">
+<span class="material-symbols-outlined text-[15px]">verified</span>
+<span class="font-label-sm text-label-sm">CampConnect Institutional Suite</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary max-w-[280px]">
+      Riphah International University • Sahiwal Campus
+    </p>
+<p class="font-label-sm text-[10px] text-outline mt-0.5">Encrypted End-to-End • TLS 1.3</p>
+</footer>
+<!-- Logout Confirmation Bottom Sheet / Dialog Modal -->
+<div class="fixed inset-0 z-50 bg-inverse-surface/50 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-200 flex items-end sm:items-center justify-center p-0 sm:p-margin" id="logout-modal">
+<div class="w-full sm:max-w-[390px] bg-surface-container-lowest rounded-t-2xl sm:rounded-2xl shadow-xl p-space-lg flex flex-col gap-space-md transform translate-y-full sm:translate-y-4 transition-transform duration-200" id="logout-modal-card">
+<div class="w-12 h-1 bg-surface-container-high rounded-full self-center sm:hidden -mt-1 mb-1"></div>
+<div class="w-12 h-12 rounded-full bg-error-container text-error flex items-center justify-center self-start">
+<span class="material-symbols-outlined text-[26px]">logout</span>
+</div>
+<div class="flex flex-col gap-1">
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Log out of CampConnect?</h4>
+<p class="font-body-md text-body-md text-secondary">
+          You will need to re-authenticate with your Riphah student portal credentials to access messages and course updates.
+        </p>
+</div>
+<div class="flex flex-col gap-space-xs mt-space-sm">
+<button class="h-[52px] w-full rounded-xl bg-error text-on-error font-label-lg text-label-lg flex items-center justify-center shadow-md active:opacity-90 transition-opacity" id="confirm-logout-btn" type="button">
+          Confirm Log Out
+        </button>
+<button class="h-[48px] w-full rounded-xl bg-surface-container-low text-on-surface font-label-lg text-label-lg flex items-center justify-center hover:bg-surface-container transition-colors" id="cancel-logout-btn" type="button">
+          Cancel
+        </button>
+</div>
+</div>
+</div>
+</div>
+<script>
+  (() => {
+    // Interactive Notification Switches
+    const setupSwitch = (btnId, initialState) => {
+      const btn = document.getElementById(btnId);
+      if (!btn) return;
+      let checked = initialState;
+
+      const render = () => {
+        btn.setAttribute('aria-checked', String(checked));
+        if (checked) {
+          btn.className = 'w-12 h-7 rounded-full bg-primary-container p-0.5 flex items-center justify-end transition-colors shrink-0 focus:outline-none';
+        } else {
+          btn.className = 'w-12 h-7 rounded-full bg-surface-container-high p-0.5 flex items-center justify-start transition-colors shrink-0 focus:outline-none';
+        }
+      };
+
+      btn.addEventListener('click', () => {
+        checked = !checked;
+        render();
+      });
+      render();
+    };
+
+    setupSwitch('toggle-app-notif', true);
+    setupSwitch('toggle-email-notif', false);
+
+    // Logout Modal Logic
+    const openBtn = document.getElementById('open-logout-btn');
+    const modal = document.getElementById('logout-modal');
+    const modalCard = document.getElementById('logout-modal-card');
+    const cancelBtn = document.getElementById('cancel-logout-btn');
+    const confirmBtn = document.getElementById('confirm-logout-btn');
+
+    const showModal = () => {
+      modal.classList.remove('opacity-0', 'pointer-events-none');
+      modal.classList.add('opacity-100');
+      modalCard.classList.remove('translate-y-full', 'sm:translate-y-4');
+      modalCard.classList.add('translate-y-0');
+    };
+
+    const hideModal = () => {
+      modal.classList.add('opacity-0', 'pointer-events-none');
+      modal.classList.remove('opacity-100');
+      modalCard.classList.add('translate-y-full');
+      modalCard.classList.remove('translate-y-0');
+    };
+
+    if (openBtn) openBtn.addEventListener('click', showModal);
+    if (cancelBtn) cancelBtn.addEventListener('click', hideModal);
+    if (modal) {
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) hideModal();
+      });
+    }
+
+    if (confirmBtn) {
+      confirmBtn.addEventListener('click', () => {
+        confirmBtn.innerHTML = '<span class="material-symbols-outlined animate-spin text-[20px]">sync</span>';
+        setTimeout(() => {
+          hideModal();
+          confirmBtn.textContent = 'Confirm Log Out';
+        }, 1000);
+      });
+    }
+  })();
+</script></main></body></html>

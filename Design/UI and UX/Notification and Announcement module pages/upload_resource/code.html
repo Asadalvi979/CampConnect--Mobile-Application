@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "surface-variant": "#d3e4fe", "surface-container-highest": "#d3e4fe", "inverse-on-surface": "#eaf1ff", "on-tertiary": "#ffffff", "primary-fixed-dim": "#b4c5ff", "tertiary-container": "#007d55", "secondary-fixed-dim": "#b9c8db", "inverse-primary": "#b4c5ff", "surface-bright": "#f8f9ff", "secondary-fixed": "#d5e4f8", "on-secondary-fixed": "#0e1d2b", "error": "#ba1a1a", "secondary": "#516070", "background": "#f8f9ff", "primary-container": "#2563eb", "on-primary-fixed-variant": "#003ea8", "error-container": "#ffdad6", "primary-fixed": "#dbe1ff", "surface-container": "#e5eeff", "surface-container-low": "#eff4ff", "on-tertiary-fixed-variant": "#005236", "on-secondary-container": "#576676", "on-primary": "#ffffff", "on-secondary-fixed-variant": "#3a4858", "surface-tint": "#0053db", "on-primary-fixed": "#00174b", "tertiary": "#006242", "on-surface-variant": "#434655", "outline": "#737686", "on-error-container": "#93000a", "surface": "#f8f9ff", "secondary-container": "#d5e4f8", "on-secondary": "#ffffff", "surface-container-high": "#dce9ff", "on-surface": "#0b1c30", "tertiary-fixed": "#6ffbbe", "surface-dim": "#cbdbf5", "on-tertiary-container": "#bdffdb", "tertiary-fixed-dim": "#4edea3", "inverse-surface": "#213145", "on-background": "#0b1c30", "on-error": "#ffffff", "outline-variant": "#c3c6d7", "surface-container-lowest": "#ffffff", "on-primary-container": "#eeefff", "on-tertiary-fixed": "#002113", "primary": "#004ac6" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-md": "1rem", "gutter": "1rem", "space-xs": "0.25rem", "margin": "1.25rem", "space-lg": "1.5rem", "space-sm": "0.5rem", "space-xl": "2rem" }, fontFamily: { "headline-lg": ["Plus Jakarta Sans"], "label-lg": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "label-sm": ["Plus Jakarta Sans"], "display-lg": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"] }, fontSize: { "headline-lg": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.015em", "fontWeight": "700" }], "label-lg": ["15px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "500" }], "display-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-md": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }], "label-md": ["13px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface antialiased flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] pt-safe"><div class="h-16 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><button aria-label="Go back" class="w-11 h-11 -ml-space-xs flex items-center justify-center rounded-full text-on-surface hover:bg-surface-container active:bg-surface-container-high transition-colors shrink-0" onclick="history.back()" type="button"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><h1 class="font-headline-sm text-on-surface truncate">Upload Resource</h1></div><div class="flex items-center gap-space-sm shrink-0"><button aria-label="More options" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">more_vert</span></button><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-2 ring-surface-container-high" src="https://lh3.googleusercontent.com/aida/AEtjO1V3PTPfNamlqI-WR1eNR0z2N1jo5FVDLI4ouq2VnUUFNCd1UNYhW1Lgc-sxaYs0-VpxdsOGgyLvZrX3SER0yyT12u_skXW_AGu5o1vFbeH2gqEXM-kBeXDVwicVEF40okVbREPNwOpTtyE-uxJePj11xfpWY7TkuARCmspv0cHg1MFO9BwccHwpMa_qMf0eyaAHZ8xHib_kSfcDqoPZKhchbbgzNsqbwUcSDiZNEDT9cikPu6j9Xo1a_nY"/></div></div></header><main class="flex flex-col relative w-full pt-16 pb-safe bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- Subtle Ambient Glow Element -->
+<div class="fixed top-12 left-1/2 -translate-x-1/2 w-72 h-44 bg-surface-variant/40 blur-3xl -z-10 pointer-events-none rounded-full"></div>
+<div class="w-full max-w-[440px] mx-auto px-margin py-space-sm space-y-space-md">
+<!-- Academic Sharing Honor Code Banner -->
+<section aria-labelledby="honor-code-title" class="bg-surface-container-low rounded-xl p-space-md shadow-sm relative overflow-hidden">
+<div class="absolute -right-3 -bottom-3 text-primary/10 select-none pointer-events-none">
+<span class="material-symbols-outlined text-[72px]" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+</div>
+<div class="flex items-start gap-space-sm relative z-10">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center shrink-0 mt-0.5 text-primary">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+</div>
+<div class="flex flex-col min-w-0 pr-2">
+<span class="font-label-md text-on-surface" id="honor-code-title">Academic Sharing Honor Code</span>
+<p class="font-body-sm text-on-surface-variant mt-0.5 leading-relaxed">
+            Ensure notes and documents adhere to Riphah academic integrity guidelines. Resources may be published automatically or reviewed.
+          </p>
+</div>
+</div>
+</section>
+<!-- Main Resource Creation Form -->
+<form class="space-y-space-md" id="resource-form" onsubmit="event.preventDefault(); triggerPublishAnimation();">
+<!-- Resource Title Input -->
+<div class="space-y-space-xs">
+<div class="flex justify-between items-baseline px-0.5">
+<label class="font-label-md text-on-surface" for="resource-title">
+            Resource Title <span class="text-error">*</span>
+</label>
+<span class="font-label-sm text-on-surface-variant" id="title-counter">56 / 100</span>
+</div>
+<div class="relative bg-surface-container-lowest rounded-xl shadow-sm focus-within:shadow-md transition-all">
+<div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-secondary">
+<span class="material-symbols-outlined text-[20px]">title</span>
+</div>
+<input class="w-full h-[52px] pl-10 pr-3.5 bg-transparent font-body-md text-on-surface placeholder:text-outline focus:outline-none rounded-xl" id="resource-title" maxlength="100" oninput="document.getElementById('title-counter').innerText = `${this.value.length} / 100`" placeholder="e.g., Computer Networks Midterm Solved Past Papers" type="text" value="Artificial Intelligence &amp; Expert Systems - Lecture Slides &amp; Notes"/>
+</div>
+</div>
+<!-- Description Input -->
+<div class="space-y-space-xs">
+<div class="flex justify-between items-baseline px-0.5">
+<label class="font-label-md text-on-surface" for="resource-description">
+            Description <span class="text-error">*</span>
+</label>
+<span class="font-label-sm text-on-surface-variant" id="desc-counter">152 / 500</span>
+</div>
+<div class="relative bg-surface-container-lowest rounded-xl shadow-sm focus-within:shadow-md transition-all p-3">
+<textarea class="w-full bg-transparent font-body-md text-on-surface placeholder:text-outline focus:outline-none resize-none" id="resource-description" maxlength="500" oninput="document.getElementById('desc-counter').innerText = `${this.value.length} / 500`" placeholder="Describe this resource and what students can learn from it..." rows="3">Complete lecture notes covering State Space Search, A* Algorithm, Alpha-Beta Pruning, and Prolog lab examples for 6th semester CS.</textarea>
+</div>
+</div>
+<!-- Metadata Group (Category & Subject) -->
+<div class="space-y-space-md">
+<!-- Resource Category -->
+<div class="space-y-space-xs">
+<label class="font-label-md text-on-surface px-0.5" for="resource-category">
+            Category <span class="text-error">*</span>
+</label>
+<div class="relative bg-surface-container-lowest rounded-xl shadow-sm focus-within:shadow-md transition-all">
+<div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-secondary">
+<span class="material-symbols-outlined text-[20px]">category</span>
+</div>
+<select class="w-full h-[52px] pl-10 pr-10 bg-transparent font-body-md text-on-surface focus:outline-none appearance-none rounded-xl cursor-pointer" id="resource-category">
+<option selected="" value="Notes">Notes</option>
+<option value="Assignments">Assignments</option>
+<option value="Past Papers">Past Papers</option>
+<option value="Books">Books</option>
+<option value="Presentations">Presentations</option>
+<option value="Tutorials">Tutorials</option>
+<option value="Other">Other</option>
+</select>
+<div class="absolute inset-y-0 right-0 pr-3.5 flex items-center pointer-events-none text-secondary">
+<span class="material-symbols-outlined text-[20px]">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Subject Input -->
+<div class="space-y-space-xs">
+<label class="font-label-md text-on-surface px-0.5" for="resource-subject">
+            Subject Name / Course Code <span class="text-error">*</span>
+</label>
+<div class="relative bg-surface-container-lowest rounded-xl shadow-sm focus-within:shadow-md transition-all">
+<div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-secondary">
+<span class="material-symbols-outlined text-[20px]">menu_book</span>
+</div>
+<input class="w-full h-[52px] pl-10 pr-3.5 bg-transparent font-body-md text-on-surface placeholder:text-outline focus:outline-none rounded-xl" id="resource-subject" placeholder="e.g., Data Structures (CS-201)" type="text" value="Artificial Intelligence (CS-312)"/>
+</div>
+</div>
+<!-- Department and Semester Side-by-Side -->
+<div class="grid grid-cols-2 gap-space-sm">
+<!-- Department Dropdown -->
+<div class="space-y-space-xs">
+<label class="font-label-md text-on-surface px-0.5 truncate block" for="resource-department">
+              Department
+            </label>
+<div class="relative bg-surface-container-lowest rounded-xl shadow-sm focus-within:shadow-md transition-all">
+<select class="w-full h-[52px] pl-3.5 pr-8 bg-transparent font-body-md text-on-surface focus:outline-none appearance-none rounded-xl cursor-pointer text-ellipsis overflow-hidden" id="resource-department">
+<option selected="" value="CS_IT">Computer Science &amp; IT</option>
+<option value="SE">Software Engineering</option>
+<option value="EE">Electrical Engineering</option>
+<option value="BBA">Business Administration</option>
+<option value="PHARM">Pharmacy</option>
+</select>
+<div class="absolute inset-y-0 right-0 pr-2.5 flex items-center pointer-events-none text-secondary">
+<span class="material-symbols-outlined text-[18px]">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Semester Dropdown -->
+<div class="space-y-space-xs">
+<label class="font-label-md text-on-surface px-0.5 block truncate" for="resource-semester">
+              Target Semester
+            </label>
+<div class="relative bg-surface-container-lowest rounded-xl shadow-sm focus-within:shadow-md transition-all">
+<select class="w-full h-[52px] pl-3.5 pr-8 bg-transparent font-body-md text-on-surface focus:outline-none appearance-none rounded-xl cursor-pointer text-ellipsis overflow-hidden" id="resource-semester">
+<option value="1">1st Semester</option>
+<option value="2">2nd Semester</option>
+<option value="3">3rd Semester</option>
+<option value="4">4th Semester</option>
+<option value="5">5th Semester</option>
+<option selected="" value="6">6th Semester</option>
+<option value="7">7th Semester</option>
+<option value="8">8th Semester</option>
+</select>
+<div class="absolute inset-y-0 right-0 pr-2.5 flex items-center pointer-events-none text-secondary">
+<span class="material-symbols-outlined text-[18px]">expand_more</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- File Attachment Zone -->
+<div class="space-y-space-xs pt-1">
+<label class="font-label-md text-on-surface px-0.5">
+          Attached Document <span class="text-error">*</span>
+</label>
+<!-- Selected File Preview Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm transition-all relative overflow-hidden" id="file-preview-card">
+<div class="flex items-center gap-space-sm">
+<!-- PDF Document Icon Badge -->
+<div class="w-12 h-12 rounded-xl bg-error-container/40 flex items-center justify-center shrink-0 text-error">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">picture_as_pdf</span>
+</div>
+<!-- Metadata info -->
+<div class="flex flex-col min-w-0 flex-1">
+<span class="font-label-md text-on-surface truncate" title="AI_Lecture_Notes_Modules_1_to_5.pdf">
+                AI_Lecture_Notes_Modules_1_to_5.pdf
+              </span>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="font-body-sm text-on-surface-variant">PDF • 5.4 MB</span>
+<span class="w-1 h-1 rounded-full bg-tertiary"></span>
+<span class="font-label-sm text-tertiary flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> Ready
+                </span>
+</div>
+</div>
+<!-- Delete Action -->
+<button aria-label="Remove uploaded file" class="w-10 h-10 flex items-center justify-center rounded-full text-error hover:bg-error-container/30 active:scale-95 transition-transform shrink-0" onclick="removeUploadedFile()" type="button">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+<!-- Secondary Inline File Actions -->
+<div class="mt-space-sm pt-space-xs flex items-center justify-between border-t border-surface-container/60">
+<button class="font-label-sm text-primary hover:text-on-primary-fixed-variant flex items-center gap-1 py-1" onclick="document.getElementById('hidden-file-input').click()" type="button">
+<span class="material-symbols-outlined text-[16px]">sync</span>
+              Replace File
+            </button>
+<span class="font-label-sm text-on-surface-variant">25 MB max</span>
+</div>
+</div>
+<!-- Hidden Fallback Input -->
+<input accept=".pdf,.docx,.pptx,.zip" class="hidden" id="hidden-file-input" type="file"/>
+<!-- Supporting Note -->
+<p class="font-body-sm text-on-surface-variant px-0.5 pt-1">
+          Supported file formats: PDF, DOCX, PPTX, ZIP (Up to 25 MB max size)
+        </p>
+</div>
+<!-- Moderation / Automated Integrity Note -->
+<div class="bg-surface-container rounded-xl p-space-sm flex items-start gap-space-sm shadow-none">
+<span class="material-symbols-outlined text-[20px] text-primary shrink-0 mt-0.5">info</span>
+<p class="font-body-sm text-on-surface-variant leading-snug">
+          Your resource will undergo automated validation and risk checks. It may be published automatically or placed under review if additional checks are required.
+        </p>
+</div>
+<!-- Action Buttons -->
+<div class="space-y-space-sm pt-space-sm pb-space-lg">
+<!-- Primary Action -->
+<button class="w-full h-[52px] bg-primary-container text-on-primary rounded-[14px] font-label-lg flex items-center justify-center gap-space-sm shadow-md hover:opacity-95 active:scale-[0.99] transition-all" id="btn-publish" type="submit">
+<span class="material-symbols-outlined text-[20px]">send</span>
+<span id="btn-label">Publish Resource</span>
+</button>
+<!-- Secondary Action -->
+<button class="w-full h-11 bg-transparent text-secondary hover:text-on-surface font-label-md flex items-center justify-center transition-colors" onclick="history.back()" type="button">
+          Cancel / Save Draft
+        </button>
+</div>
+</form>
+</div>
+</div>
+<script>
+  function removeUploadedFile() {
+    const card = document.getElementById('file-preview-card');
+    if (card) {
+      card.innerHTML = `
+        <div class="py-space-md flex flex-col items-center justify-center text-center cursor-pointer" onclick="document.getElementById('hidden-file-input').click()">
+          <div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center text-primary mb-2">
+            <span class="material-symbols-outlined text-[26px]">cloud_upload</span>
+          </div>
+          <span class="font-label-md text-on-surface">Tap to select a document</span>
+          <span class="font-body-sm text-on-surface-variant mt-0.5">PDF, DOCX, PPTX or ZIP up to 25 MB</span>
+        </div>
+      `;
+    }
+  }
+
+  function triggerPublishAnimation() {
+    const btn = document.getElementById('btn-publish');
+    const label = document.getElementById('btn-label');
+    if (!btn || !label) return;
+
+    btn.disabled = true;
+    label.innerText = 'Validating & Publishing...';
+    btn.classList.add('opacity-80');
+
+    setTimeout(() => {
+      label.innerText = 'Resource Published!';
+      btn.classList.replace('bg-primary-container', 'bg-tertiary-container');
+      btn.classList.replace('text-on-primary', 'text-on-tertiary');
+      setTimeout(() => {
+        history.back();
+      }, 700);
+    }, 900);
+  }
+</script></main></body></html>

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { width: 100vw; margin: 0; padding: 0; } body { overscroll-behavior: none; } .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); } .pt-safe { padding-top: env(safe-area-inset-top, 0px); } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "secondary-container": "#d5e4f8", "error": "#ba1a1a", "surface-container-low": "#eff4ff", "on-secondary-fixed": "#0e1d2b", "surface-bright": "#f8f9ff", "outline": "#737686", "primary": "#004ac6", "on-tertiary-fixed": "#002113", "surface": "#f8f9ff", "on-primary-fixed": "#00174b", "on-primary-fixed-variant": "#003ea8", "inverse-on-surface": "#eaf1ff", "tertiary-container": "#007d55", "on-tertiary": "#ffffff", "primary-fixed": "#dbe1ff", "on-secondary-container": "#576676", "outline-variant": "#c3c6d7", "on-tertiary-fixed-variant": "#005236", "tertiary-fixed-dim": "#4edea3", "surface-container-high": "#dce9ff", "on-primary-container": "#eeefff", "on-surface-variant": "#434655", "on-secondary-fixed-variant": "#3a4858", "surface-container": "#e5eeff", "on-error-container": "#93000a", "inverse-surface": "#213145", "on-secondary": "#ffffff", "primary-fixed-dim": "#b4c5ff", "primary-container": "#2563eb", "background": "#f8f9ff", "on-error": "#ffffff", "error-container": "#ffdad6", "surface-variant": "#d3e4fe", "on-primary": "#ffffff", "surface-container-highest": "#d3e4fe", "on-surface": "#0b1c30", "on-background": "#0b1c30", "on-tertiary-container": "#bdffdb", "inverse-primary": "#b4c5ff", "surface-dim": "#cbdbf5", "surface-tint": "#0053db", "secondary-fixed": "#d5e4f8", "tertiary-fixed": "#6ffbbe", "surface-container-lowest": "#ffffff", "secondary": "#516070", "secondary-fixed-dim": "#b9c8db", "tertiary": "#006242" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "gutter": "1rem", "margin": "1.25rem", "space-lg": "1.5rem", "space-md": "1rem", "space-sm": "0.5rem", "space-xl": "2rem", "space-xs": "0.25rem" }, fontFamily: { "body-lg": ["Plus Jakarta Sans"], "display-lg": ["Plus Jakarta Sans"], "label-lg": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "label-sm": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"] }, fontSize: { "body-lg": ["16px", { lineHeight: "24px", fontWeight: "400" }], "display-lg": ["32px", { lineHeight: "40px", letterSpacing: "-0.02em", fontWeight: "700" }], "label-lg": ["15px", { lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "600" }], "headline-lg": ["26px", { lineHeight: "34px", letterSpacing: "-0.015em", fontWeight: "700" }], "headline-sm": ["18px", { lineHeight: "24px", fontWeight: "600" }], "label-sm": ["11px", { lineHeight: "14px", letterSpacing: "0.02em", fontWeight: "500" }], "label-md": ["13px", { lineHeight: "18px", letterSpacing: "0.01em", fontWeight: "600" }], "body-sm": ["12px", { lineHeight: "16px", fontWeight: "400" }], "headline-md": ["22px", { lineHeight: "28px", letterSpacing: "-0.01em", fontWeight: "600" }], "body-md": ["14px", { lineHeight: "20px", fontWeight: "400" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-space-sm flex items-center justify-between"><div class="flex items-center gap-space-xs"><button aria-label="Go back" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface hover:bg-surface-container transition-colors" onclick="history.back()"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><h1 class="font-headline-sm text-headline-sm text-on-surface line-clamp-1">Edit Post</h1></div><div class="flex items-center gap-space-xs"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-safe bg-surface"><div class="flex flex-col w-full">
+<div class="w-full max-w-xl mx-auto px-margin py-space-md flex flex-col gap-space-lg">
+<!-- Top Action Notice / Save Bar for Quick Edits -->
+<div class="w-full flex items-center justify-between bg-surface-container-lowest p-space-sm rounded-xl shadow-sm">
+<div class="flex items-center gap-space-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px] text-tertiary">history_toggle_off</span>
+<span class="font-body-sm text-body-sm">Unsaved edits</span>
+</div>
+<button class="px-space-md py-space-xs bg-primary-container text-on-primary font-label-md text-label-md rounded-full shadow-md active:scale-95 transition-transform flex items-center gap-space-xs" id="quick-save-btn">
+<span class="material-symbols-outlined text-[16px]">check</span>
+        Save Changes
+      </button>
+</div>
+<!-- Post Meta Card (Institutional Authority & Context) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="inline-flex items-center gap-space-xs px-space-sm py-1 bg-surface-container rounded-full text-on-secondary-container">
+<span class="material-symbols-outlined text-[16px] text-primary">groups</span>
+<span class="font-label-sm text-label-sm">Software Engineering Community</span>
+<span class="material-symbols-outlined text-[14px] text-outline" title="Community locked for editing">lock</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline">v1.2</span>
+</div>
+<div class="flex items-center gap-space-sm pt-space-xs">
+<div class="relative w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed overflow-hidden">
+<span class="font-headline-sm text-headline-sm">AS</span>
+<div class="absolute bottom-0 right-0 w-3 h-3 bg-tertiary rounded-full border-2 border-surface-container-lowest"></div>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-lg text-label-lg text-on-surface truncate">Asadullah Sadiq (You)</span>
+<span class="px-1.5 py-0.5 bg-surface-container-high rounded text-[10px] font-label-sm text-on-surface-variant">Student</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+            Original post published today at 10:24 AM
+          </p>
+</div>
+</div>
+</div>
+<!-- Editable Content Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm">
+<div class="flex justify-between items-center">
+<label class="font-label-md text-label-md text-on-surface" for="post-textarea">Post Content</label>
+<span class="font-label-sm text-label-sm text-on-surface-variant" id="char-counter">238 / 2000</span>
+</div>
+<div class="relative w-full rounded-lg bg-surface-container-low p-space-sm">
+<textarea class="w-full bg-transparent resize-none font-body-md text-body-md text-on-surface focus:outline-none placeholder-outline" id="post-textarea" maxlength="2000" placeholder="What updates would you like to share?" rows="6">Excited to share our team's upcoming open-source campus initiative: Smart Campus Parking IoT &amp; Mobile App! We are actively looking for contributors with experience in Flutter and Python MQTT. Check out the project architecture diagram below 👇</textarea>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant pt-space-xs">
+<div class="flex items-center gap-space-sm">
+<button class="p-1 rounded hover:bg-surface-container transition-colors" title="Bold text" type="button">
+<span class="material-symbols-outlined text-[20px]">format_bold</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container transition-colors" title="Italic text" type="button">
+<span class="material-symbols-outlined text-[20px]">format_italic</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container transition-colors" title="Add link" type="button">
+<span class="material-symbols-outlined text-[20px]">link</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container transition-colors" title="Code snippet" type="button">
+<span class="material-symbols-outlined text-[20px]">code</span>
+</button>
+</div>
+<span class="font-label-sm text-label-sm text-tertiary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">auto_awesome</span> Markdown enabled
+        </span>
+</div>
+</div>
+<!-- Existing Attachment Preview Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-md" id="attachment-card">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface">Attached Visual Media</span>
+<span class="px-2 py-0.5 bg-surface-container rounded-full font-label-sm text-label-sm text-on-surface-variant">PNG • 1.2 MB</span>
+</div>
+<div class="relative w-full rounded-xl overflow-hidden bg-surface-container group">
+<img class="w-full h-44 object-cover" data-alt="Technical architectural diagram for a Smart Campus Parking system illustrating IoT sensor nodes, Python MQTT broker connections, cloud server infrastructure, and a Flutter mobile user client in clean modern blue and slate minimalist schematic style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7rmkaW2ImuPKEbhy1DzCh4CMmD1_XtldTgXarX3MebYevayvHJIyLbGDqYRsEH_oyMqmkb0Cuvp6GFdtsA3sTqQW71Zp9GRl45cmbsyPv7pOyM_IuKqI9xyrWKBHb3uf3t03Osy1IwK6RDzJy7_l5k91pjfPad8bfSKYM_kZfMJqPSzb9VB2lCo3h20LbY3uXAtV-TRESnnI_XXQbJl0gnyLk8wuVIliVIBdVIYw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/80 via-transparent to-transparent flex items-end p-space-sm">
+<div class="flex items-center gap-space-xs text-on-secondary">
+<span class="material-symbols-outlined text-[20px]">image</span>
+<span class="font-label-md text-label-md truncate">campus_iot_architecture.png</span>
+</div>
+</div>
+</div>
+<!-- Attachment Actions -->
+<div class="grid grid-cols-2 gap-space-sm pt-space-xs">
+<button class="h-11 rounded-lg bg-surface-container-high text-primary font-label-md text-label-md flex items-center justify-center gap-space-xs active:bg-surface-container-highest transition-colors" id="replace-file-btn" type="button">
+<span class="material-symbols-outlined text-[18px]">cached</span>
+          Replace Image
+        </button>
+<button class="h-11 rounded-lg bg-error-container text-on-error-container font-label-md text-label-md flex items-center justify-center gap-space-xs active:opacity-80 transition-opacity" id="remove-file-btn" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+          Remove Media
+        </button>
+</div>
+</div>
+<!-- Additional Actions & Topic Tags Toolbar -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface">+ Add more tags or files</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Max 5 topics</span>
+</div>
+<!-- Quick Action Buttons -->
+<div class="flex items-center gap-space-sm">
+<button class="flex-1 py-2 px-space-sm bg-surface-container-low hover:bg-surface-container rounded-lg flex items-center justify-center gap-space-xs text-on-surface-variant transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px] text-primary">add_photo_alternate</span>
+<span class="font-label-sm text-label-sm">Photo</span>
+</button>
+<button class="flex-1 py-2 px-space-sm bg-surface-container-low hover:bg-surface-container rounded-lg flex items-center justify-center gap-space-xs text-on-surface-variant transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px] text-primary">description</span>
+<span class="font-label-sm text-label-sm">Document</span>
+</button>
+<button class="flex-1 py-2 px-space-sm bg-surface-container-low hover:bg-surface-container rounded-lg flex items-center justify-center gap-space-xs text-on-surface-variant transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px] text-primary">poll</span>
+<span class="font-label-sm text-label-sm">Poll</span>
+</button>
+</div>
+<!-- Topic Hashtag Chips -->
+<div class="flex flex-wrap items-center gap-space-xs pt-space-xs" id="tags-container">
+<div class="inline-flex items-center gap-1 bg-surface-container px-space-sm py-1 rounded-full text-primary font-label-sm text-label-sm">
+<span>#Flutter</span>
+<button aria-label="Remove tag" class="w-4 h-4 flex items-center justify-center rounded-full text-on-surface-variant hover:text-error" type="button">
+<span class="material-symbols-outlined text-[14px]">close</span>
+</button>
+</div>
+<div class="inline-flex items-center gap-1 bg-surface-container px-space-sm py-1 rounded-full text-primary font-label-sm text-label-sm">
+<span>#IoT</span>
+<button aria-label="Remove tag" class="w-4 h-4 flex items-center justify-center rounded-full text-on-surface-variant hover:text-error" type="button">
+<span class="material-symbols-outlined text-[14px]">close</span>
+</button>
+</div>
+<div class="inline-flex items-center gap-1 bg-surface-container px-space-sm py-1 rounded-full text-primary font-label-sm text-label-sm">
+<span>#PythonMQTT</span>
+<button aria-label="Remove tag" class="w-4 h-4 flex items-center justify-center rounded-full text-on-surface-variant hover:text-error" type="button">
+<span class="material-symbols-outlined text-[14px]">close</span>
+</button>
+</div>
+<button class="inline-flex items-center gap-1 bg-surface-container-low px-space-sm py-1 rounded-full text-outline font-label-sm text-label-sm hover:bg-surface-container" type="button">
+<span class="material-symbols-outlined text-[14px]">add</span>
+<span>Add Tag</span>
+</button>
+</div>
+</div>
+<!-- Academic Community Policy Box -->
+<div class="bg-surface-container-low rounded-xl p-space-md flex gap-space-sm items-start">
+<span class="material-symbols-outlined text-primary text-[20px] mt-0.5">verified_user</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Community Integrity Notice</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Posts cannot be saved empty. Changes will reflect immediately across community feeds and notification digests.
+        </p>
+</div>
+</div>
+<!-- Bottom Action CTAs -->
+<div class="flex flex-col gap-space-sm pb-space-lg">
+<button class="w-full h-[52px] bg-primary-container text-on-primary rounded-xl font-label-lg text-label-lg shadow-md flex items-center justify-center gap-space-xs active:bg-primary transition-colors" id="main-save-btn" type="button">
+<span class="material-symbols-outlined text-[20px]">check_circle</span>
+        Save Changes
+      </button>
+<button class="w-full h-[48px] bg-surface-container text-on-surface rounded-xl font-label-lg text-label-lg flex items-center justify-center hover:bg-surface-container-high transition-colors" onclick="history.back()" type="button">
+        Cancel
+      </button>
+</div>
+</div>
+<!-- Micro-interaction JS for Character Counter & Attachment removal -->
+<script>
+    const textarea = document.getElementById('post-textarea');
+    const charCounter = document.getElementById('char-counter');
+    const removeBtn = document.getElementById('remove-file-btn');
+    const attachmentCard = document.getElementById('attachment-card');
+    const mainSaveBtn = document.getElementById('main-save-btn');
+    const quickSaveBtn = document.getElementById('quick-save-btn');
+
+    if (textarea && charCounter) {
+      textarea.addEventListener('input', () => {
+        const count = textarea.value.length;
+        charCounter.textContent = `${count} / 2000`;
+        if (count === 0) {
+          mainSaveBtn.disabled = true;
+          quickSaveBtn.disabled = true;
+          mainSaveBtn.classList.add('opacity-50');
+          quickSaveBtn.classList.add('opacity-50');
+        } else {
+          mainSaveBtn.disabled = false;
+          quickSaveBtn.disabled = false;
+          mainSaveBtn.classList.remove('opacity-50');
+          quickSaveBtn.classList.remove('opacity-50');
+        }
+      });
+    }
+
+    if (removeBtn && attachmentCard) {
+      removeBtn.addEventListener('click', () => {
+        attachmentCard.style.transition = 'all 0.25s ease-out';
+        attachmentCard.style.opacity = '0';
+        attachmentCard.style.transform = 'scale(0.96)';
+        setTimeout(() => {
+          attachmentCard.remove();
+        }, 250);
+      });
+    }
+
+    const tagsContainer = document.getElementById('tags-container');
+    if (tagsContainer) {
+      tagsContainer.addEventListener('click', (e) => {
+        const removeTagBtn = e.target.closest('button[aria-label="Remove tag"]');
+        if (removeTagBtn) {
+          const chip = removeTagBtn.parentElement;
+          chip.remove();
+        }
+      });
+    }
+
+    const triggerSave = () => {
+      const originalText = mainSaveBtn.innerHTML;
+      mainSaveBtn.innerHTML = '<span class="material-symbols-outlined animate-spin text-[20px]">progress_activity</span> Saving...';
+      setTimeout(() => {
+        mainSaveBtn.innerHTML = '<span class="material-symbols-outlined text-[20px]">done_all</span> Changes Saved!';
+        mainSaveBtn.classList.remove('bg-primary-container');
+        mainSaveBtn.classList.add('bg-tertiary-container');
+        setTimeout(() => {
+          history.back();
+        }, 600);
+      }, 700);
+    };
+
+    if (mainSaveBtn) mainSaveBtn.addEventListener('click', triggerSave);
+    if (quickSaveBtn) quickSaveBtn.addEventListener('click', triggerSave);
+  </script>
+</div></main></body></html>

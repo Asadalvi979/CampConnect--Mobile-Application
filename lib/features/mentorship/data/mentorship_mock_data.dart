@@ -1,0 +1,112 @@
+import '../../profile/models/user_profile.dart';
+import '../models/mentorship_member.dart';
+import '../models/mentorship_request.dart';
+
+abstract final class MentorshipMockData {
+  static const members = <String, MentorshipMember>{
+    'current-student': MentorshipMember(
+      id: 'current-student',
+      name: 'Asadullah Sadiq',
+      role: UserProfileRole.student,
+      program: 'BS Software Engineering',
+      semester: '5th Semester',
+      university: 'Riphah International University',
+      location: 'Sahiwal, Pakistan',
+      cgpa: '3.72',
+    ),
+    'current-senior': MentorshipMember(
+      id: 'current-senior',
+      name: 'Zainab Farooq',
+      role: UserProfileRole.senior,
+      program: 'BS Software Engineering',
+      semester: '8th Semester',
+      university: 'Riphah International University',
+      location: 'Sahiwal, Pakistan',
+      cgpa: '3.82',
+    ),
+    'student-usman': MentorshipMember(
+      id: 'student-usman',
+      name: 'Usman Ali',
+      role: UserProfileRole.student,
+      program: 'BS Software Engineering',
+      semester: '5th Semester',
+      university: 'Riphah International University',
+      location: 'Sahiwal, Pakistan',
+      cgpa: '3.65',
+    ),
+    'student-daniyal': MentorshipMember(
+      id: 'student-daniyal',
+      name: 'Daniyal Rauf',
+      role: UserProfileRole.student,
+      program: 'BS Computer Science',
+      semester: '6th Semester',
+      university: 'Riphah International University',
+      location: 'Sahiwal, Pakistan',
+      cgpa: '3.54',
+    ),
+    'senior-zainab': MentorshipMember(
+      id: 'senior-zainab',
+      name: 'Zainab Farooq',
+      role: UserProfileRole.senior,
+      program: 'BS Software Engineering',
+      semester: '8th Semester',
+      university: 'Riphah International University',
+      location: 'Sahiwal, Pakistan',
+      cgpa: '3.82',
+    ),
+  };
+
+  static final initialRequests = <MentorshipRequest>[
+    MentorshipRequest(
+      id: 'request-student-pending',
+      requesterId: 'current-student',
+      alumniId: 'mentor-bilal',
+      focusArea: 'Software Engineering',
+      cadence: 'Bi-weekly',
+      message: 'I am working toward a software engineering internship and would value advice on building a strong project portfolio.',
+      status: MentorshipRequestStatus.pending,
+      createdAt: DateTime(2025, 2, 12),
+    ),
+    MentorshipRequest(
+      id: 'request-student-accepted',
+      requesterId: 'current-student',
+      alumniId: 'mentor-ayesha',
+      focusArea: 'Artificial Intelligence',
+      cadence: 'Monthly',
+      message: 'I would appreciate guidance on choosing an applied machine learning project for my final year.',
+      status: MentorshipRequestStatus.accepted,
+      createdAt: DateTime(2025, 1, 20),
+      respondedAt: DateTime(2025, 1, 22),
+    ),
+    MentorshipRequest(
+      id: 'request-senior-pending',
+      requesterId: 'current-senior',
+      alumniId: 'mentor-hamza',
+      focusArea: 'Cloud Computing',
+      cadence: 'Monthly',
+      message: 'I am preparing for cloud engineering roles and would value advice on a practical learning path.',
+      status: MentorshipRequestStatus.pending,
+      createdAt: DateTime(2025, 2, 10),
+    ),
+    MentorshipRequest(
+      id: 'request-incoming-usman',
+      requesterId: 'student-usman',
+      alumniId: 'mentor-bilal',
+      focusArea: 'Mobile Development',
+      cadence: 'Bi-weekly',
+      message: 'I would love your advice on preparing for my first Flutter developer internship.',
+      status: MentorshipRequestStatus.pending,
+      createdAt: DateTime(2025, 2, 14),
+    ),
+    MentorshipRequest(
+      id: 'request-incoming-daniyal',
+      requesterId: 'student-daniyal',
+      alumniId: 'mentor-bilal',
+      focusArea: 'Career Guidance',
+      cadence: 'Monthly',
+      message: 'Could you share advice on interview preparation and selecting a software engineering specialization?',
+      status: MentorshipRequestStatus.pending,
+      createdAt: DateTime(2025, 2, 13),
+    ),
+  ];
+}
