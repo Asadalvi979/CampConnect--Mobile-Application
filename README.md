@@ -156,11 +156,11 @@ The repository includes the project's requirements and design materials:
 
 | Document | Location |
 | --- | --- |
-| Software Requirements Specification (SRS) | [SRS document](Documentaion/SRS/CampConnect_SRS_v1.0.docx) |
+| Software Requirements Specification (SRS) | [SRS document](Documentation/SRS/CampConnect_SRS_v1.0.docx) |
 | System Architecture | [Architecture diagram](Design/CampConnect_System_Architecture.drawio) |
-| Entity Relationship Diagram (ERD) | [ERD folder](Documentaion/ERD/) |
-| Use Case Diagrams | [Use Case folder](Documentaion/UseCase%20Diagram/) |
-| Sequence Diagrams | [Sequence diagram folder](Design/SequanceDiagram/) |
+| Entity Relationship Diagram (ERD) | [ERD folder](Documentation/ERD/) |
+| Use Case Diagrams | [Use Case folder](Documentation/UseCases/) |
+| Sequence Diagrams | [Sequence diagram folder](Design/SequenceDiagrams/) |
 | UI/UX Designs and Assets | [UI/UX folder](Design/UI%20and%20UX/) |
 
 ## Repository Structure
@@ -170,7 +170,7 @@ CampConnect--Mobile-Application/
 ├── .github/
 │   └── workflows/          # GitHub Actions workflow
 ├── Design/                 # UI/UX assets and design diagrams
-├── Documentaion/           # SRS, ERD, and use case documents
+├── Documentation/           # SRS, ERD, and use case documents
 ├── android/                # Android platform project
 ├── ios/                    # iOS platform project
 ├── lib/
