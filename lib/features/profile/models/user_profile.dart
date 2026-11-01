@@ -84,18 +84,18 @@ class UserProfileStore {
 
   final ValueNotifier<UserProfile> profile = ValueNotifier(
     const UserProfile(
-      name: 'Asadullah Sadiq',
+      name: 'Muhammad Hamza',
       role: UserProfileRole.student,
       program: 'BS Software Engineering (BSSE)',
       semester: '5th Semester',
       location: 'Sahiwal, Pakistan',
-      bio: 'Software Engineering student passionate about building innovative software solutions, exploring AI technologies, and collaborating on meaningful campus projects.',
-      email: 'asadullah.sadiq@riphah.edu.pk',
-      studentId: 'RP-2022-BSSE-042',
+      bio: 'Software Engineering student interested in mobile development, artificial intelligence, and collaborating on meaningful campus projects.',
+      email: 'muhammad.hamza@example.com',
+      studentId: 'DEMO-BSSE-001',
       university: 'Riphah International University',
       department: 'Faculty of Computing & Information Technology',
-      academicSession: '2022 – 2026',
-      cgpa: '3.72',
+      academicSession: '2024 – 2028',
+      cgpa: '3.50',
       skills: [
         'Python',
         'C++',
