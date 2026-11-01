@@ -216,7 +216,7 @@ class _ProfileSettingsScreenState extends State<ProfileSettingsScreen> {
               ),
               SizedBox(height: 5),
               Text(
-                'Encrypted End-to-End • TLS 1.3',
+                'Security features planned for backend integration',
                 style: TextStyle(fontSize: 9, color: AppColors.secondaryText),
               ),
             ],
