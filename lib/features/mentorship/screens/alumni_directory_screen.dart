@@ -55,16 +55,7 @@ class _AlumniDirectoryScreenState extends State<AlumniDirectoryScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text(
-                'Find your mentor',
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700),
-              ),
               const SizedBox(height: 4),
-              const Text(
-                'Learn from alumni who have been where you are.',
-                style: TextStyle(color: AppColors.secondaryText),
-              ),
-              const SizedBox(height: 14),
               TextField(
                 controller: _searchController,
                 onChanged: (_) => setState(() {}),

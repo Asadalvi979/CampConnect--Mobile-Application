@@ -44,7 +44,7 @@ class _CommunityListScreenState extends State<CommunityListScreen> {
   Widget build(BuildContext context) {
     final store = CommunityStore.instance;
     return CommunityScaffold(
-      title: 'Community List',
+      title: 'Communities',
       bottomNavigation: true,
       showBackButton: false,
       body: AnimatedBuilder(
@@ -70,42 +70,18 @@ class _CommunityListScreenState extends State<CommunityListScreen> {
           return ListView(
             padding: const EdgeInsets.fromLTRB(18, 18, 18, 90),
             children: [
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Communities',
-                          style: TextStyle(
-                            fontSize: 24,
-                            fontWeight: FontWeight.w700,
-                          ),
-                        ),
-                        SizedBox(height: 4),
-                        Text(
-                          'Connect, learn and share with your university community.',
-                          style: TextStyle(
-                            color: AppColors.secondaryText,
-                            fontSize: 13,
-                          ),
-                        ),
-                      ],
-                    ),
+              Align(
+                alignment: Alignment.centerRight,
+                child: IconButton.filledTonal(
+                  tooltip: 'Campus activity',
+                  onPressed: () => showCommunityMessage(
+                    context,
+                    'Community activity notifications are a preview only.',
                   ),
-                  IconButton.filledTonal(
-                    tooltip: 'Campus activity',
-                    onPressed: () => showCommunityMessage(
-                      context,
-                      'Community activity notifications are a preview only.',
-                    ),
-                    icon: const Icon(Icons.notifications_none),
-                  ),
-                ],
+                  icon: const Icon(Icons.notifications_none),
+                ),
               ),
-              const SizedBox(height: 16),
+              const SizedBox(height: 8),
               TextField(
                 controller: _searchController,
                 onChanged: (_) => setState(() {}),
@@ -170,7 +146,7 @@ class _CommunityListScreenState extends State<CommunityListScreen> {
                       ),
                     ),
                   ),
-                  CommunityPill('${joined.length} Active'),
+                  CommunityPill('${joined.length} Joined'),
                 ],
               ),
               const SizedBox(height: 10),

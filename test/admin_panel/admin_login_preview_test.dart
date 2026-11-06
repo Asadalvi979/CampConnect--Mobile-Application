@@ -54,15 +54,15 @@ void main() {
     (tester) async {
       await _pumpRoute(tester, route: AppRoutes.adminLogin);
 
-      await tester.tap(find.text('Login to Admin Preview'));
+      await tester.tap(find.text('Sign In'));
       await tester.pumpAndSettle();
-      expect(find.text('Enter the Admin preview email.'), findsOneWidget);
-      expect(find.text('Enter the preview password.'), findsOneWidget);
+      expect(find.text('Enter the admin email.'), findsOneWidget);
+      expect(find.text('Enter your password.'), findsOneWidget);
 
       final inputs = find.byType(TextFormField);
       await tester.enterText(inputs.at(0), 'admin@campconnect.com');
       await tester.enterText(inputs.at(1), 'WrongPass');
-      await tester.tap(find.text('Login to Admin Preview'));
+      await tester.tap(find.text('Sign In'));
       await tester.pumpAndSettle();
 
       expect(
@@ -85,7 +85,7 @@ void main() {
       'admin@campconnect.com',
     );
     await tester.enterText(find.byType(TextFormField).at(1), 'Admin123');
-    await tester.tap(find.text('Login to Admin Preview'));
+    await tester.tap(find.text('Sign In'));
     await tester.pumpAndSettle();
 
     expect(UserProfileStore.instance.profile.value.role, UserProfileRole.admin);
@@ -101,7 +101,7 @@ void main() {
         'admin@campconnect.com',
       );
       await tester.enterText(find.byType(TextFormField).at(1), 'Admin123');
-      await tester.tap(find.text('Login to Admin Preview'));
+      await tester.tap(find.text('Sign In'));
       await tester.pumpAndSettle();
 
       await tester.tap(find.byTooltip('Log out of Admin preview'));

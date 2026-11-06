@@ -203,10 +203,6 @@ class _ProjectListScreenState extends State<ProjectListScreen> {
                   style: TextStyle(fontSize: 17, fontWeight: FontWeight.w600),
                 ),
               ),
-              Text(
-                'Spotlight picks',
-                style: TextStyle(color: AppColors.secondaryText, fontSize: 11),
-              ),
             ],
           ),
         ),
@@ -322,10 +318,6 @@ class _ProjectListScreenState extends State<ProjectListScreen> {
               Text(
                 'All Projects',
                 style: TextStyle(fontSize: 17, fontWeight: FontWeight.w600),
-              ),
-              Text(
-                'Discover active teams building right now',
-                style: TextStyle(color: AppColors.secondaryText, fontSize: 11),
               ),
             ],
           ),

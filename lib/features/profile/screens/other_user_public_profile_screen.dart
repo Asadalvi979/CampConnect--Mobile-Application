@@ -373,7 +373,7 @@ class OtherUserPublicProfileScreen extends StatelessWidget {
     child: Column(
       children: [
         ProfileSectionHeading(
-          title: 'Projects (6)',
+          title: 'Projects',
           icon: Icons.folder_open_outlined,
           trailing: TextButton(
             onPressed: () => openProjectList(

@@ -140,7 +140,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
           ),
           const Center(
             child: Text(
-              'All changes are stored locally on this device for preview.',
+              'Profile changes are saved on this device.',
               style: TextStyle(fontSize: 9, color: AppColors.secondaryText),
             ),
           ),
@@ -161,7 +161,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
             OutlinedButton.icon(
               onPressed: () => showProfileMessage(
                 context,
-                'Photo selection is not available in this frontend preview.',
+                'Photo updates are unavailable in this preview.',
               ),
               icon: const Icon(Icons.upload_outlined, size: 15),
               label: const Text('Change Photo'),
@@ -169,16 +169,12 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
             TextButton.icon(
               onPressed: () => showProfileMessage(
                 context,
-                'Photo removal is a preview only; selecting and storing images is not available yet.',
+                'Photo updates are unavailable in this preview.',
               ),
               icon: const Icon(Icons.delete_outline, size: 15),
               label: const Text('Remove'),
             ),
           ],
-        ),
-        const Text(
-          'JPG, PNG or WebP. Max 5MB.',
-          style: TextStyle(fontSize: 9, color: AppColors.secondaryText),
         ),
       ],
     ),

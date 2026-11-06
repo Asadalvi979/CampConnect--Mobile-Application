@@ -125,18 +125,10 @@ class _AdminUsersScreenState extends State<AdminUsersScreen> {
                     child: Row(
                       children: [
                         Text(
-                          '${users.length} mock ${users.length == 1 ? 'account' : 'accounts'}',
+                          '${users.length} ${users.length == 1 ? 'account' : 'accounts'}',
                           style: const TextStyle(
                             color: AppColors.mutedText,
                             fontSize: 12,
-                          ),
-                        ),
-                        const Spacer(),
-                        const Text(
-                          'Local preview',
-                          style: TextStyle(
-                            color: AppColors.mutedText,
-                            fontSize: 11,
                           ),
                         ),
                       ],

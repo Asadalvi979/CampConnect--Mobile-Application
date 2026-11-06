@@ -34,7 +34,7 @@ class _AdminLoginPreviewScreenState extends State<AdminLoginPreviewScreen> {
 
   String? _validateEmail(String? value) {
     final email = value?.trim() ?? '';
-    if (email.isEmpty) return 'Enter the Admin preview email.';
+    if (email.isEmpty) return 'Enter the admin email.';
     if (!RegExp(r'^[^@\s]+@[^@\s]+\.[^@\s]+$').hasMatch(email)) {
       return 'Enter a valid email address.';
     }
@@ -42,7 +42,7 @@ class _AdminLoginPreviewScreenState extends State<AdminLoginPreviewScreen> {
   }
 
   String? _validatePassword(String? value) =>
-      value == null || value.isEmpty ? 'Enter the preview password.' : null;
+      value == null || value.isEmpty ? 'Enter your password.' : null;
 
   void _login() {
     if (!(_formKey.currentState?.validate() ?? false)) return;
@@ -62,7 +62,7 @@ class _AdminLoginPreviewScreenState extends State<AdminLoginPreviewScreen> {
 
   @override
   Widget build(BuildContext context) => Scaffold(
-    appBar: const AuthHeader(title: 'Admin Preview Login'),
+    appBar: const AuthHeader(title: 'Admin Login'),
     body: SafeArea(
       top: false,
       child: LayoutBuilder(
@@ -93,17 +93,7 @@ class _AdminLoginPreviewScreenState extends State<AdminLoginPreviewScreen> {
                     ),
                     const SizedBox(height: 17),
                     const Text(
-                      'Admin Login',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 26,
-                        fontWeight: FontWeight.w700,
-                        color: AppColors.primaryText,
-                      ),
-                    ),
-                    const SizedBox(height: 5),
-                    const Text(
-                      'Sign in to preview the CampConnect Admin Panel.',
+                      'Use the demo account to open admin tools.',
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         color: AppColors.secondaryText,
@@ -132,7 +122,7 @@ class _AdminLoginPreviewScreenState extends State<AdminLoginPreviewScreen> {
                             AuthTextField(
                               controller: _emailController,
                               label: 'Admin Email',
-                              hint: 'Enter Admin preview email',
+                              hint: 'Email address',
                               icon: Icons.mail_outline_rounded,
                               keyboardType: TextInputType.emailAddress,
                               textInputAction: TextInputAction.next,
@@ -147,7 +137,7 @@ class _AdminLoginPreviewScreenState extends State<AdminLoginPreviewScreen> {
                             AuthTextField(
                               controller: _passwordController,
                               label: 'Password',
-                              hint: 'Enter preview password',
+                              hint: 'Password',
                               icon: Icons.lock_outline_rounded,
                               textInputAction: TextInputAction.done,
                               obscureText: !_isPasswordVisible,
@@ -175,7 +165,7 @@ class _AdminLoginPreviewScreenState extends State<AdminLoginPreviewScreen> {
                             ],
                             const SizedBox(height: 18),
                             AuthPrimaryButton(
-                              label: 'Login to Admin Preview',
+                              label: 'Sign In',
                               icon: Icons.arrow_forward_rounded,
                               onPressed: _login,
                             ),
@@ -194,7 +184,7 @@ class _AdminLoginPreviewScreenState extends State<AdminLoginPreviewScreen> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Frontend preview only — not real authentication.',
+                            'Demo access only—not real authentication.',
                             style: TextStyle(
                               color: AppColors.deepPrimary,
                               fontSize: 11,

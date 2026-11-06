@@ -177,33 +177,6 @@ class _ResourceLibraryScreenState extends State<ResourceLibraryScreen> {
                               padding: const EdgeInsets.only(bottom: 9),
                               child: _resourceCard(context, resource),
                             ),
-                          const SizedBox(height: 9),
-                          Container(
-                            padding: const EdgeInsets.all(14),
-                            decoration: BoxDecoration(
-                              color: AppColors.paleBlue,
-                              borderRadius: BorderRadius.circular(15),
-                            ),
-                            child: const Row(
-                              children: [
-                                Icon(
-                                  Icons.menu_book_outlined,
-                                  color: AppColors.deepPrimary,
-                                ),
-                                SizedBox(width: 10),
-                                Expanded(
-                                  child: Text(
-                                    'Share course notes and learning materials with your campus community.',
-                                    style: TextStyle(
-                                      color: AppColors.primaryText,
-                                      fontSize: 11,
-                                      height: 1.4,
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
                         ],
                       ),
               ),

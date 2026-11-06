@@ -153,13 +153,8 @@ void main() {
       expect(find.text('Notifications'), findsOneWidget);
       await tester.pageBack();
       await tester.pumpAndSettle();
-      if (role == UserProfileRole.senior) {
-        await tester.ensureVisible(find.text('Notices'));
-        await tester.tap(find.text('Notices'));
-      } else {
-        await tester.ensureVisible(find.text('View Notice'));
-        await tester.tap(find.text('View Notice').last);
-      }
+      await tester.ensureVisible(find.text('View Notice'));
+      await tester.tap(find.text('View Notice').last);
       await tester.pumpAndSettle();
       expect(find.text('Announcements'), findsOneWidget);
       expect(find.text('Create Announcement'), findsNothing);

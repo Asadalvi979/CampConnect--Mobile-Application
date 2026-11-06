@@ -339,9 +339,7 @@ class _LoginScreenState extends State<LoginScreen> {
     return SizedBox(
       height: 52,
       child: OutlinedButton(
-        onPressed: () => _showPreviewMessage(
-          'Campus SSO is not connected yet and needs backend integration.',
-        ),
+        onPressed: () => _showPreviewMessage('Campus SSO is not connected.'),
         style: OutlinedButton.styleFrom(
           backgroundColor: AppColors.paleBlue,
           foregroundColor: AppColors.primaryText,
@@ -373,22 +371,6 @@ class _LoginScreenState extends State<LoginScreen> {
                 style: TextStyle(fontSize: 13, fontWeight: FontWeight.w600),
               ),
             ),
-            Container(
-              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
-              decoration: BoxDecoration(
-                color: AppColors.lightBlue,
-                borderRadius: BorderRadius.circular(20),
-              ),
-              child: const Text(
-                'Preview',
-                style: TextStyle(
-                  color: AppColors.deepPrimary,
-                  fontSize: 9,
-                  fontWeight: FontWeight.w500,
-                ),
-              ),
-            ),
-            const SizedBox(width: 4),
             const Icon(
               Icons.chevron_right_rounded,
               size: 20,
@@ -414,7 +396,7 @@ class _LoginScreenState extends State<LoginScreen> {
           SizedBox(width: 5),
           Flexible(
             child: Text(
-              'Institutional authentication requires backend integration',
+              'Campus SSO is not connected.',
               textAlign: TextAlign.center,
               style: TextStyle(color: AppColors.mutedText, fontSize: 10),
             ),

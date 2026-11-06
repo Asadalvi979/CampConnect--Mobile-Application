@@ -37,9 +37,8 @@ class AdminDashboardScreen extends StatelessWidget {
                   .length;
               final cards = [
                 _Metric(
-                  title: 'Mock users',
+                  title: 'Users',
                   value: '${users.length}',
-                  subtitle: 'Local preview accounts',
                   icon: Icons.people_alt_outlined,
                   color: AppColors.primary,
                 ),
@@ -47,7 +46,6 @@ class AdminDashboardScreen extends StatelessWidget {
                   title: 'Students',
                   value:
                       '${users.where((user) => user.role == UserProfileRole.student).length}',
-                  subtitle: 'In this mock directory',
                   icon: Icons.school_outlined,
                   color: const Color(0xFF2563EB),
                 ),
@@ -55,7 +53,6 @@ class AdminDashboardScreen extends StatelessWidget {
                   title: 'Seniors',
                   value:
                       '${users.where((user) => user.role == UserProfileRole.senior).length}',
-                  subtitle: 'In this mock directory',
                   icon: Icons.workspace_premium_outlined,
                   color: const Color(0xFF7C3AED),
                 ),
@@ -63,7 +60,6 @@ class AdminDashboardScreen extends StatelessWidget {
                   title: 'Alumni',
                   value:
                       '${users.where((user) => user.role == UserProfileRole.alumni).length}',
-                  subtitle: 'In this mock directory',
                   icon: Icons.school_outlined,
                   color: const Color(0xFF0891B2),
                 ),
@@ -77,7 +73,6 @@ class AdminDashboardScreen extends StatelessWidget {
                 _Metric(
                   title: 'Published announcements',
                   value: '$announcements',
-                  subtitle: 'Local announcement store',
                   icon: Icons.campaign_outlined,
                   color: const Color(0xFF059669),
                 ),
@@ -95,19 +90,6 @@ class AdminDashboardScreen extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const Text(
-                          'Overview',
-                          style: TextStyle(
-                            fontSize: 24,
-                            fontWeight: FontWeight.w700,
-                          ),
-                        ),
-                        const SizedBox(height: 5),
-                        const Text(
-                          'Administrative tools and local preview data.',
-                          style: TextStyle(color: AppColors.mutedText),
-                        ),
-                        const SizedBox(height: 17),
                         Container(
                           width: double.infinity,
                           padding: const EdgeInsets.all(12),
@@ -125,7 +107,7 @@ class AdminDashboardScreen extends StatelessWidget {
                               SizedBox(width: 9),
                               Expanded(
                                 child: Text(
-                                  'All figures and actions are local mock previews, not live university data.',
+                                  'Local preview data—not live university records.',
                                   style: TextStyle(
                                     color: AppColors.deepPrimary,
                                     fontSize: 12,
@@ -187,14 +169,14 @@ class _Metric {
   const _Metric({
     required this.title,
     required this.value,
-    required this.subtitle,
+    this.subtitle,
     required this.icon,
     required this.color,
   });
 
   final String title;
   final String value;
-  final String subtitle;
+  final String? subtitle;
   final IconData icon;
   final Color color;
 }
@@ -241,11 +223,13 @@ class _MetricCard extends StatelessWidget {
             metric.value,
             style: const TextStyle(fontSize: 27, fontWeight: FontWeight.w700),
           ),
-          const SizedBox(height: 4),
-          Text(
-            metric.subtitle,
-            style: const TextStyle(color: AppColors.mutedText, fontSize: 11),
-          ),
+          if (metric.subtitle != null) ...[
+            const SizedBox(height: 4),
+            Text(
+              metric.subtitle!,
+              style: const TextStyle(color: AppColors.mutedText, fontSize: 11),
+            ),
+          ],
         ],
       ),
     ),
@@ -346,17 +330,12 @@ class _ActivityCard extends StatelessWidget {
             'Recent administrative activity',
             style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700),
           ),
-          const SizedBox(height: 4),
-          const Text(
-            'Mock entries and changes made in this session',
-            style: TextStyle(color: AppColors.mutedText, fontSize: 11),
-          ),
           const SizedBox(height: 10),
           if (activities.isEmpty)
             const Padding(
               padding: EdgeInsets.all(12),
               child: Text(
-                'No activity in this preview yet.',
+                'No recent activity.',
                 style: TextStyle(color: AppColors.mutedText),
               ),
             )

@@ -148,7 +148,7 @@ class AlumniProfileScreen extends StatelessWidget {
             ),
             const SizedBox(height: 4),
             Text(
-              '${mentor.department} · Class of ${mentor.graduationYear}',
+              mentor.industry,
               textAlign: TextAlign.center,
               style: const TextStyle(
                 color: AppColors.secondaryText,

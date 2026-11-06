@@ -373,7 +373,7 @@ class MyProfileScreen extends StatelessWidget {
           icon: Icons.folder_open_outlined,
           trailing: TextButton(
             onPressed: () => openMyProjects(context, profile.role),
-            child: const Text('View All (3) ›', style: TextStyle(fontSize: 10)),
+            child: const Text('View All ›', style: TextStyle(fontSize: 10)),
           ),
         ),
         const SizedBox(height: 5),

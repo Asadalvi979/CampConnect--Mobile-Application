@@ -68,16 +68,6 @@ class AnnouncementListScreen extends StatelessWidget {
             return ListView(
               padding: const EdgeInsets.fromLTRB(16, 12, 16, 24),
               children: [
-                Text(
-                  isAdmin
-                      ? 'Published campus announcements'
-                      : 'Official updates from CampConnect',
-                  style: const TextStyle(
-                    color: AppColors.mutedText,
-                    fontSize: 12,
-                  ),
-                ),
-                const SizedBox(height: 10),
                 for (final announcement in announcements) ...[
                   _announcementCard(context, announcement),
                   const SizedBox(height: 10),
@@ -93,7 +83,7 @@ class AnnouncementListScreen extends StatelessWidget {
                   ),
                 const SizedBox(height: 8),
                 const Text(
-                  'Local preview only. Publishing does not send push notifications.',
+                  'Local preview; publishing does not send notifications.',
                   textAlign: TextAlign.center,
                   style: TextStyle(color: AppColors.mutedText, fontSize: 10),
                 ),
@@ -197,9 +187,7 @@ class AnnouncementListScreen extends StatelessWidget {
       ScaffoldMessenger.of(context)
         ..hideCurrentSnackBar()
         ..showSnackBar(
-          const SnackBar(
-            content: Text('Announcement published to the local preview.'),
-          ),
+          const SnackBar(content: Text('Announcement published.')),
         );
     }
   }

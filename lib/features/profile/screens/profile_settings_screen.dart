@@ -20,7 +20,7 @@ class _ProfileSettingsScreenState extends State<ProfileSettingsScreen> {
   Widget build(BuildContext context) => ValueListenableBuilder<UserProfile>(
     valueListenable: UserProfileStore.instance.profile,
     builder: (context, profile, _) => ProfilePageScaffold(
-      title: 'Edit Profile',
+      title: 'Settings',
       actions: [
         IconButton(
           tooltip: 'Profile',
@@ -34,24 +34,12 @@ class _ProfileSettingsScreenState extends State<ProfileSettingsScreen> {
           Row(
             children: [
               const Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Settings',
-                      style: TextStyle(
-                        fontSize: 24,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                    Text(
-                      'Manage your institutional account & preferences',
-                      style: TextStyle(
-                        fontSize: 12,
-                        color: AppColors.secondaryText,
-                      ),
-                    ),
-                  ],
+                child: Text(
+                  'Manage your account and preferences',
+                  style: TextStyle(
+                    fontSize: 12,
+                    color: AppColors.secondaryText,
+                  ),
                 ),
               ),
               CircleAvatar(
@@ -68,7 +56,6 @@ class _ProfileSettingsScreenState extends State<ProfileSettingsScreen> {
           const SizedBox(height: 18),
           _settingsGroup(
             title: 'ACCOUNT',
-            subtitle: 'Academic Identity',
             rows: [
               _settingsRow(
                 context,
@@ -103,7 +90,6 @@ class _ProfileSettingsScreenState extends State<ProfileSettingsScreen> {
           const SizedBox(height: 18),
           _settingsGroup(
             title: 'NOTIFICATIONS',
-            subtitle: 'Real-time alerts',
             rows: [
               _settingsRow(
                 context,
@@ -144,7 +130,6 @@ class _ProfileSettingsScreenState extends State<ProfileSettingsScreen> {
           const SizedBox(height: 18),
           _settingsGroup(
             title: 'SUPPORT',
-            subtitle: 'Helpdesk & Policies',
             rows: [
               _settingsRow(
                 context,
@@ -205,18 +190,12 @@ class _ProfileSettingsScreenState extends State<ProfileSettingsScreen> {
           const Column(
             children: [
               Text(
-                '◈  CampConnect Institutional Suite',
+                '◈  CampConnect • Riphah Sahiwal',
                 style: TextStyle(fontSize: 11, color: AppColors.secondaryText),
               ),
               SizedBox(height: 5),
               Text(
-                'Riphah International University • Sahiwal Campus',
-                textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 10, color: AppColors.secondaryText),
-              ),
-              SizedBox(height: 5),
-              Text(
-                'Security features planned for backend integration',
+                'Settings are a local preview.',
                 style: TextStyle(fontSize: 9, color: AppColors.secondaryText),
               ),
             ],
@@ -338,51 +317,35 @@ class _ProfileSettingsScreenState extends State<ProfileSettingsScreen> {
     ),
   );
 
-  Widget _settingsGroup({
-    required String title,
-    required String subtitle,
-    required List<Widget> rows,
-  }) => Column(
-    children: [
-      Padding(
-        padding: const EdgeInsets.fromLTRB(4, 0, 4, 7),
-        child: Row(
-          children: [
-            Expanded(
-              child: Text(
-                title,
-                style: const TextStyle(
-                  fontSize: 10,
-                  letterSpacing: 0.8,
-                  fontWeight: FontWeight.w600,
-                  color: AppColors.secondaryText,
-                ),
-              ),
-            ),
-            Text(
-              subtitle,
+  Widget _settingsGroup({required String title, required List<Widget> rows}) =>
+      Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.fromLTRB(4, 0, 4, 7),
+            child: Text(
+              title,
               style: const TextStyle(
-                fontSize: 9,
+                fontSize: 10,
+                letterSpacing: 0.8,
+                fontWeight: FontWeight.w600,
                 color: AppColors.secondaryText,
               ),
             ),
-          ],
-        ),
-      ),
-      ProfileCard(
-        padding: EdgeInsets.zero,
-        child: Column(
-          children: [
-            for (var index = 0; index < rows.length; index++) ...[
-              rows[index],
-              if (index != rows.length - 1)
-                const Divider(height: 1, color: AppColors.paleBlue),
-            ],
-          ],
-        ),
-      ),
-    ],
-  );
+          ),
+          ProfileCard(
+            padding: EdgeInsets.zero,
+            child: Column(
+              children: [
+                for (var index = 0; index < rows.length; index++) ...[
+                  rows[index],
+                  if (index != rows.length - 1)
+                    const Divider(height: 1, color: AppColors.paleBlue),
+                ],
+              ],
+            ),
+          ),
+        ],
+      );
 
   Widget _settingsRow(
     BuildContext context, {

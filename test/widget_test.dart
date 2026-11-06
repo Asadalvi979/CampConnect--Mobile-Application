@@ -174,8 +174,9 @@ void main() {
 
     expect(find.text('Student Home Dashboard'), findsOneWidget);
     expect(find.text('Campus Services'), findsOneWidget);
-    expect(find.text('Available Mentors'), findsOneWidget);
-    expect(find.text('Verified Resources'), findsOneWidget);
+    expect(find.text('Mentorship'), findsOneWidget);
+    expect(find.text('Find your people'), findsOneWidget);
+    expect(find.text('Available Mentors'), findsNothing);
   });
 
   testWidgets('senior dashboard offers alumni mentor discovery', (
@@ -189,8 +190,8 @@ void main() {
 
     expect(find.text('Senior Home Dashboard'), findsOneWidget);
     expect(find.text('Senior Actions'), findsOneWidget);
-    expect(find.text('Find an Alumni Mentor'), findsOneWidget);
-    expect(find.text('Capstone Opportunities'), findsOneWidget);
+    expect(find.text('Explore Projects'), findsOneWidget);
+    expect(find.text('Capstone Opportunities'), findsNothing);
   });
 
   testWidgets('alumni dashboard shows alumni mentorship content', (
@@ -204,8 +205,9 @@ void main() {
 
     expect(find.text('Alumni Home Dashboard'), findsOneWidget);
     expect(find.text('Quick Navigation'), findsOneWidget);
+    expect(find.text('Mentorship Requests'), findsOneWidget);
     expect(find.text('Active Mentorships'), findsOneWidget);
-    expect(find.text('Industry Advisory Board'), findsOneWidget);
+    expect(find.text('Industry Advisory Board'), findsNothing);
   });
 
   testWidgets('project dashboard shortcut opens discovery', (tester) async {
@@ -221,8 +223,8 @@ void main() {
     await _pumpApp(tester, initialRoute: AppRoutes.studentDashboard);
 
     expect(find.text('Campus Services'), findsOneWidget);
-    expect(find.text('Everything you need, all in one place'), findsOneWidget);
-    expect(find.text('6 services'), findsOneWidget);
+    expect(find.text('Everything you need, all in one place'), findsNothing);
+    expect(find.text('6 services'), findsNothing);
     expect(find.text('Find your people'), findsOneWidget);
     expect(find.text('Build together'), findsOneWidget);
     expect(find.text('Chat with peers'), findsOneWidget);
