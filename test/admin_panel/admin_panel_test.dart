@@ -48,7 +48,7 @@ void main() {
     );
     expect(find.text('WORKSPACE'), findsOneWidget);
     expect(find.text('Admin Dashboard'), findsOneWidget);
-    expect(find.text('Mock users'), findsOneWidget);
+    expect(find.text('Users'), findsOneWidget);
     final desktopException = tester.takeException();
     expect(
       desktopException,
@@ -61,9 +61,7 @@ void main() {
     await _pumpRoute(tester, route: AppRoutes.adminDashboard);
     expect(find.byType(NavigationBar), findsOneWidget);
     expect(
-      find.text(
-        'All figures and actions are local mock previews, not live university data.',
-      ),
+      find.text('Local preview data—not live university records.'),
       findsOneWidget,
     );
     expect(tester.takeException(), isNull);
@@ -195,7 +193,7 @@ void main() {
       await tester.tap(find.text('Announcement Management'));
       await tester.pumpAndSettle();
       expect(find.byType(AnnouncementListScreen), findsOneWidget);
-      expect(find.text('Published campus announcements'), findsOneWidget);
+      expect(find.text('Announcement Management'), findsOneWidget);
 
       await tester.tap(
         find.text('Fall 2024 Capstone Project & FYP Proposals Open'),
@@ -241,7 +239,12 @@ void main() {
     expect(find.byType(AnnouncementDetailsScreen), findsOneWidget);
     expect(find.byType(NavigationBar), findsOneWidget);
 
-    await tester.tap(find.text('Users'));
+    await tester.tap(
+      find.descendant(
+        of: find.byType(NavigationBar),
+        matching: find.text('Users'),
+      ),
+    );
     await tester.pumpAndSettle();
     expect(find.byType(AdminUsersScreen), findsOneWidget);
     expect(find.byType(AnnouncementListScreen), findsNothing);
@@ -277,7 +280,12 @@ void main() {
     (tester) async {
       await _pumpRoute(tester, route: AppRoutes.adminDashboard);
 
-      await tester.tap(find.text('Users'));
+      await tester.tap(
+        find.descendant(
+          of: find.byType(NavigationBar),
+          matching: find.text('Users'),
+        ),
+      );
       await tester.pumpAndSettle();
       expect(find.byType(AdminUsersScreen), findsOneWidget);
 
@@ -286,7 +294,12 @@ void main() {
       expect(find.byType(AdminDashboardScreen), findsOneWidget);
       expect(find.byType(AdminUsersScreen), findsNothing);
 
-      await tester.tap(find.text('Users'));
+      await tester.tap(
+        find.descendant(
+          of: find.byType(NavigationBar),
+          matching: find.text('Users'),
+        ),
+      );
       await tester.pumpAndSettle();
       expect(find.byType(AdminUsersScreen), findsOneWidget);
       expect(find.byType(AdminDashboardScreen), findsNothing);

@@ -21,8 +21,8 @@ void main() {
     UserProfileStore.instance.setRole(UserProfileRole.student);
     await _pumpApp(tester, route: AppRoutes.studentDashboard);
 
-    await tester.ensureVisible(find.text('Find Mentors'));
-    await tester.tap(find.text('Find Mentors'));
+    await tester.ensureVisible(find.text('Mentorship'));
+    await tester.tap(find.text('Mentorship'));
     await tester.pumpAndSettle();
     expect(find.text('Alumni Directory'), findsOneWidget);
 
