@@ -60,6 +60,25 @@ flutter:
   assets:
     - Design/UI and UX/logo.png
 
+  fonts:
+    # Static instances of Plus Jakarta Sans, instantiated from the
+    # variable font (ofl/plusjakartasans/PlusJakartaSans[wght].ttf) with
+    # fonttools varLib.instancer. Static files are used because the
+    # variable file does not load in this Flutter version's test
+    # environment (text falls back to the 1em-per-glyph test font).
+    - family: PlusJakartaSans
+      fonts:
+        - asset: assets/fonts/PlusJakartaSans-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/PlusJakartaSans-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/PlusJakartaSans-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/PlusJakartaSans-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/PlusJakartaSans-ExtraBold.ttf
+          weight: 800
+
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../core/theme/app_colors.dart';
+import '../../../core/theme/app_tokens.dart';
 import '../../notifications_announcements/services/notification_announcement_store.dart';
 import '../../profile/models/user_profile.dart';
 import '../../resources/models/resource_route_arguments.dart';
@@ -47,42 +48,52 @@ class AdminDashboardScreen extends StatelessWidget {
                   value:
                       '${users.where((user) => user.role == UserProfileRole.student).length}',
                   icon: Icons.school_outlined,
-                  color: const Color(0xFF2563EB),
+                  color: AppColors.primary,
                 ),
                 _Metric(
                   title: 'Seniors',
                   value:
                       '${users.where((user) => user.role == UserProfileRole.senior).length}',
                   icon: Icons.workspace_premium_outlined,
-                  color: const Color(0xFF7C3AED),
+                  color: AppColors.primary,
                 ),
                 _Metric(
                   title: 'Alumni',
                   value:
                       '${users.where((user) => user.role == UserProfileRole.alumni).length}',
                   icon: Icons.school_outlined,
-                  color: const Color(0xFF0891B2),
+                  color: AppColors.primary,
                 ),
                 _Metric(
                   title: 'Open resource reports',
                   value: '$openReports',
                   subtitle: '$publishedResources published resources',
                   icon: Icons.fact_check_outlined,
-                  color: const Color(0xFFF59E0B),
+                  color: AppColors.primary,
                 ),
                 _Metric(
                   title: 'Published announcements',
                   value: '$announcements',
                   icon: Icons.campaign_outlined,
-                  color: const Color(0xFF059669),
+                  color: AppColors.primary,
                 ),
               ];
+              // Card widths are computed from the width left after the
+              // scroll view's horizontal padding, so cards never overflow.
+              const spacing = AppSpacing.xl;
+              final horizontalPadding = wide ? 60.0 : 32.0;
+              final availableWidth = constraints.maxWidth - horizontalPadding;
+              final cardWidth = wide
+                  ? (availableWidth - 2 * spacing) / 3
+                  : constraints.maxWidth >= 600
+                  ? (availableWidth - spacing) / 2
+                  : availableWidth;
               return SingleChildScrollView(
                 padding: EdgeInsets.fromLTRB(
-                  wide ? 30 : 16,
-                  20,
-                  wide ? 30 : 16,
-                  28,
+                  wide ? 30 : AppSpacing.lg,
+                  AppSpacing.xl,
+                  wide ? 30 : AppSpacing.lg,
+                  AppSpacing.xxl,
                 ),
                 child: Center(
                   child: ConstrainedBox(
@@ -92,54 +103,48 @@ class AdminDashboardScreen extends StatelessWidget {
                       children: [
                         Container(
                           width: double.infinity,
-                          padding: const EdgeInsets.all(12),
+                          padding: const EdgeInsets.all(AppSpacing.md),
                           decoration: BoxDecoration(
                             color: AppColors.lightBlue,
-                            borderRadius: BorderRadius.circular(12),
+                            borderRadius: BorderRadius.circular(AppRadii.md),
                           ),
-                          child: const Row(
+                          child: Row(
                             children: [
-                              Icon(
+                              const Icon(
                                 Icons.info_outline,
                                 size: 18,
-                                color: AppColors.deepPrimary,
+                                color: AppColors.primaryDark,
                               ),
-                              SizedBox(width: 9),
+                              const SizedBox(width: AppSpacing.sm),
                               Expanded(
                                 child: Text(
                                   'Local preview data—not live university records.',
-                                  style: TextStyle(
-                                    color: AppColors.deepPrimary,
-                                    fontSize: 12,
-                                  ),
+                                  style: Theme.of(context).textTheme.bodySmall
+                                      ?.copyWith(color: AppColors.primaryDark),
                                 ),
                               ),
                             ],
                           ),
                         ),
-                        const SizedBox(height: 18),
+                        const SizedBox(height: AppSpacing.xxl),
                         Wrap(
-                          spacing: 14,
-                          runSpacing: 14,
+                          spacing: spacing,
+                          runSpacing: spacing,
                           children: [
                             for (final metric in cards)
                               SizedBox(
-                                width: wide
-                                    ? (constraints.maxWidth - 56) / 3
-                                    : constraints.maxWidth >= 600
-                                    ? (constraints.maxWidth - 14) / 2
-                                    : constraints.maxWidth,
+                                width: cardWidth,
                                 child: _MetricCard(metric: metric),
                               ),
                           ],
                         ),
-                        const SizedBox(height: 25),
+                        const SizedBox(height: AppSpacing.xxl),
                         if (wide)
                           Row(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Expanded(child: _QuickActions()),
-                              const SizedBox(width: 18),
+                              const SizedBox(width: AppSpacing.xl),
                               Expanded(
                                 child: _ActivityCard(
                                   activities: store.activity,
@@ -149,7 +154,7 @@ class AdminDashboardScreen extends StatelessWidget {
                           )
                         else ...[
                           _QuickActions(),
-                          const SizedBox(height: 16),
+                          const SizedBox(height: AppSpacing.xxl),
                           _ActivityCard(activities: store.activity),
                         ],
                       ],
@@ -187,70 +192,61 @@ class _MetricCard extends StatelessWidget {
   final _Metric metric;
 
   @override
-  Widget build(BuildContext context) => Card(
-    margin: EdgeInsets.zero,
-    color: AppColors.white,
-    child: Padding(
-      padding: const EdgeInsets.all(17),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            children: [
-              Expanded(
-                child: Text(
-                  metric.title,
-                  style: const TextStyle(
-                    color: AppColors.mutedText,
-                    fontSize: 12,
-                    fontWeight: FontWeight.w600,
+  Widget build(BuildContext context) {
+    final textTheme = Theme.of(context).textTheme;
+    return Card(
+      child: Padding(
+        padding: const EdgeInsets.all(AppSpacing.lg),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                Expanded(
+                  child: Text(
+                    metric.title,
+                    style: textTheme.labelMedium?.copyWith(
+                      color: AppColors.textMuted,
+                    ),
                   ),
                 ),
-              ),
-              Container(
-                width: 37,
-                height: 37,
-                decoration: BoxDecoration(
-                  color: metric.color.withValues(alpha: .1),
-                  borderRadius: BorderRadius.circular(11),
+                Container(
+                  width: 40,
+                  height: 40,
+                  decoration: BoxDecoration(
+                    color: metric.color.withValues(alpha: .1),
+                    borderRadius: BorderRadius.circular(AppRadii.md),
+                  ),
+                  child: Icon(metric.icon, color: metric.color, size: 20),
                 ),
-                child: Icon(metric.icon, color: metric.color, size: 20),
-              ),
-            ],
-          ),
-          const SizedBox(height: 14),
-          Text(
-            metric.value,
-            style: const TextStyle(fontSize: 27, fontWeight: FontWeight.w700),
-          ),
-          if (metric.subtitle != null) ...[
-            const SizedBox(height: 4),
-            Text(
-              metric.subtitle!,
-              style: const TextStyle(color: AppColors.mutedText, fontSize: 11),
+              ],
             ),
+            const SizedBox(height: AppSpacing.md),
+            Text(metric.value, style: textTheme.headlineMedium),
+            if (metric.subtitle != null) ...[
+              const SizedBox(height: AppSpacing.xs),
+              Text(metric.subtitle!, style: textTheme.bodySmall),
+            ],
           ],
-        ],
+        ),
       ),
-    ),
-  );
+    );
+  }
 }
 
 class _QuickActions extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Card(
-    margin: EdgeInsets.zero,
-    color: AppColors.white,
     child: Padding(
-      padding: const EdgeInsets.all(18),
+      padding: const EdgeInsets.all(AppSpacing.lg),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text(
+          Text(
             'Management',
-            style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700),
+            style: Theme.of(context).textTheme.titleMedium,
           ),
-          const SizedBox(height: 12),
+          const SizedBox(height: AppSpacing.md),
           _ActionTile(
             icon: Icons.people_outline,
             title: 'User Management',
@@ -300,13 +296,10 @@ class _ActionTile extends StatelessWidget {
     contentPadding: EdgeInsets.zero,
     leading: CircleAvatar(
       backgroundColor: AppColors.paleBlue,
-      child: Icon(icon, color: AppColors.deepPrimary),
+      child: Icon(icon, color: AppColors.primaryDark),
     ),
-    title: Text(title, style: const TextStyle(fontWeight: FontWeight.w600)),
-    subtitle: Text(
-      subtitle,
-      style: const TextStyle(color: AppColors.mutedText, fontSize: 11),
-    ),
+    title: Text(title),
+    subtitle: Text(subtitle),
     trailing: const Icon(Icons.arrow_forward_ios, size: 14),
     onTap: onTap,
   );
@@ -319,24 +312,22 @@ class _ActivityCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Card(
-    margin: EdgeInsets.zero,
-    color: AppColors.white,
     child: Padding(
-      padding: const EdgeInsets.all(18),
+      padding: const EdgeInsets.all(AppSpacing.lg),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text(
+          Text(
             'Recent administrative activity',
-            style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700),
+            style: Theme.of(context).textTheme.titleMedium,
           ),
-          const SizedBox(height: 10),
+          const SizedBox(height: AppSpacing.sm),
           if (activities.isEmpty)
             const Padding(
-              padding: EdgeInsets.all(12),
+              padding: EdgeInsets.all(AppSpacing.md),
               child: Text(
                 'No recent activity.',
-                style: TextStyle(color: AppColors.mutedText),
+                style: TextStyle(color: AppColors.textMuted),
               ),
             )
           else
@@ -349,7 +340,7 @@ class _ActivityCard extends StatelessWidget {
                   child: Icon(
                     Icons.history,
                     size: 17,
-                    color: AppColors.deepPrimary,
+                    color: AppColors.primaryDark,
                   ),
                 ),
                 title: Text(
@@ -362,8 +353,8 @@ class _ActivityCard extends StatelessWidget {
                 subtitle: Text(
                   '${activity.context} · ${_formatTime(activity.occurredAt)}',
                   style: const TextStyle(
-                    fontSize: 10,
-                    color: AppColors.mutedText,
+                    fontSize: 12,
+                    color: AppColors.textMuted,
                   ),
                 ),
               ),

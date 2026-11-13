@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 
 import '../../../core/theme/app_colors.dart';
+import '../../../core/theme/app_tokens.dart';
 
+/// Primary call-to-action button. Styling comes from the FilledButton theme
+/// (blue, the single accent color); this widget only owns height and
+/// loading state.
 class AuthPrimaryButton extends StatelessWidget {
   const AuthPrimaryButton({
     required this.label,
@@ -23,15 +27,6 @@ class AuthPrimaryButton extends StatelessWidget {
       height: 52,
       child: FilledButton(
         onPressed: isLoading ? null : onPressed,
-        style: FilledButton.styleFrom(
-          backgroundColor: AppColors.primary,
-          foregroundColor: AppColors.white,
-          disabledBackgroundColor: AppColors.primary.withValues(alpha: 0.65),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(14),
-          ),
-          textStyle: const TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
-        ),
         child: isLoading
             ? const SizedBox(
                 width: 21,
@@ -48,7 +43,7 @@ class AuthPrimaryButton extends StatelessWidget {
                   children: [
                     Text(label),
                     if (icon != null) ...[
-                      const SizedBox(width: 8),
+                      const SizedBox(width: AppSpacing.sm),
                       Icon(icon, size: 19),
                     ],
                   ],

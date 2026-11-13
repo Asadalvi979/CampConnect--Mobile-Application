@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../core/theme/app_colors.dart';
+import '../../../core/theme/app_tokens.dart';
 import '../../navigation/app_routes.dart';
 import '../../profile/models/user_profile.dart';
 import '../../resources/models/resource_route_arguments.dart';
@@ -28,25 +29,25 @@ class AdminPanelLayout extends StatelessWidget {
         appBar: AppBar(title: const Text('Admin Panel')),
         body: const Center(
           child: Padding(
-            padding: EdgeInsets.all(24),
+            padding: EdgeInsets.all(AppSpacing.xxl),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
                 Icon(
                   Icons.admin_panel_settings_outlined,
                   size: 48,
-                  color: AppColors.deepPrimary,
+                  color: AppColors.primaryDark,
                 ),
-                SizedBox(height: 12),
+                SizedBox(height: AppSpacing.md),
                 Text(
                   'Administrator access required',
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
+                  style: TextStyle(fontSize: 17, fontWeight: FontWeight.w700),
                 ),
-                SizedBox(height: 6),
+                SizedBox(height: AppSpacing.xs),
                 Text(
                   'This local preview is available only for the Admin role.',
                   textAlign: TextAlign.center,
-                  style: TextStyle(color: AppColors.mutedText),
+                  style: TextStyle(color: AppColors.textMuted),
                 ),
               ],
             ),
@@ -123,7 +124,7 @@ class _AdminHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Container(
     height: 72,
-    padding: const EdgeInsets.symmetric(horizontal: 28),
+    padding: const EdgeInsets.symmetric(horizontal: AppSpacing.xxl),
     decoration: const BoxDecoration(
       color: AppColors.white,
       border: Border(bottom: BorderSide(color: AppColors.border, width: .5)),
@@ -139,20 +140,20 @@ class _AdminHeader extends StatelessWidget {
         Expanded(
           child: Text(
             title,
-            style: const TextStyle(fontSize: 21, fontWeight: FontWeight.w700),
+            style: Theme.of(context).textTheme.titleLarge,
           ),
         ),
         const Chip(
           avatar: Icon(
             Icons.admin_panel_settings_outlined,
             size: 17,
-            color: AppColors.deepPrimary,
+            color: AppColors.primaryDark,
           ),
           label: Text('Admin preview'),
           backgroundColor: AppColors.paleBlue,
           side: BorderSide.none,
         ),
-        const SizedBox(width: 8),
+        const SizedBox(width: AppSpacing.sm),
         IconButton(
           tooltip: 'Notifications',
           onPressed: () =>
@@ -184,7 +185,12 @@ class _AdminSidebar extends StatelessWidget {
   Widget build(BuildContext context) => Container(
     width: 248,
     color: AppColors.white,
-    padding: const EdgeInsets.fromLTRB(17, 22, 14, 14),
+    padding: const EdgeInsets.fromLTRB(
+      AppSpacing.lg,
+      AppSpacing.xxl,
+      AppSpacing.md,
+      AppSpacing.md,
+    ),
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -195,7 +201,7 @@ class _AdminSidebar extends StatelessWidget {
               height: 40,
               decoration: BoxDecoration(
                 color: AppColors.primary,
-                borderRadius: BorderRadius.circular(12),
+                borderRadius: BorderRadius.circular(AppRadii.md),
               ),
               child: const Icon(
                 Icons.hub_rounded,
@@ -203,7 +209,7 @@ class _AdminSidebar extends StatelessWidget {
                 size: 23,
               ),
             ),
-            const SizedBox(width: 10),
+            const SizedBox(width: AppSpacing.sm),
             const Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -217,8 +223,8 @@ class _AdminSidebar extends StatelessWidget {
                     'ADMIN CONSOLE',
                     overflow: TextOverflow.ellipsis,
                     style: TextStyle(
-                      fontSize: 9,
-                      color: AppColors.mutedText,
+                      fontSize: 12,
+                      color: AppColors.textMuted,
                       letterSpacing: 1.1,
                     ),
                   ),
@@ -227,14 +233,14 @@ class _AdminSidebar extends StatelessWidget {
             ),
           ],
         ),
-        const SizedBox(height: 34),
+        const SizedBox(height: AppSpacing.xxxl),
         const Padding(
-          padding: EdgeInsets.only(left: 12, bottom: 9),
+          padding: EdgeInsets.only(left: AppSpacing.md, bottom: AppSpacing.sm),
           child: Text(
             'WORKSPACE',
             style: TextStyle(
-              color: AppColors.mutedText,
-              fontSize: 10,
+              color: AppColors.textMuted,
+              fontSize: 12,
               fontWeight: FontWeight.w700,
               letterSpacing: 1,
             ),
@@ -273,10 +279,15 @@ class _AdminSidebar extends StatelessWidget {
         const Spacer(),
         const Divider(),
         const Padding(
-          padding: EdgeInsets.fromLTRB(12, 12, 12, 4),
+          padding: EdgeInsets.fromLTRB(
+            AppSpacing.md,
+            AppSpacing.md,
+            AppSpacing.md,
+            AppSpacing.xs,
+          ),
           child: Text(
             'Local mock data · resets on restart',
-            style: TextStyle(color: AppColors.mutedText, fontSize: 10),
+            style: TextStyle(color: AppColors.textMuted, fontSize: 12),
           ),
         ),
       ],
@@ -307,9 +318,11 @@ class _NavItem extends StatelessWidget {
       color: Colors.transparent,
       child: ListTile(
         selected: selected,
-        selectedColor: AppColors.deepPrimary,
+        selectedColor: AppColors.primaryDark,
         selectedTileColor: AppColors.paleBlue,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(AppRadii.sm),
+        ),
         leading: Icon(icon, size: 20),
         title: Text(label, style: const TextStyle(fontSize: 13)),
         onTap: onTap,

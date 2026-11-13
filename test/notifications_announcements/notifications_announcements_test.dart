@@ -128,8 +128,8 @@ void main() {
     await tester.pumpAndSettle();
     expect(find.byTooltip('Notifications: 1 unread'), findsOneWidget);
 
-    await tester.ensureVisible(find.text('View Notice  →'));
-    await tester.tap(find.text('View Notice  →'));
+    await tester.ensureVisible(find.text('View Notice'));
+    await tester.tap(find.text('View Notice'));
     await tester.pumpAndSettle();
     expect(find.text('Announcements'), findsOneWidget);
   });

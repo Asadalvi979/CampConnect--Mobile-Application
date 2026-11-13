@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../core/theme/app_colors.dart';
+import '../../../core/theme/app_tokens.dart';
 
 const universityLogoAsset = 'Design/UI and UX/logo.png';
 
@@ -16,16 +17,10 @@ class AuthHeader extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return Container(
       height: preferredSize.height,
-      padding: const EdgeInsets.symmetric(horizontal: 16),
-      decoration: BoxDecoration(
+      padding: const EdgeInsets.symmetric(horizontal: AppSpacing.lg),
+      decoration: const BoxDecoration(
         color: AppColors.background,
-        boxShadow: [
-          BoxShadow(
-            color: AppColors.primaryText.withValues(alpha: 0.045),
-            offset: const Offset(0, 2),
-            blurRadius: 8,
-          ),
-        ],
+        border: Border(bottom: BorderSide(color: AppColors.border)),
       ),
       child: Row(
         children: [
@@ -33,32 +28,25 @@ class AuthHeader extends StatelessWidget implements PreferredSizeWidget {
             onPressed: () => Navigator.of(context).maybePop(),
             tooltip: 'Go back',
             icon: const Icon(Icons.arrow_back, size: 23),
-            color: AppColors.primaryText,
+            color: AppColors.textPrimary,
             visualDensity: VisualDensity.compact,
           ),
-          const SizedBox(width: 4),
+          const SizedBox(width: AppSpacing.xs),
           Image.asset(
             universityLogoAsset,
             width: 28,
             height: 36,
             fit: BoxFit.contain,
           ),
-          const SizedBox(width: 10),
+          const SizedBox(width: AppSpacing.sm),
           Expanded(
-            child: Text(
-              title,
-              style: const TextStyle(
-                color: AppColors.primaryText,
-                fontSize: 18,
-                fontWeight: FontWeight.w600,
-              ),
-            ),
+            child: Text(title, style: Theme.of(context).textTheme.titleMedium),
           ),
           Container(
             width: 34,
             height: 34,
             decoration: const BoxDecoration(
-              color: AppColors.deepPrimary,
+              color: AppColors.primaryDark,
               shape: BoxShape.circle,
             ),
             child: const Icon(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../core/theme/app_colors.dart';
+import '../../../core/theme/app_tokens.dart';
 import '../../navigation/app_routes.dart';
 import '../models/otp_screen_arguments.dart';
 import '../widgets/auth_header.dart';
@@ -75,7 +76,12 @@ class _LoginScreenState extends State<LoginScreen> {
         top: false,
         child: LayoutBuilder(
           builder: (context, constraints) => SingleChildScrollView(
-            padding: const EdgeInsets.fromLTRB(20, 12, 20, 24),
+            padding: const EdgeInsets.fromLTRB(
+              AppSpacing.xl,
+              AppSpacing.md,
+              AppSpacing.xl,
+              AppSpacing.xxl,
+            ),
             child: ConstrainedBox(
               constraints: BoxConstraints(
                 minHeight: constraints.maxHeight - 36,
@@ -87,11 +93,11 @@ class _LoginScreenState extends State<LoginScreen> {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       _buildWelcome(),
-                      const SizedBox(height: 22),
+                      const SizedBox(height: AppSpacing.xxl),
                       _buildLoginCard(),
-                      const SizedBox(height: 22),
+                      const SizedBox(height: AppSpacing.xxl),
                       _buildRegistrationLink(),
-                      const SizedBox(height: 10),
+                      const SizedBox(height: AppSpacing.sm),
                       TextButton.icon(
                         onPressed: () =>
                             Navigator.of(context)
@@ -101,9 +107,6 @@ class _LoginScreenState extends State<LoginScreen> {
                           size: 17,
                         ),
                         label: const Text('Admin Login'),
-                        style: TextButton.styleFrom(
-                          foregroundColor: AppColors.deepPrimary,
-                        ),
                       ),
                     ],
                   ),
@@ -117,86 +120,53 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   Widget _buildWelcome() {
+    final textTheme = Theme.of(context).textTheme;
     return Column(
       children: [
-        Stack(
-          clipBehavior: Clip.none,
+        Container(
+          width: 66,
+          height: 66,
+          padding: const EdgeInsets.all(AppSpacing.sm),
+          decoration: BoxDecoration(
+            color: AppColors.white,
+            borderRadius: BorderRadius.circular(AppRadii.xl),
+            border: Border.all(color: AppColors.border),
+          ),
+          child: Image.asset(universityLogoAsset, fit: BoxFit.contain),
+        ),
+        const SizedBox(height: AppSpacing.lg),
+        Row(
+          mainAxisSize: MainAxisSize.min,
           children: [
-            Container(
-              width: 66,
-              height: 66,
-              padding: const EdgeInsets.all(8),
-              decoration: BoxDecoration(
-                color: AppColors.paleBlue,
-                borderRadius: BorderRadius.circular(20),
-              ),
-              child: Image.asset(universityLogoAsset, fit: BoxFit.contain),
+            const Icon(
+              Icons.verified_user_outlined,
+              size: 14,
+              color: AppColors.textMuted,
             ),
-            Positioned(
-              top: -3,
-              right: -3,
-              child: Container(
-                width: 13,
-                height: 13,
-                decoration: BoxDecoration(
-                  color: AppColors.success,
-                  shape: BoxShape.circle,
-                  border: Border.all(color: AppColors.background, width: 2),
+            const SizedBox(width: AppSpacing.xs),
+            Flexible(
+              child: Text(
+                'Step 2 of 5 • Authentication',
+                maxLines: 1,
+                style: textTheme.bodySmall?.copyWith(
+                  color: AppColors.textMuted,
                 ),
               ),
             ),
           ],
         ),
-        const SizedBox(height: 18),
-        Container(
-          padding: const EdgeInsets.symmetric(horizontal: 11, vertical: 5),
-          decoration: BoxDecoration(
-            color: AppColors.lightBlue,
-            borderRadius: BorderRadius.circular(24),
-          ),
-          child: const Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Icon(
-                Icons.verified_user_outlined,
-                size: 14,
-                color: AppColors.deepPrimary,
-              ),
-              SizedBox(width: 5),
-              Flexible(
-                child: Text(
-                  'Step 2 of 5 • Authentication',
-                  maxLines: 1,
-                  style: TextStyle(
-                    color: AppColors.secondaryText,
-                    fontSize: 12,
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ),
-        const SizedBox(height: 10),
-        const Text(
+        const SizedBox(height: AppSpacing.sm),
+        Text(
           'Welcome Back!',
           textAlign: TextAlign.center,
-          style: TextStyle(
-            color: AppColors.primaryText,
-            fontSize: 27,
-            height: 1.25,
-            fontWeight: FontWeight.w700,
-            letterSpacing: -0.5,
-          ),
+          style: textTheme.headlineMedium,
         ),
-        const SizedBox(height: 5),
-        const Text(
+        const SizedBox(height: AppSpacing.xs),
+        Text(
           'Sign in to continue your university journey.',
           textAlign: TextAlign.center,
-          style: TextStyle(
-            color: AppColors.secondaryText,
-            fontSize: 14,
-            height: 1.5,
+          style: textTheme.bodyMedium?.copyWith(
+            color: AppColors.textSecondary,
           ),
         ),
       ],
@@ -206,17 +176,11 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget _buildLoginCard() {
     return Container(
       width: double.infinity,
-      padding: const EdgeInsets.all(22),
+      padding: const EdgeInsets.all(AppSpacing.lg),
       decoration: BoxDecoration(
         color: AppColors.white,
-        borderRadius: BorderRadius.circular(20),
-        boxShadow: [
-          BoxShadow(
-            color: AppColors.primaryText.withValues(alpha: 0.035),
-            offset: const Offset(0, 2),
-            blurRadius: 10,
-          ),
-        ],
+        borderRadius: BorderRadius.circular(AppRadii.xl),
+        border: Border.all(color: AppColors.border),
       ),
       child: Form(
         key: _formKey,
@@ -233,7 +197,7 @@ class _LoginScreenState extends State<LoginScreen> {
               textInputAction: TextInputAction.next,
               validator: _validateEmail,
             ),
-            const SizedBox(height: 17),
+            const SizedBox(height: AppSpacing.xl),
             AuthTextField(
               controller: _passwordController,
               label: 'Password',
@@ -246,28 +210,31 @@ class _LoginScreenState extends State<LoginScreen> {
               },
               validator: _validatePassword,
             ),
-            const SizedBox(height: 7),
+            const SizedBox(height: AppSpacing.sm),
             Row(
               children: [
                 Expanded(
                   child: InkWell(
                     onTap: () => setState(() => _rememberMe = !_rememberMe),
-                    borderRadius: BorderRadius.circular(8),
+                    borderRadius: BorderRadius.circular(AppRadii.sm),
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 7),
+                      padding: const EdgeInsets.symmetric(
+                        vertical: AppSpacing.sm,
+                      ),
                       child: Row(
                         children: [
                           _RememberCheckbox(value: _rememberMe),
-                          const SizedBox(width: 7),
-                          const Flexible(
+                          const SizedBox(width: AppSpacing.sm),
+                          Flexible(
                             child: Text(
                               'Remember me',
                               maxLines: 1,
                               overflow: TextOverflow.ellipsis,
-                              style: TextStyle(
-                                color: AppColors.secondaryText,
-                                fontSize: 13,
-                              ),
+                              style: Theme.of(context).textTheme.labelMedium
+                                  ?.copyWith(
+                                    color: AppColors.textSecondary,
+                                    fontWeight: FontWeight.w400,
+                                  ),
                             ),
                           ),
                         ],
@@ -279,10 +246,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   onPressed: () =>
                       Navigator.of(context).pushNamed(AppRoutes.forgotPassword),
                   style: TextButton.styleFrom(
-                    foregroundColor: AppColors.deepPrimary,
-                    padding: const EdgeInsets.symmetric(horizontal: 2),
-                    minimumSize: Size.zero,
-                    tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                    minimumSize: const Size(0, AppTargets.min),
                   ),
                   child: const Text(
                     'Forgot Password?',
@@ -291,18 +255,18 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ],
             ),
-            const SizedBox(height: 12),
+            const SizedBox(height: AppSpacing.lg),
             AuthPrimaryButton(
               label: 'Sign In',
               icon: Icons.arrow_forward_rounded,
               isLoading: _isLoading,
               onPressed: _signIn,
             ),
-            const SizedBox(height: 18),
+            const SizedBox(height: AppSpacing.xl),
             _buildSsoDivider(),
-            const SizedBox(height: 14),
+            const SizedBox(height: AppSpacing.md),
             _buildSsoButton(),
-            const SizedBox(height: 15),
+            const SizedBox(height: AppSpacing.xl),
             _buildSecurityNote(),
           ],
         ),
@@ -311,27 +275,14 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   Widget _buildSsoDivider() {
-    return Row(
-      children: [
-        const Expanded(child: Divider(color: AppColors.lightBlue, height: 1)),
-        Flexible(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10),
-            child: FittedBox(
-              fit: BoxFit.scaleDown,
-              child: Text(
-                'Or sign in with University Portal',
-                maxLines: 1,
-                style: TextStyle(
-                  color: AppColors.mutedText.withValues(alpha: 0.9),
-                  fontSize: 11,
-                ),
-              ),
-            ),
-          ),
+    return Center(
+      child: Text(
+        'Or sign in with University Portal',
+        maxLines: 1,
+        style: Theme.of(context).textTheme.bodySmall?.copyWith(
+          color: AppColors.textMuted,
         ),
-        const Expanded(child: Divider(color: AppColors.lightBlue, height: 1)),
-      ],
+      ),
     );
   }
 
@@ -341,40 +292,28 @@ class _LoginScreenState extends State<LoginScreen> {
       child: OutlinedButton(
         onPressed: () => _showPreviewMessage('Campus SSO is not connected.'),
         style: OutlinedButton.styleFrom(
-          backgroundColor: AppColors.paleBlue,
-          foregroundColor: AppColors.primaryText,
-          side: BorderSide.none,
-          padding: const EdgeInsets.symmetric(horizontal: 14),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(14),
-          ),
+          padding: const EdgeInsets.symmetric(horizontal: AppSpacing.md),
         ),
         child: Row(
           children: [
-            Container(
-              width: 30,
-              height: 30,
-              decoration: BoxDecoration(
-                color: AppColors.white,
-                borderRadius: BorderRadius.circular(9),
-              ),
-              child: const Icon(
-                Icons.account_balance_outlined,
-                size: 18,
-                color: AppColors.deepPrimary,
-              ),
+            const Icon(
+              Icons.account_balance_outlined,
+              size: 20,
+              color: AppColors.primaryDark,
             ),
-            const SizedBox(width: 9),
-            const Expanded(
+            const SizedBox(width: AppSpacing.sm),
+            Expanded(
               child: Text(
                 'Campus SSO Gateway',
-                style: TextStyle(fontSize: 13, fontWeight: FontWeight.w600),
+                style: Theme.of(
+                  context,
+                ).textTheme.labelMedium?.copyWith(fontSize: 13),
               ),
             ),
             const Icon(
               Icons.chevron_right_rounded,
               size: 20,
-              color: AppColors.mutedText,
+              color: AppColors.textMuted,
             ),
           ],
         ),
@@ -383,49 +322,50 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   Widget _buildSecurityNote() {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 9),
-      decoration: BoxDecoration(
-        color: AppColors.paleBlue,
-        borderRadius: BorderRadius.circular(12),
-      ),
-      child: const Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Icon(Icons.lock_outline_rounded, size: 15, color: AppColors.success),
-          SizedBox(width: 5),
-          Flexible(
-            child: Text(
-              'Campus SSO is not connected.',
-              textAlign: TextAlign.center,
-              style: TextStyle(color: AppColors.mutedText, fontSize: 10),
-            ),
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        const Icon(
+          Icons.lock_outline_rounded,
+          size: 15,
+          color: AppColors.textMuted,
+        ),
+        const SizedBox(width: AppSpacing.xs),
+        Flexible(
+          child: Text(
+            'Campus SSO is not connected.',
+            textAlign: TextAlign.center,
+            style: Theme.of(
+              context,
+            ).textTheme.bodySmall?.copyWith(color: AppColors.textMuted),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 
   Widget _buildRegistrationLink() {
+    final textTheme = Theme.of(context).textTheme;
     return Wrap(
       alignment: WrapAlignment.center,
       crossAxisAlignment: WrapCrossAlignment.center,
       children: [
-        const Text(
+        Text(
           "Don't have an account? ",
-          style: TextStyle(color: AppColors.secondaryText, fontSize: 14),
+          style: textTheme.bodyMedium?.copyWith(
+            color: AppColors.textSecondary,
+          ),
         ),
         TextButton(
           onPressed: () => Navigator.of(context).pushNamed(AppRoutes.register),
           style: TextButton.styleFrom(
-            foregroundColor: AppColors.deepPrimary,
-            padding: const EdgeInsets.symmetric(horizontal: 2),
-            minimumSize: Size.zero,
-            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+            minimumSize: const Size(0, AppTargets.min),
           ),
-          child: const Text(
+          child: Text(
             'Create Account',
-            style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700),
+            style: textTheme.bodyMedium?.copyWith(
+              fontWeight: FontWeight.w700,
+            ),
           ),
         ),
       ],
@@ -441,13 +381,13 @@ class _RememberCheckbox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AnimatedContainer(
-      duration: const Duration(milliseconds: 120),
+      duration: AppMotion.press,
       width: 20,
       height: 20,
       decoration: BoxDecoration(
-        color: value ? AppColors.deepPrimary : AppColors.white,
+        color: value ? AppColors.primaryDark : AppColors.white,
         border: Border.all(
-          color: value ? AppColors.deepPrimary : AppColors.border,
+          color: value ? AppColors.primaryDark : AppColors.border,
         ),
         borderRadius: BorderRadius.circular(6),
       ),

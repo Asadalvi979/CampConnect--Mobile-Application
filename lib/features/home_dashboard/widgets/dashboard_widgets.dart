@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../core/theme/app_colors.dart';
+import '../../../core/theme/app_tokens.dart';
 import '../../navigation/app_routes.dart';
 import '../../profile/models/user_profile.dart';
 import '../../messaging/widgets/messaging_navigation.dart';
@@ -56,7 +57,12 @@ class DashboardFrame extends StatelessWidget {
                 DashboardTopBar(role: role),
                 Expanded(
                   child: SingleChildScrollView(
-                    padding: const EdgeInsets.fromLTRB(16, 8, 16, 24),
+                    padding: const EdgeInsets.fromLTRB(
+                      AppSpacing.lg,
+                      AppSpacing.sm,
+                      AppSpacing.lg,
+                      AppSpacing.xxl,
+                    ),
                     child: child,
                   ),
                 ),
@@ -77,11 +83,18 @@ class DashboardTopBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final textTheme = Theme.of(context).textTheme;
     return Material(
       color: AppColors.background,
-      elevation: 1,
+      elevation: 0,
+      shape: const Border(
+        bottom: BorderSide(color: AppColors.border),
+      ),
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 9),
+        padding: const EdgeInsets.symmetric(
+          horizontal: AppSpacing.lg,
+          vertical: AppSpacing.sm,
+        ),
         child: Row(
           children: [
             Container(
@@ -89,7 +102,7 @@ class DashboardTopBar extends StatelessWidget {
               height: 36,
               decoration: BoxDecoration(
                 color: AppColors.primary,
-                borderRadius: BorderRadius.circular(12),
+                borderRadius: BorderRadius.circular(AppRadii.md),
               ),
               child: const Icon(
                 Icons.hub_rounded,
@@ -97,21 +110,18 @@ class DashboardTopBar extends StatelessWidget {
                 size: 21,
               ),
             ),
-            const SizedBox(width: 9),
+            const SizedBox(width: AppSpacing.sm),
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text(
+                  Text(
                     'CampConnect',
-                    style: TextStyle(fontWeight: FontWeight.w700, fontSize: 16),
+                    style: textTheme.titleMedium?.copyWith(fontSize: 16),
                   ),
                   Text(
                     '${role.label} Home Dashboard',
-                    style: const TextStyle(
-                      color: AppColors.secondaryText,
-                      fontSize: 10,
-                    ),
+                    style: textTheme.bodySmall,
                   ),
                 ],
               ),
@@ -144,13 +154,13 @@ class DashboardTopBar extends StatelessWidget {
               onTap: () =>
                   Navigator.of(context)
                       .pushNamed(AppRoutes.profile, arguments: role),
-              borderRadius: BorderRadius.circular(24),
+              borderRadius: BorderRadius.circular(AppRadii.full),
               child: const CircleAvatar(
                 radius: 17,
                 backgroundColor: AppColors.lightBlue,
                 child: Icon(
                   Icons.person_outline,
-                  color: AppColors.deepPrimary,
+                  color: AppColors.primaryDark,
                   size: 20,
                 ),
               ),
@@ -194,9 +204,9 @@ class DashboardBottomBar extends StatelessWidget {
       child: Container(
         decoration: const BoxDecoration(
           color: AppColors.white,
-          border: Border(top: BorderSide(color: AppColors.lightBlue)),
+          border: Border(top: BorderSide(color: AppColors.border)),
         ),
-        padding: const EdgeInsets.symmetric(vertical: 7),
+        padding: const EdgeInsets.symmetric(vertical: AppSpacing.xs),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
@@ -225,26 +235,44 @@ class DashboardBottomBar extends StatelessWidget {
                           showDashboardPreviewMessage(context, item.label);
                         }
                       },
+                // 48px tall tap target: icon + 12px label, centered.
+                // 72px wide so the longest label ('Community') fits on
+                // one line at the 12px floor.
                 child: SizedBox(
-                  width: 64,
+                  width: 72,
+                  height: 48,
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Icon(
                         item.icon,
                         color: item.route == null
-                            ? AppColors.deepPrimary
-                            : AppColors.secondaryText,
+                            ? AppColors.primaryDark
+                            : AppColors.textSecondary,
                         size: 21,
                       ),
                       const SizedBox(height: 2),
-                      Text(
-                        item.label,
-                        style: TextStyle(
-                          fontSize: 10,
-                          color: item.route == null
-                              ? AppColors.deepPrimary
-                              : AppColors.secondaryText,
+                      // FittedBox keeps the longest label on one line even
+                      // when the test environment renders the wide fallback
+                      // font; at real font widths it renders at full size.
+                      SizedBox(
+                        width: 72,
+                        child: FittedBox(
+                          fit: BoxFit.scaleDown,
+                          child: Text(
+                            item.label,
+                            maxLines: 1,
+                            style: TextStyle(
+                              fontSize: 12,
+                              fontWeight: item.route == null
+                                  ? FontWeight.w600
+                                  : FontWeight.w500,
+                              color: item.route == null
+                                  ? AppColors.primaryDark
+                                  : AppColors.textSecondary,
+                            ),
+                          ),
                         ),
                       ),
                     ],
@@ -273,28 +301,29 @@ class DashboardSectionTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 9, top: 3),
+      padding: const EdgeInsets.only(
+        bottom: AppSpacing.sm,
+        top: AppSpacing.xs,
+      ),
       child: Row(
         children: [
           Expanded(
             child: Text(
               title,
-              style: const TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.w600,
-                color: AppColors.primaryText,
-              ),
+              style: Theme.of(context).textTheme.titleMedium,
             ),
           ),
           if (trailing != null)
             TextButton(
               onPressed: onTap,
               style: TextButton.styleFrom(
-                minimumSize: const Size(0, 34),
-                padding: const EdgeInsets.symmetric(horizontal: 5),
-                foregroundColor: AppColors.deepPrimary,
+                minimumSize: const Size(0, AppTargets.min),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: AppSpacing.xs,
+                ),
+                foregroundColor: AppColors.primaryDark,
               ),
-              child: Text(trailing!, style: const TextStyle(fontSize: 11)),
+              child: Text(trailing!, style: const TextStyle(fontSize: 12)),
             ),
         ],
       ),
@@ -305,7 +334,7 @@ class DashboardSectionTitle extends StatelessWidget {
 class DashboardCard extends StatelessWidget {
   const DashboardCard({
     required this.child,
-    this.padding = const EdgeInsets.all(12),
+    this.padding = const EdgeInsets.all(AppSpacing.md),
     this.color = AppColors.white,
     super.key,
   });
@@ -321,14 +350,8 @@ class DashboardCard extends StatelessWidget {
       padding: padding,
       decoration: BoxDecoration(
         color: color,
-        borderRadius: BorderRadius.circular(16),
-        boxShadow: [
-          BoxShadow(
-            color: AppColors.primaryText.withValues(alpha: 0.035),
-            blurRadius: 8,
-            offset: const Offset(0, 2),
-          ),
-        ],
+        borderRadius: BorderRadius.circular(AppRadii.lg),
+        border: Border.all(color: AppColors.border),
       ),
       child: child,
     );
@@ -357,24 +380,24 @@ class DashboardShortcut extends StatelessWidget {
   Widget build(BuildContext context) {
     return Material(
       color: AppColors.white,
-      borderRadius: BorderRadius.circular(14),
+      borderRadius: BorderRadius.circular(AppRadii.md),
       child: InkWell(
         onTap: onTap,
-        borderRadius: BorderRadius.circular(14),
+        borderRadius: BorderRadius.circular(AppRadii.md),
         child: Padding(
-          padding: EdgeInsets.all(compact ? 9 : 12),
+          padding: EdgeInsets.all(compact ? AppSpacing.sm : AppSpacing.md),
           child: compact
               ? Column(
                   children: [
                     _icon(),
-                    const SizedBox(height: 6),
+                    const SizedBox(height: AppSpacing.xs),
                     Text(
                       title,
                       textAlign: TextAlign.center,
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
                       style: const TextStyle(
-                        fontSize: 11,
+                        fontSize: 12,
                         fontWeight: FontWeight.w600,
                       ),
                     ),
@@ -384,8 +407,8 @@ class DashboardShortcut extends StatelessWidget {
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
                       style: const TextStyle(
-                        fontSize: 9,
-                        color: AppColors.secondaryText,
+                        fontSize: 12,
+                        color: AppColors.textSecondary,
                       ),
                     ),
                   ],
@@ -393,7 +416,7 @@ class DashboardShortcut extends StatelessWidget {
               : Row(
                   children: [
                     _icon(),
-                    const SizedBox(width: 9),
+                    const SizedBox(width: AppSpacing.sm),
                     Expanded(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -412,8 +435,8 @@ class DashboardShortcut extends StatelessWidget {
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
                             style: const TextStyle(
-                              fontSize: 10,
-                              color: AppColors.secondaryText,
+                              fontSize: 12,
+                              color: AppColors.textSecondary,
                             ),
                           ),
                         ],
@@ -427,13 +450,13 @@ class DashboardShortcut extends StatelessWidget {
   }
 
   Widget _icon() => Container(
-    width: compact ? 38 : 38,
-    height: compact ? 38 : 38,
+    width: 38,
+    height: 38,
     decoration: BoxDecoration(
       color: accent,
-      borderRadius: BorderRadius.circular(11),
+      borderRadius: BorderRadius.circular(AppRadii.md),
     ),
-    child: Icon(icon, size: 20, color: AppColors.deepPrimary),
+    child: Icon(icon, size: 20, color: AppColors.primaryDark),
   );
 }
 
@@ -450,7 +473,7 @@ class DashboardAvatar extends StatelessWidget {
     child: Text(
       initials,
       style: const TextStyle(
-        color: AppColors.deepPrimary,
+        color: AppColors.primaryDark,
         fontWeight: FontWeight.w700,
         fontSize: 12,
       ),
@@ -459,23 +482,50 @@ class DashboardAvatar extends StatelessWidget {
 }
 
 class DashboardPill extends StatelessWidget {
-  const DashboardPill(this.text, {this.color = AppColors.lightBlue, super.key});
+  const DashboardPill(
+    this.text, {
+    this.color = AppColors.lightBlue,
+    this.foreground = AppColors.primaryDark,
+    this.icon,
+    super.key,
+  });
 
   final String text;
   final Color color;
+  final Color foreground;
+  final IconData? icon;
 
   @override
-  Widget build(BuildContext context) => Container(
-    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-    decoration: BoxDecoration(
-      color: color,
-      borderRadius: BorderRadius.circular(20),
-    ),
-    child: Text(
+  Widget build(BuildContext context) {
+    final label = Text(
       text,
       maxLines: 1,
       overflow: TextOverflow.ellipsis,
-      style: const TextStyle(fontSize: 9, color: AppColors.deepPrimary),
-    ),
-  );
+      style: TextStyle(
+        fontSize: 12,
+        fontWeight: FontWeight.w600,
+        color: foreground,
+      ),
+    );
+    return Container(
+      padding: const EdgeInsets.symmetric(
+        horizontal: AppSpacing.sm,
+        vertical: AppSpacing.xs,
+      ),
+      decoration: BoxDecoration(
+        color: color,
+        borderRadius: BorderRadius.circular(AppRadii.full),
+      ),
+      child: icon == null
+          ? label
+          : Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Icon(icon, size: 12, color: foreground),
+                const SizedBox(width: AppSpacing.xs),
+                Flexible(child: label),
+              ],
+            ),
+    );
+  }
 }

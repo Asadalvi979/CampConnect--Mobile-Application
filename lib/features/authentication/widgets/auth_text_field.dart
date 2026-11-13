@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../core/theme/app_colors.dart';
+import '../../../core/theme/app_tokens.dart';
 
 class AuthTextField extends StatelessWidget {
   const AuthTextField({
@@ -32,33 +33,23 @@ class AuthTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final textTheme = Theme.of(context).textTheme;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Row(
           children: [
-            Expanded(
-              child: Text(
-                label,
-                style: const TextStyle(
-                  color: AppColors.primaryText,
-                  fontSize: 13,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-            ),
+            Expanded(child: Text(label, style: textTheme.labelMedium)),
             if (trailingLabel != null)
               Text(
                 trailingLabel!,
-                style: const TextStyle(
-                  color: AppColors.deepPrimary,
-                  fontSize: 11,
-                  fontWeight: FontWeight.w500,
+                style: textTheme.bodySmall?.copyWith(
+                  color: AppColors.primaryDark,
                 ),
               ),
           ],
         ),
-        const SizedBox(height: 7),
+        const SizedBox(height: AppSpacing.sm),
         TextFormField(
           controller: controller,
           keyboardType: keyboardType,
@@ -70,7 +61,7 @@ class AuthTextField extends StatelessWidget {
           onChanged: onChanged,
           decoration: InputDecoration(
             hintText: hint,
-            prefixIcon: Icon(icon, color: AppColors.mutedText, size: 20),
+            prefixIcon: Icon(icon, color: AppColors.textMuted, size: 20),
             suffixIcon: onVisibilityPressed == null
                 ? null
                 : IconButton(
@@ -78,7 +69,7 @@ class AuthTextField extends StatelessWidget {
                     tooltip: obscureText ? 'Show password' : 'Hide password',
                     icon: Icon(
                       obscureText ? Icons.visibility_off : Icons.visibility,
-                      color: AppColors.mutedText,
+                      color: AppColors.textMuted,
                       size: 20,
                     ),
                   ),
