@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 
+import 'core/supabase/supabase_config.dart';
 import 'core/theme/app_colors.dart';
 import 'core/theme/app_theme.dart';
 import 'features/navigation/app_routes.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  // Init Supabase before runApp. When no real keys are configured yet this
+  // is a no-op and the app runs in preview mode with mock data.
+  await SupabaseConfig.initialize();
   runApp(const CampConnectApp());
 }
 

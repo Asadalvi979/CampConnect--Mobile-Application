@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
+import '../../../core/supabase/supabase_config.dart';
 import '../../../core/theme/app_colors.dart';
+import '../services/auth_services.dart';
 import '../widgets/auth_header.dart';
 import '../widgets/auth_primary_button.dart';
 import '../widgets/auth_progress.dart';
@@ -16,6 +19,8 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
   final _formKey = GlobalKey<FormState>();
   final _emailController = TextEditingController();
   bool _previewRequested = false;
+  bool _resetSent = false;
+  bool _isLoading = false;
 
   @override
   void dispose() {
@@ -32,9 +37,37 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
     return null;
   }
 
-  void _requestReset() {
-    if (!(_formKey.currentState?.validate() ?? false)) return;
+  Future<void> _requestReset() async {
+    if (_isLoading || !(_formKey.currentState?.validate() ?? false)) return;
     FocusScope.of(context).unfocus();
+    if (SupabaseConfig.isConfigured) {
+      // Real password reset: Supabase emails the recovery link.
+      setState(() => _isLoading = true);
+      try {
+        await AuthServices.current.requestPasswordReset(
+          _emailController.text.trim(),
+        );
+      } catch (e) {
+        if (!mounted) return;
+        setState(() => _isLoading = false);
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(
+              e is AuthException
+                  ? e.message
+                  : 'Could not send reset instructions. Please try again.',
+            ),
+          ),
+        );
+        return;
+      }
+      if (!mounted) return;
+      setState(() {
+        _isLoading = false;
+        _resetSent = true;
+      });
+      return;
+    }
     setState(() => _previewRequested = true);
   }
 
@@ -226,16 +259,41 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
             ),
             const SizedBox(height: 16),
             AuthPrimaryButton(
-              label: _previewRequested
+              label: _resetSent
+                  ? 'Reset Instructions Sent'
+                  : _previewRequested
                   ? 'Reset Request Preview'
                   : 'Send Reset Instructions',
-              icon: _previewRequested
+              icon: _resetSent || _previewRequested
                   ? Icons.check_rounded
                   : Icons.send_rounded,
+              isLoading: _isLoading,
               onPressed: _requestReset,
             ),
             const SizedBox(height: 14),
-            if (_previewRequested)
+            if (_resetSent)
+              const Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Icon(
+                    Icons.check_circle_outline_rounded,
+                    color: AppColors.deepPrimary,
+                    size: 17,
+                  ),
+                  SizedBox(width: 8),
+                  Expanded(
+                    child: Text(
+                      'Reset instructions sent. Check your inbox (and spam folder) for the recovery link.',
+                      style: TextStyle(
+                        color: AppColors.secondaryText,
+                        fontSize: 12,
+                        height: 1.4,
+                      ),
+                    ),
+                  ),
+                ],
+              )
+            else if (_previewRequested)
               const Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [

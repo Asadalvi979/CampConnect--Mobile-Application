@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
+import '../../../core/supabase/supabase_config.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../navigation/app_routes.dart';
+import '../../profile/models/user_profile.dart';
 import '../models/otp_screen_arguments.dart';
+import '../services/auth_services.dart';
 import '../widgets/auth_header.dart';
 import '../widgets/auth_primary_button.dart';
 
@@ -38,12 +42,56 @@ class _EmailOtpScreenState extends State<EmailOtpScreen> {
     return '$visibleStart***$visibleEnd@${parts[1]}';
   }
 
-  void _verifyEmail() {
+  void _showMessage(String message) {
+    ScaffoldMessenger.of(context)
+      ..hideCurrentSnackBar()
+      ..showSnackBar(
+        SnackBar(content: Text(message), behavior: SnackBarBehavior.floating),
+      );
+  }
+
+  String _errorMessage(Object e) {
+    if (e is AuthException) return e.message;
+    if (e is SupabaseNotConfiguredException) return e.toString();
+    return 'Verification failed. Please try again.';
+  }
+
+  Future<void> _verifyEmail() async {
     FocusScope.of(context).unfocus();
     if (_codeController.text.length != 6) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('Enter the 6-digit verification code.')),
       );
+      return;
+    }
+    if (SupabaseConfig.isConfigured) {
+      // Real verification: the code emailed by Supabase is checked, which
+      // creates the session. Then the profile row is loaded.
+      try {
+        await AuthServices.current.verifyEmailOtp(
+          email: widget.arguments.email,
+          code: _codeController.text,
+          isLoginOtp: widget.arguments.isLoginOtp,
+        );
+      } catch (e) {
+        if (!mounted) return;
+        _showMessage(_errorMessage(e));
+        return;
+      }
+      await UserProfileStore.instance.loadFromSupabase();
+      if (!mounted) return;
+      if (widget.arguments.isLoginOtp) {
+        final route = AppRoutes.dashboardRouteForProfile(
+          UserProfileStore.instance.profile.value.role,
+        );
+        Navigator.of(
+          context,
+        ).pushNamedAndRemoveUntil(route, (route) => false);
+        return;
+      }
+      Navigator.of(
+        context,
+      ).pushNamedAndRemoveUntil(AppRoutes.login, (route) => false);
       return;
     }
     if (widget.arguments.isLoginOtp) {
@@ -72,7 +120,18 @@ class _EmailOtpScreenState extends State<EmailOtpScreen> {
         .pushNamedAndRemoveUntil(AppRoutes.login, (route) => false);
   }
 
-  void _resendCode() {
+  Future<void> _resendCode() async {
+    if (SupabaseConfig.isConfigured) {
+      try {
+        await AuthServices.current.resendEmailOtp(widget.arguments.email);
+        if (!mounted) return;
+        _showMessage('A new code was sent to your email.');
+      } catch (e) {
+        if (!mounted) return;
+        _showMessage(_errorMessage(e));
+      }
+      return;
+    }
     ScaffoldMessenger.of(context).showSnackBar(
       const SnackBar(
         content: Text(
@@ -305,20 +364,21 @@ class _EmailOtpScreenState extends State<EmailOtpScreen> {
           const SizedBox(height: 25),
           _buildCodeInput(),
           const SizedBox(height: 10),
-          Wrap(
-            alignment: WrapAlignment.center,
-            crossAxisAlignment: WrapCrossAlignment.center,
-            children: [
-              const Icon(
-                Icons.content_paste_rounded,
-                size: 14,
-                color: AppColors.success,
-              ),
-              const SizedBox(width: 5),
-              const Text(
-                'Preview code:',
-                style: TextStyle(color: AppColors.mutedText, fontSize: 11),
-              ),
+          if (!SupabaseConfig.isConfigured)
+            Wrap(
+              alignment: WrapAlignment.center,
+              crossAxisAlignment: WrapCrossAlignment.center,
+              children: [
+                const Icon(
+                  Icons.content_paste_rounded,
+                  size: 14,
+                  color: AppColors.success,
+                ),
+                const SizedBox(width: 5),
+                const Text(
+                  'Preview code:',
+                  style: TextStyle(color: AppColors.mutedText, fontSize: 11),
+                ),
               const SizedBox(width: 5),
               InkWell(
                 onTap: () {

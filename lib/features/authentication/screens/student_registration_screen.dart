@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
+import '../../../core/supabase/supabase_config.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../navigation/app_routes.dart';
 import '../models/otp_screen_arguments.dart';
 import '../models/registration_form_data.dart';
+import '../services/auth_services.dart';
 import '../widgets/auth_header.dart';
 import '../widgets/auth_primary_button.dart';
 import '../widgets/auth_progress.dart';
@@ -27,6 +30,7 @@ class _StudentRegistrationScreenState extends State<StudentRegistrationScreen> {
   bool _isPasswordVisible = false;
   bool _isConfirmPasswordVisible = false;
   bool _acceptedTerms = false;
+  bool _isLoading = false;
 
   @override
   void dispose() {
@@ -64,8 +68,8 @@ class _StudentRegistrationScreenState extends State<StudentRegistrationScreen> {
     return null;
   }
 
-  void _continue() {
-    if (!(_formKey.currentState?.validate() ?? false)) return;
+  Future<void> _continue() async {
+    if (_isLoading || !(_formKey.currentState?.validate() ?? false)) return;
     if (!_acceptedTerms) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('Please accept the terms to continue.')),
@@ -79,6 +83,29 @@ class _StudentRegistrationScreenState extends State<StudentRegistrationScreen> {
       email: _emailController.text.trim(),
       password: _passwordController.text,
     );
+    if (SupabaseConfig.isConfigured) {
+      // Real registration: creates the Supabase Auth user (the `profiles`
+      // row is created by the database trigger) and sends the email OTP.
+      setState(() => _isLoading = true);
+      try {
+        await AuthServices.current.register(registration);
+      } catch (e) {
+        if (!mounted) return;
+        setState(() => _isLoading = false);
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(
+              e is AuthException
+                  ? e.message
+                  : 'Registration failed. Please try again.',
+            ),
+          ),
+        );
+        return;
+      }
+      if (!mounted) return;
+      setState(() => _isLoading = false);
+    }
     Navigator.of(context).pushNamed(
       AppRoutes.verifyEmail,
       arguments: OtpScreenArguments(email: registration.email),
@@ -201,6 +228,7 @@ class _StudentRegistrationScreenState extends State<StudentRegistrationScreen> {
                     AuthPrimaryButton(
                       label: 'Continue to Verification',
                       icon: Icons.arrow_forward_rounded,
+                      isLoading: _isLoading,
                       onPressed: _continue,
                     ),
                     const SizedBox(height: 18),

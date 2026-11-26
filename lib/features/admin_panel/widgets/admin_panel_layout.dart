@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_tokens.dart';
+import '../../authentication/services/auth_services.dart';
 import '../../navigation/app_routes.dart';
 import '../../profile/models/user_profile.dart';
 import '../../resources/models/resource_route_arguments.dart';
@@ -170,8 +171,11 @@ class _AdminHeader extends StatelessWidget {
   );
 }
 
-void _logout(BuildContext context) {
+Future<void> _logout(BuildContext context) async {
+  // Ends the Supabase session when configured (no-op in preview mode).
+  await AuthServices.current.signOut();
   UserProfileStore.instance.setRole(UserProfileRole.student);
+  if (!context.mounted) return;
   Navigator.of(context)
       .pushNamedAndRemoveUntil(AppRoutes.adminLogin, (route) => false);
 }

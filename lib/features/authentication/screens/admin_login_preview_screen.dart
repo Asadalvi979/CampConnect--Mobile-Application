@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
+import '../../../core/supabase/supabase_config.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../navigation/app_routes.dart';
 import '../../profile/models/user_profile.dart';
+import '../services/auth_services.dart';
 import '../widgets/auth_header.dart';
 import '../widgets/auth_primary_button.dart';
 import '../widgets/auth_text_field.dart';
@@ -16,13 +19,11 @@ class AdminLoginPreviewScreen extends StatefulWidget {
 }
 
 class _AdminLoginPreviewScreenState extends State<AdminLoginPreviewScreen> {
-  static const _previewEmail = 'admin@campconnect.com';
-  static const _previewPassword = 'Admin123';
-
   final _formKey = GlobalKey<FormState>();
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
   bool _isPasswordVisible = false;
+  bool _isLoading = false;
   String? _loginError;
 
   @override
@@ -44,18 +45,48 @@ class _AdminLoginPreviewScreenState extends State<AdminLoginPreviewScreen> {
   String? _validatePassword(String? value) =>
       value == null || value.isEmpty ? 'Enter your password.' : null;
 
-  void _login() {
-    if (!(_formKey.currentState?.validate() ?? false)) return;
+  /// Real admin login: password sign-in via Supabase Auth, then the
+  /// `profiles` row is loaded and only role == admin may continue. There is
+  /// no demo account and no hardcoded credential anywhere in this screen.
+  Future<void> _login() async {
+    if (_isLoading || !(_formKey.currentState?.validate() ?? false)) return;
     final email = _emailController.text.trim().toLowerCase();
-    if (email != _previewEmail ||
-        _passwordController.text != _previewPassword) {
-      setState(
-        () => _loginError = 'Incorrect Admin preview email or password.',
+    final password = _passwordController.text;
+    setState(() {
+      _isLoading = true;
+      _loginError = null;
+    });
+    try {
+      await AuthServices.current.signInWithPassword(
+        email: email,
+        password: password,
       );
+      final loaded = await UserProfileStore.instance.loadFromSupabase();
+      if (!loaded ||
+          UserProfileStore.instance.profile.value.role !=
+              UserProfileRole.admin) {
+        await AuthServices.current.signOut();
+        if (!mounted) return;
+        setState(() {
+          _isLoading = false;
+          _loginError = 'This account does not have admin access.';
+        });
+        return;
+      }
+    } catch (e) {
+      if (!mounted) return;
+      setState(() {
+        _isLoading = false;
+        _loginError = e is AuthException
+            ? e.message
+            : e is SupabaseNotConfiguredException
+            ? e.toString()
+            : 'Admin sign in failed. Please try again.';
+      });
       return;
     }
-
-    UserProfileStore.instance.setRole(UserProfileRole.admin);
+    if (!mounted) return;
+    setState(() => _isLoading = false);
     Navigator.of(context)
         .pushNamedAndRemoveUntil(AppRoutes.adminDashboard, (route) => false);
   }
@@ -93,7 +124,7 @@ class _AdminLoginPreviewScreenState extends State<AdminLoginPreviewScreen> {
                     ),
                     const SizedBox(height: 17),
                     const Text(
-                      'Use the demo account to open admin tools.',
+                      'Sign in with your admin account to open admin tools.',
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         color: AppColors.secondaryText,
@@ -167,6 +198,7 @@ class _AdminLoginPreviewScreenState extends State<AdminLoginPreviewScreen> {
                             AuthPrimaryButton(
                               label: 'Sign In',
                               icon: Icons.arrow_forward_rounded,
+                              isLoading: _isLoading,
                               onPressed: _login,
                             ),
                           ],
@@ -184,7 +216,7 @@ class _AdminLoginPreviewScreenState extends State<AdminLoginPreviewScreen> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Demo access only—not real authentication.',
+                            'Admin access only.',
                             style: TextStyle(
                               color: AppColors.deepPrimary,
                               fontSize: 11,
@@ -192,8 +224,8 @@ class _AdminLoginPreviewScreenState extends State<AdminLoginPreviewScreen> {
                             ),
                           ),
                           SizedBox(height: 5),
-                          SelectableText(
-                            'Preview email: admin@campconnect.com\nPreview password: Admin123',
+                          Text(
+                            'Only accounts whose profile role is admin can sign in here. The first admin is promoted with SQL after signing up (see tools/supabase_schema.sql).',
                             style: TextStyle(
                               color: AppColors.secondaryText,
                               fontSize: 11,

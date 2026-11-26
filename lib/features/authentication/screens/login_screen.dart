@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
+import '../../../core/supabase/supabase_config.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_tokens.dart';
 import '../../navigation/app_routes.dart';
 import '../models/otp_screen_arguments.dart';
+import '../services/auth_services.dart';
 import '../widgets/auth_header.dart';
 import '../widgets/auth_primary_button.dart';
 import '../widgets/auth_text_field.dart';
@@ -48,16 +51,38 @@ class _LoginScreenState extends State<LoginScreen> {
     if (_isLoading || !(_formKey.currentState?.validate() ?? false)) return;
     FocusScope.of(context).unfocus();
     setState(() => _isLoading = true);
-    await Future<void>.delayed(const Duration(milliseconds: 300));
+    final email = _emailController.text.trim();
+    if (SupabaseConfig.isConfigured) {
+      // Real login: password is checked first, then a 6-digit email OTP is
+      // sent and verified on the OTP screen.
+      try {
+        await AuthServices.current.signInWithPassword(
+          email: email,
+          password: _passwordController.text,
+        );
+        await AuthServices.current.requestLoginOtp(email);
+      } catch (e) {
+        if (!mounted) return;
+        setState(() => _isLoading = false);
+        _showPreviewMessage(_errorMessage(e));
+        return;
+      }
+    } else {
+      // Preview mode: no backend yet, keep the old 300 ms fake delay.
+      await Future<void>.delayed(const Duration(milliseconds: 300));
+    }
     if (!mounted) return;
     setState(() => _isLoading = false);
     Navigator.of(context).pushNamed(
       AppRoutes.verifyEmail,
-      arguments: OtpScreenArguments(
-        email: _emailController.text.trim(),
-        isLoginOtp: true,
-      ),
+      arguments: OtpScreenArguments(email: email, isLoginOtp: true),
     );
+  }
+
+  String _errorMessage(Object e) {
+    if (e is AuthException) return e.message;
+    if (e is SupabaseNotConfiguredException) return e.toString();
+    return 'Sign in failed. Please try again.';
   }
 
   void _showPreviewMessage(String message) {

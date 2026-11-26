@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../core/theme/app_colors.dart';
+import '../../authentication/services/auth_services.dart';
 import '../../navigation/app_routes.dart';
 import '../models/user_profile.dart';
 import '../widgets/profile_widgets.dart';
@@ -180,8 +181,11 @@ class _ProfileSettingsScreenState extends State<ProfileSettingsScreen> {
             title: 'Log Out',
             detail: 'Sign out of your active session on this device',
             isDanger: true,
-            onTap: () {
+            onTap: () async {
+              // Ends the Supabase session when configured (no-op in preview).
+              await AuthServices.current.signOut();
               UserProfileStore.instance.setRole(UserProfileRole.student);
+              if (!context.mounted) return;
               Navigator.of(context)
                   .pushNamedAndRemoveUntil(AppRoutes.login, (_) => false);
             },
