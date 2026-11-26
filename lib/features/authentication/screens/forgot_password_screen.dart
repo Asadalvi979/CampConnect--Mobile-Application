@@ -40,7 +40,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
   Future<void> _requestReset() async {
     if (_isLoading || !(_formKey.currentState?.validate() ?? false)) return;
     FocusScope.of(context).unfocus();
-    if (SupabaseConfig.isConfigured) {
+    if (SupabaseConfig.isLive) {
       // Real password reset: Supabase emails the recovery link.
       setState(() => _isLoading = true);
       try {

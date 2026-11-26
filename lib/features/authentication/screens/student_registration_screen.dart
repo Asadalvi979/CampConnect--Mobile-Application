@@ -83,7 +83,7 @@ class _StudentRegistrationScreenState extends State<StudentRegistrationScreen> {
       email: _emailController.text.trim(),
       password: _passwordController.text,
     );
-    if (SupabaseConfig.isConfigured) {
+    if (SupabaseConfig.isLive) {
       // Real registration: creates the Supabase Auth user (the `profiles`
       // row is created by the database trigger) and sends the email OTP.
       setState(() => _isLoading = true);

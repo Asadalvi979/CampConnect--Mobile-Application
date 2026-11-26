@@ -52,7 +52,7 @@ class _LoginScreenState extends State<LoginScreen> {
     FocusScope.of(context).unfocus();
     setState(() => _isLoading = true);
     final email = _emailController.text.trim();
-    if (SupabaseConfig.isConfigured) {
+    if (SupabaseConfig.isLive) {
       // Real login: password is checked first, then a 6-digit email OTP is
       // sent and verified on the OTP screen.
       try {

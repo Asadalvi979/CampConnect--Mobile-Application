@@ -64,7 +64,7 @@ class _EmailOtpScreenState extends State<EmailOtpScreen> {
       );
       return;
     }
-    if (SupabaseConfig.isConfigured) {
+    if (SupabaseConfig.isLive) {
       // Real verification: the code emailed by Supabase is checked, which
       // creates the session. Then the profile row is loaded.
       try {
@@ -121,7 +121,7 @@ class _EmailOtpScreenState extends State<EmailOtpScreen> {
   }
 
   Future<void> _resendCode() async {
-    if (SupabaseConfig.isConfigured) {
+    if (SupabaseConfig.isLive) {
       try {
         await AuthServices.current.resendEmailOtp(widget.arguments.email);
         if (!mounted) return;
@@ -364,7 +364,7 @@ class _EmailOtpScreenState extends State<EmailOtpScreen> {
           const SizedBox(height: 25),
           _buildCodeInput(),
           const SizedBox(height: 10),
-          if (!SupabaseConfig.isConfigured)
+          if (!SupabaseConfig.isLive)
             Wrap(
               alignment: WrapAlignment.center,
               crossAxisAlignment: WrapCrossAlignment.center,

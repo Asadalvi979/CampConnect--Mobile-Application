@@ -18,8 +18,8 @@ abstract final class SupabaseConfig {
   // Hardcoded fallbacks (same values as `.env` — used when `.env` is missing
   // or the platform can't read it, e.g. web).
   // TODO: replace BOTH placeholders with the real first-mad project values.
-  static const String urlFallback = 'https://YOUR_PROJECT_REF.supabase.co';
-  static const String anonKeyFallback = 'YOUR_ANON_KEY';
+  static const String urlFallback = 'https://krxyclswprgumpxqvhfk.supabase.co';
+  static const String anonKeyFallback = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtyeHljbHN3cHJndW1weHF2aGZrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTU2NDk1MzIsImV4cCI6MjExMTIyNTUzMn0.Fg_P_spzVr_uWuwWEjuXQpgXjfOHk6MRSTV6NZ8Q5AY';
 
   static bool _initialized = false;
 
@@ -38,6 +38,12 @@ abstract final class SupabaseConfig {
       !anonKey.contains('YOUR_ANON_KEY') &&
       url.startsWith('https://') &&
       anonKey.isNotEmpty;
+
+  /// True when Supabase is actually live: real keys present AND
+  /// [initialize] has run successfully. Screens and route guards use this,
+  /// not [isConfigured]: keys alone (e.g. a real `.env` during widget tests,
+  /// where main() never runs) must keep the app in preview mode.
+  static bool get isLive => isConfigured && isInitialized;
 
   /// Initialize Supabase once, before `runApp`. Never throws: when the app
   /// is not configured (or init fails) it stays in preview mode.

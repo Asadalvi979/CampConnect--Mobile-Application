@@ -150,12 +150,13 @@ abstract final class AppRoutes {
   static bool _isAdminRoute(String? name) =>
       name == adminDashboard || name == adminUsers || name == adminUserDetails;
 
-  /// Route guards (Slice 1). Active only when Supabase is configured:
+  /// Route guards (Slice 1). Active only when Supabase is live (keys
+  /// present AND initialized in main()):
   /// every non-public route needs a session, and /admin routes additionally
   /// need profiles.role == admin. In preview mode (no keys) the guards are
   /// off so the app and its widget tests keep working on mock data.
   static Route<dynamic> onGenerateRoute(RouteSettings settings) {
-    if (SupabaseConfig.isConfigured) {
+    if (SupabaseConfig.isLive) {
       final name = settings.name;
       if (!_publicRoutes.contains(name) && !SupabaseConfig.hasSession) {
         return _route(const LoginScreen(), const RouteSettings(name: login));
